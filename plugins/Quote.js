@@ -16,7 +16,7 @@ let handler = async(m, { conn, args, usedPrefix }) => {
             .catch(() => {
                 conn.reply(m.chat, '*[ ERROR ]* _Terjadi Kesalahan!_', m)
             })
-    } /*else {
+   /* } else {
         conn.reply(m.chat, `Query tidak tersedia!. Silahkan ketik *${usedPrefix}anime* untuk melihat *List Query*`, m)
     }*/
 //   } else if (!user.prems) m.reply('*FITUR INI KHUSUS UNTUK USER PREMIUM!*')
