@@ -1,20 +1,19 @@
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
 
-    if (!text) return conn.reply(m.chat, 'Masukkan Lokasi', m)
+    if (!text) return conn.reply(m.chat, 'Silahkan masukan teks', m)
 
-//  await m.reply('*[ WAIT ]* _Seda..._')
-axios.get(`https://xnxx-tbot.herokuapp.com/api/kodepos?kota=${text}&apikey=tbot`).then((res) => {
+axios.get(`https://api-anoncybfakeplayer.herokuapp.com/pastebin?text=${text}`).then((res) => {
     let hasil = `
-*KODE POSTAL*
-${res.data.result.data.postalcode}
+*Teks:* ${text}
+*Link:* ${res.data.result}
 
 *[ • SGDC-BOT • ]*
 `.trim()
 conn.reply(m.chat, hasil, m)
 	})
 }
-handler.command = /^(kodepos)$/i
+handler.command = /^(pastebin)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
@@ -28,3 +27,6 @@ handler.fail = null
 
 
 module.exports = handler
+
+///  MUHAMMAD AFDHAN
+
