@@ -2,7 +2,7 @@ let axios = require("axios");
 let handler = async(m, { conn, text }) => {
             if (!text) return conn.reply(m.chat, 'Apa Yang Mau Dicari?', m)
             
-            await m.reply('Wait.....')
+            await m.reply('*[ WAIT ]* _Searching..._')
             axios.get(`https://fzn-gaz.herokuapp.com/api/sfile?search=${text}`).then ((res) => {
                 let sfiles = res.data
                 let sfile = `*「 SFILE SEARCH 」*\n\n*Hasil Pencarian:* ${text}\n`
