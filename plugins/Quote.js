@@ -6,7 +6,7 @@ let handler = async(m, { conn, text }) => {
 *[ • SGDC-BOT • ]*
 `.trim()
     
-    axios.get(`https://raw.githubusercontent.com/Afdhan/Quo/main/file.json`)
+    axios.get(`https://raw.githubusercontent.com/Afdhan/Quo/main/file.txt`)
       .then((result) => {
         let b = JSON.parse(JSON.stringify(result.data));
         let dhan =  b[Math.floor(Math.random() * b.length)];
