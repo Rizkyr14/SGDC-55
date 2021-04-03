@@ -9,6 +9,7 @@ let handler = async (m, { conn, text }) => {
 *║ ○* Nsfw
 *╰═════════╯*
 `.trim())
+}
 handler.command = /^(optionlist)$/i
 handler.owner = true
 
