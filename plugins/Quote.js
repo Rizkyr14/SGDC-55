@@ -15,7 +15,7 @@ let handler = async(m, { conn, text }) => {
             (response) => {
 	let buf = Buffer.from(response, 'base64');
 
-    conn.sendFile(m.chat, buf, 'QUOTES-MUSLIM.jpg', str, m)
+    conn.sendFile(m.chat, buf, 'QUOTES-MUSLIM.png', str, m)
             }
         )
         .catch(
