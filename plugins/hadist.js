@@ -11,10 +11,10 @@ let [nm, no] = text.split `|`
 *${res.data.result.message}*
 
 *Arab:*
-${res.data.result.contents.arab}
+${res.data.result.data.contents.arab}
 
 *Translation:*
-${res.data.result.contents.id}
+${res.data.result.data.contents.id}
 
 
 *[ • SGDC-BOT • ]*
