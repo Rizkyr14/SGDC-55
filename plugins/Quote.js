@@ -11,7 +11,7 @@ let handler = async(m, { conn, args, usedPrefix }) => {
             .then(body => {
                 let quo = body.split('\n')
                 let islami = quo[Math.floor(Math.random() * quo.length)]
-                conn.sendFile(m.chat, islami, '', 'Dasar Wibu:v', m)
+                conn.sendFile(m.chat, islami, 'Tes.png', 'Dasar Wibu:v', m)
             })
             .catch(() => {
                 conn.reply(m.chat, '*[ ERROR ]* _Terjadi Kesalahan!_', m)
