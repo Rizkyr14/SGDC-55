@@ -2,10 +2,11 @@ let { MessageType } = require('@adiwajshing/baileys')
 
 let handler = async (m, { conn, text }) => {
   let users = (await conn.groupMetadata(m.chat)).participants.map(u => u.jid)
-  let mem = `*「 TAG ALL MEMBER 」*\n\n`
+  let mem = `*「  TAG ALL MEMBER  」*\n\n`
   for (let i = 0; i < users.length; i++) {
-                    mem += ` *~>* @${users[i].split("@")[0]}\n`
-                }
+      mem += ` *➸* @${users[i].split("@")[0]}\n`
+     }
+      mem += '*「 • 」  SGDC-BOT  「 • 」*'
 
   conn.reply(m.chat, mem, m, {
     contextInfo: {
