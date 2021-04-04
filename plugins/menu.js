@@ -69,7 +69,6 @@ _if you violate, your account will be banned permanently!_
 *┃║ ${_p}coffe*  _Teks_
 *┃║ ${_p}coffe2*  _Teks_
 *┃║ ${_p}matrix*  _Teks_
-*┃║ ${_p}bokeh*  _Teks_
 *┃║ ${_p}silverbutton*  _Teks_
 *┃║ ${_p}goldbutton*  _Teks_
 *┃║ ${_p}quotemaker*  _Teks_
@@ -156,7 +155,7 @@ _if you violate, your account will be banned permanently!_
 *┃                            STALK*
 *┃╭═════════════════╮*
 *┃║ ${_p}igstalk*  _Username_
-*┃║ ${_p}githubstalk*  _Username
+*┃║ ${_p}githubstalk*  _Username_
 *┃║ ${_p}twitterstalk*  _Username_
 *┃║ ${_p}tiktokstalk*  _Username_ (error)
 *┃╰═════════════════╯*
@@ -224,6 +223,7 @@ _if you violate, your account will be banned permanently!_
 *┃║ ${_p}bacotan*
 *┃║ ${_p}donasi*
 *┃║ ${_p}covid*
+*┃║ ${_p}sfileup*
 *┃║ ${_p}infogempa*
 *┃║ ${_p}nickepep*
 *┃║ ${_p}grouplist*
@@ -231,7 +231,6 @@ _if you violate, your account will be banned permanently!_
 *┃║ ${_p}tebakgambar*
 *┃║ ${_p}google*  _Teks_
 *┃║ ${_p}sfile*  _Teks_
-*┃║ ${_p}sfileup*  _Teks_
 *┃║ ${_p}wiki*  _Teks_
 *┃║ ${_p}kbbi*  _Teks_
 *┃║ ${_p}lirik*  _Judul Lagu_
