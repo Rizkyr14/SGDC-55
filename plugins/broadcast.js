@@ -1,9 +1,8 @@
 let handler  = async (m, { conn, text }) => {
-  let chats = conn.chats.array.filter(v => !v.read_only && v.message).map(v => v.jid)
-  for (let id of chats) conn.sendMessage(id, text + (/broadcast/im.test(text) ? '' : ('\n\n*[ • SGDC-BOT • ]*')), m.mtype, m.msg.contextInfo ? {
-    contextInfo: m.msg.contextInfo
-  } : {})
-  conn.reply(m.chat, `*_Mengirim pesan broadcast ke ${chats.length} chat_*`, m)
+  let chats = conn.chats.all().filter(v => !v.read_only && v.message).map(v => v.jid)
+  let content = await conn.cMod(m.chat, m, /bc|broadcast/i.test(text) ? text : text + '\n\n*「 SGDC-BOT 」*')
+  for (let id of chats) conn.copyNForward(id, content)
+  conn.reply(m.chat, `_Mengirim pesan broadcast ke ${chats.length} chat_`, m)
 }
 
 handler.command = /^(broadcast|bc)$/i
