@@ -15,12 +15,12 @@ _Terdeteksi *${usname}* telah mengirim link group!_
 Maaf Kamu akan dikick oleh *SGDC-BOT*
 `.trim(), m)
  conn.groupRemove(m.chat, [users])
-    }
+    } else if (!chat.antiLink) return m.reply('```AKTIFIN ANTILINK! BIAR GUA KILL NI BOCAH !!```')
  }
 
 handler.customPrefix = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
 handler.command = new RegExp
-
+handler.group = true
 handler.fail = null
 
 module.exports = handler
