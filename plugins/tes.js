@@ -1,4 +1,4 @@
-let handler = async(m, { delete, conn, participant }) => {
+let handler = async(m, { conn, participant }) => {
     if (m.key.fromMe) return
     let chat = global.DATABASE._data.chats[m.key.remoteJid]
     if (chat.delete) return
