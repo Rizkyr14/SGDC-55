@@ -5,10 +5,11 @@ let handler = async(m, { conn, text }) => {
             await m.reply('*[ WAIT ]* _Sedang Diproses..._')
             axios.get(`https://fzn-gaz.herokuapp.com/api/sfileup`).then ((res) => {
                 let sfiles = res.data
-                let sfile = `*「  SFILE LATEST UPLOAD  」*\n\n`
+                let sfile = `*「 • 」 SFILE LATEST UPLOAD 「 • 」*\n\n`
                 for (let i = 0; i < sfiles.result.length; i++) {
                     sfile += `\n*─────────────────*\n\n~> *Title:* ${sfiles.result[i].title}\n~> *Link:* ${sfiles.result[i].link}\n`
                 }
+		    sfile += '\n*「 • 」  SGDC-BOT  「 • 」*'
                  conn.reply(m.chat, sfile, m)
 	})
 }
