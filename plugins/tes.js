@@ -12,7 +12,7 @@ let handler = async(m, { conn, participant }) => {
       }
     })
     conn.copyNForward(m.key.remoteJid, m.message).catch(e => console.log(e, m))
-  }
+ // }
 }
 
 module.exports = handler
