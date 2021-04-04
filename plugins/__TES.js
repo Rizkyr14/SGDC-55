@@ -4,7 +4,7 @@ let handler = async (m, { conn, text }) => {
   let users = (await conn.groupMetadata(m.chat)).participants.map(u => u.jid)
   let mem = `*「 TES 」*\n`
   for (let i = 0; i < users.length; i++) {
-                    mem += `@${users[i].split("@s.whatsapp.net")}\n`
+                    mem += `@${users[i].split("@")}\n`
                 }
 
   conn.reply(m.chat, mem, m, {
