@@ -9,7 +9,7 @@ let handler = async (m) => {
   let img = await q.download()
   let body = new FormData
   body.append('image', img, 'image')
-  let res = await fetch(`https://api.xteam.xyz/removebg?url=${body}&APIKEY=abba3220ce4a347f`, {
+  let res = await fetch(`https://api.xteam.xyz/removebg?url=https:\/\/i.pinimg.com\/originals\/a4\/be\/64\/a4be64e6a134bf3b24ff7d6d2476a1bb.jpg&APIKEY=abba3220ce4a347f`, {
     method: 'POST',
     body
   })
