@@ -12,14 +12,7 @@ let handler = async (m, { conn, text }) => {
 }
 
 handler.command = /^(join)$/i
-handler.owner = false
-handler.mods = false
 handler.premium = true
-handler.group = false
-handler.private = false
-
-handler.admin = false
-handler.botAdmin = false
 
 handler.fail = null
 
