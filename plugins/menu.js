@@ -230,6 +230,8 @@ _if you violate, your account will be banned permanently!_
 *┃║ ${_p}linkgroup*
 *┃║ ${_p}tebakgambar*
 *┃║ ${_p}google*  _Teks_
+*┃║ ${_p}sfile*  _Teks_
+*┃║ ${_p}sfileup*  _Teks_
 *┃║ ${_p}wiki*  _Teks_
 *┃║ ${_p}kbbi*  _Teks_
 *┃║ ${_p}lirik*  _Judul Lagu_
@@ -270,7 +272,7 @@ _if you violate, your account will be banned permanently!_
 *┃║ ${_p}tiktokdl*  _Url
 *┃║ ${_p}ytmp4*  _Url_
 *┃║ ${_p}ytmp3*  _Judul_
-*┃║ ${_p}ytplay*  _Judul_
+*┃║ ${_p}ytplay*  _Judul_  (error)
 *┃╰═════════════════╯*
 *┃                          TOOLS*
 *┃╭═════════════════╮*
