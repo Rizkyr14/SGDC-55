@@ -8,6 +8,7 @@ let handler  = async (m, { conn, args, usedPrefix: _p }) => {
     let bname = package.name
     let vers = package.version
     let dsci = package.description
+    let gc = 'https://chat.whatsapp.com/C6JvFUMrWpBJ5THI0Bz3QM'
     let name = conn.getName(m.sender)
     let desc = 'Powered by'
     let d = new Date
@@ -33,6 +34,8 @@ _Hey *${name}* you will using *${bname}!*_
 _before you using this features,_ 
 _please follow the rules *${bname}.*_
 _if you violate, your account will be banned permanently!_
+
+_Join GC BOT ${gc}_
 
 *Rules:*
 *> Don't Spam !!!*
