@@ -6,7 +6,7 @@ let handler  = async (m, { conn, text }) => {
 }
 
 handler.command = /^(broadcast|bc)$/i
-handler.rowner = true
+handler.owner = true
 
 handler.fail = null
 
