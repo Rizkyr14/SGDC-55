@@ -2,9 +2,9 @@ let { MessageType } = require('@adiwajshing/baileys')
 
 let handler = async (m, { conn, text }) => {
   let users = (await conn.groupMetadata(m.chat)).participants.map(u => u.jid)
-  let mem = `*「 TES 」*\n`
+  let mem = `*「 TAG ALL MEMBER 」*\n\n`
   for (let i = 0; i < users.length; i++) {
-                    mem += `@${users[i].split("@")[0]}\n`
+                    mem += ` ~>* @${users[i].split("@")[0]}\n`
                 }
 
   conn.reply(m.chat, mem, m, {
@@ -14,15 +14,15 @@ let handler = async (m, { conn, text }) => {
   })
 }
 
-handler.command = /^(tes)$/i
-handler.owner = true
+handler.command = /^(tagall)$/i
+handler.owner = false
 handler.mods = false
 handler.premium = false
 handler.group = true
 handler.private = false
 
 handler.admin = false
-handler.botAdmin = false
+handler.botAdmin = true
 
 handler.fail = null
 
