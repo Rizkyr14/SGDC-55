@@ -49,7 +49,7 @@ ${usedPrefix}off welcome
 `.trim())
   }
   m.reply(`
-_Berhasil di *${isEnable ? 'Nyala' : 'Mati'}kan* *${type}* Untuk ${isAll ? 'Bot ini' : 'Chat ini'}
+_Berhasil Me${isEnable ? 'nyala' : 'mati'}kan *${type}* Untuk ${isAll ? 'BOT ini' : 'Chat Ini'}_
 `.trim())
 }
 
