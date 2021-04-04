@@ -7,7 +7,7 @@ let handler = async (m, { conn, text }) => {
                     mem += `@${users[i].split("@s.whatsapp.net")}\n`
                 }
 
-  conn.sendMessage(m.chat, mem, MessageType.extendedText, { contextInfo: { mentionedJid: users } })
+  conn.sendMessage(m.chat, mem, { contextInfo: { mentionedJid: users } })
 }
 
 handler.command = /^(tes)$/i
