@@ -93,7 +93,8 @@ _Join GC BOT ${gc}_
 *┃╭═════════════════╮*
 *┃║ ${_p}quran*
 *┃║ ${_p}ayatkursi*
-*┃║ ${_p}quotepict*
+*┃║ ${_p}doawirid*
+*┃║ ${_p}doatahlil*
 *┃║ ${_p}quotemuslim*
 *┃║ ${_p}getsurah*  _Nomor Surah_
 *┃║ ${_p}jadwalsholat*  _Daerah_
@@ -169,10 +170,12 @@ _Join GC BOT ${gc}_
 *┃║ ${_p}santet2*  _@user|Teks_
 *┃║ ${_p}spaming*  _628xxx|Teks_
 *┃║ ${_p}spamsms*  _08xxx|Jmlh_
-*┃║ ${_p}spamcall*  _8xxxx_
+*┃║ ${_p}call*  _8xxxx_
 *┃╰═════════════════╯*
 *┃                            GROUP*
 *┃╭═════════════════╮*
+*┃║ ${_p}tagall*
+*┃║ ${_p}tagall2*
 *┃║ ${_p}grup*  _open/close_
 *┃║ ${_p}add*  _628xxxx_
 *┃║ ${_p}promote*  _@user_
