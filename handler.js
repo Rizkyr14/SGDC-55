@@ -299,9 +299,11 @@ module.exports = {
     let chat = global.DATABASE._data.chats[m.key.remoteJid]
     if (!chat.delete) return
     await this.reply(m.key.remoteJid, `
+*「  ANTI DELETE  」*
+
 *_Terdeteksi @${m.participant.split`@`[0]} telah menghapus pesan!_*
 
-*[ • SGDC-BOT • ] _Detector_*
+*[ • SGDC-BOT • ]*
 `.trim(), m.message, {
       contextInfo: {
         mentionedJid: [m.participant]
