@@ -7,7 +7,7 @@ let handler = async(m, { conn, text }) => {
                 let doa = res.data.result
                 let out = `*「  DO'A TAHLIL  」*\n\n`
                 for (let i = 0; i < doa.data.length; i++) {
-                    out += `─────────────────────\n*${doa.data[i].title}*\n${doa.data[i].arabic}\n\n*Artinya*\n${doa.data[i]translation}\n`
+                    out += `─────────────────────\n*${doa.data[i].title}*\n${doa.data[i].arabic}\n\n*Artinya*\n${doa.data[i].translation}\n`
                 }
                     out += '\n*[ • SGDC-BOT • ]*'
                  conn.reply(m.chat, out, m)
