@@ -187,6 +187,7 @@ _Join GC BOT ${gc}_
 *┃║ ${_p}odemote*  _@user_
 *┃║ ${_p}okick*  _@user_
 *┃║ ${_p}getpp*  _@user_
+*┃║ ${_p}rptag*  _@user_
 *┃║ ${_p}hidetag*  _Teks_
 *┃║ ${_p}ohidetag*  _Teks_
 *┃║ ${_p}fitnah*  _Teks @user Teks_
