@@ -5,11 +5,11 @@ let handler = async(m, { conn, text }) => {
             await m.reply('*[ WAIT ]* _Sedang Diproses..._')
             axios.get(`https://xnxx-tbot.herokuapp.com/api/muslim/doaharian?apikey=tbot`).then ((res) => {
                 let doa = res.data.result
-                let out = `*「  Do'a Harian  」*\n\n`
+                let out = `*「  DO'A HARIAN  」*\n\n`
                 for (let i = 0; i < doa.data.length; i++) {
-                    out += `─────────────────────\n${doa.data[i].arabic}\n*Latin:*\n${doa.data[i].latin}\n*Artinya*\n${doa.data[i].translation}\n`
+                    out += `\n─────────────────────\n*${doa.data[i].title}:*\n${doa.data[i].arabic}\n*Latin:*\n${doa.data[i].latin}\n*Artinya*\n${doa.data[i].translation}\n`
                 }
-                    out += '\n*[ • SGDC-BOT • ]*'
+                    out += '\n\n*[ • SGDC-BOT • ]*'
                  conn.reply(m.chat, out, m)
 	})
 }
