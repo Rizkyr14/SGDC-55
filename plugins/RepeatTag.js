@@ -7,7 +7,6 @@ let handler = async(m, { conn, text }) => {
 *「  REPEAT TAG  」*
 
 Dari: ${name}
-Alasan: ${text}
 
 🤣 @${who.split("@")[0]}
 🤣 @${who.split("@")[0]}
