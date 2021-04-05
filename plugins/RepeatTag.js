@@ -1,1009 +1,1417 @@
 let handler = async(m, { conn, text }) => {
-  let who = m.mentionedJid[0]
+  let [who, txt] = text.split `-`
+//  let who = m.mentionedJid[0]
+  let name = conn.getName(m.sender)
   if (!who) return m.reply('_Tag Salah Satu!_')
   let repeat = `
 *「  REPEAT TAG  」*
 
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
-@${who.split("@")[0]}
+Dari: ${name}
+Alasan: ${txt}
+
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
+🤣 @${who.split("@")[0]}
 
 *「    SGDC-BOT    」*
 `.trim()
