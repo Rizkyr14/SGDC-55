@@ -1,6 +1,6 @@
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
-  if (!text) return m.reply('_Masukkan Nomor Tujuan!_')
+  if (!text) return m.reply('_Masukkan Nomor Tujuan Dengan Format *8xxx*!_')
 await axios.get(`https://api-anoncybfakeplayer.herokuapp.com/spamcall?nomor=${text}`).then ((res) => {
   let user = m.sender
  // let cal = `@${no.split("@")[0]}`
