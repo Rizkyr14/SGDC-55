@@ -16,7 +16,7 @@ let handler  = async (m, { conn, args, usedPrefix, command }) => {
         throw false
       }
       global.opts['self'] = true
-  conn.reply(m.chat, `_Mode Public Berhasil Diaktifkan! Sekarang Ssmua User Bisa Menggunakan BOT!_`, m
+  conn.reply(m.chat, `_Mode Public Berhasil Diaktifkan! Sekarang Ssmua User Bisa Menggunakan BOT!_`, m)
       }
   }
   
