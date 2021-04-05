@@ -1,6 +1,6 @@
 let { Presence, GroupSettingChange } = require('@adiwajshing/baileys')
 //  let isEnable = /true|enable|(turn)?on/i.test(command)
-let handler  = async (m, { conn, args, usedPrefix, command }) => {
+let handler = async (m, { conn, usedPrefix, command, text, args, isROwner }) => {
    if (command == 'self') {
 		  isAll = true
    if (!isROwner) {
