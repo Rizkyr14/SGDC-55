@@ -96,6 +96,7 @@ _Join GC BOT ${gc}_
 *┃║ ${_p}doawirid*
 *┃║ ${_p}doatahlil*
 *┃║ ${_p}doaharian*
+*┃║ ${_p}asmaulhusna*
 *┃║ ${_p}quotemuslim*
 *┃║ ${_p}getsurah*  _Nomor Surah_
 *┃║ ${_p}jadwalsholat*  _Daerah_
