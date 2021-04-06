@@ -322,6 +322,7 @@ _Join GC BOT ${gc}_
 *┃║ ${_p}bann*  _@user_
 *┃║ ${_p}unbann*  _@user_
 *┃║ ${_p}addprem*  _@user_
+*┃║ ${_p}delprem*  _@user_
 *┃║ ${_p}optionlist*
 *┃║ ${_p}on*  _Option_
 *┃║ ${_p}off*  _Option_
