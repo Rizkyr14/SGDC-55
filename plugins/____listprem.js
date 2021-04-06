@@ -6,7 +6,7 @@ const fs = require('fs')
 
 let handler = async(m, { conn, text, participants, isPrems }) => {
 
-let kntl = JSON.parse(fs.readFileSync('./config.js',JSON.stringify(global.prems)))
+let kntl = fs.readFileSync('./config.js',JSON.stringify(global.prems))
      let user = `Total User Premium: ${kntl.length}\n`
      for (let kon of kntl.length) {
          user += `➸ @${kon.split("@")[0]}\n`
