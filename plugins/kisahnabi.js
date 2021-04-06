@@ -18,6 +18,7 @@ let handler = async(m, { conn, text }) => {
 *Tempat Lahir:* ${res.data.result.tempat_lahir}
 *Usia:* ${res.data.result.usia}
 *Deskripsi:* 
+
 ${res.data.result.description}
 
 *[ • SGDC-BOT • ]*
