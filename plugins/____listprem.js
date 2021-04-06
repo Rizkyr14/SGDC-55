@@ -2,7 +2,7 @@ const { MessageType } = require('@adiwajshing/baileys')
 const fs = require('fs')
 let handler = async(m, { conn, text, participants, isPrems }) => {
 
-let global.prems = JSON.parse(JSON.stringify(fs.readFileSync('./config.js')))
+let global.prems = JSON.parse(fs.readFileSync('./config.js'))
      let kntl = global.prems
      let user = `Total User Premium: ${kntl.length}\n`
      for (let kon of kntl) {
