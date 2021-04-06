@@ -23,7 +23,7 @@ ${res.data.result.description}
 *[ • SGDC-BOT • ]*
 `.trim()
      conn.reply(m.chat, str, m)
-        })
+        //})
     })
 }
 
