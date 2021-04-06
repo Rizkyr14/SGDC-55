@@ -4,13 +4,13 @@ let handler = async(m, { conn, text }) => {
             
             await m.reply('*[ WAIT ]* _Sedang Diproses..._')
             axios.get(`https://xnxx-tbot.herokuapp.com/api/muslim/niatshalat?apikey=tbot`).then ((res) => {
-                let doa = res.data
-                let out = `*「  NIAT SHOLAT  」*\n\n`
-                for (let i = 0; i < doa.result.length; i++) {
-                    out += `\n─────────────────────\n\n*~ Nama:* ${doa.result[i].name}*\n*~ Arab:*\n${doa.data[i].arabic}\n*~ Latin:*\n${doa.data[i].latin}\n`
+                //let doa = res.data.result
+                let meme = `*「  NIAT SHOLAT  」*\n\n`
+                for (let i = 0; i < res.data.result.length; i++) {
+                    meme += `\n─────────────────────\n\n*~ Nama:* ${res.data.result[i].name}*\n*~ Arab:*\n${res.data.result[i].arabic}\n*~ Latin:*\n${res.data.result[i].latin}\n`
                 }
-                    out += '\n*[ • SGDC-BOT • ]*'
-                 conn.reply(m.chat, out, m)
+                    meme += '\n*[ • SGDC-BOT • ]*'
+                 conn.reply(m.chat, meme, m)
 	})
 }
 handler.command = /^(niatshalat|niatsholat|niatsolat)$/i
