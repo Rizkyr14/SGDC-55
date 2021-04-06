@@ -22,7 +22,7 @@ ${res.data.result.description}
 
 *[ • SGDC-BOT • ]*
 `.trim()
-     conn.sendFile(m.chat, buf, 'SGDC-BOT.png', str, m)
+     conn.reply(m.chat, str, m)
         })
     })
 }
