@@ -13,9 +13,14 @@ let who
 *╭═══[ • SGDC-BOT • ]═══╮*
 
 _Berhasil Delete User Premium_
-_User @${who.split("@")[0]_
+_User @${who.split("@")[0]}_
 `.trim()
-  conn.reply(m.chat, prem, m, { contextInfo { mentiondeJid: [who]}})
+  
+  conn.reply(m.chat, prem, m, {
+           contextInfo: { 
+                 mentionedJid: [who]
+          } 
+      })
 }
 handler.command = /^(delprem)$/i
 handler.rowner = true
