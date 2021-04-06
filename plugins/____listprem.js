@@ -1,9 +1,12 @@
 const { MessageType } = require('@adiwajshing/baileys')
+let util = require('util')
+let path = require('path')
+let { spawn } = require('child_process')
 const fs = require('fs')
+
 let handler = async(m, { conn, text, participants, isPrems }) => {
 
-fs.readFileSync('./config.js',JSON.stringify(global.prems))
-     let kntl = global.prems
+let kntl = fs.readFileSync('./config.js',JSON.stringify(global.prems))
      let user = `Total User Premium: ${kntl.length}\n`
      for (let kon of kntl) {
          user += `➸ @${kon.split("@")[0]}\n`
