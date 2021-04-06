@@ -16,14 +16,13 @@ _~> Nomor: wa.me/${who.split("@s.whatsapp.net")[0]}_
 `.trim()
   conn.reply(m.chat, prem, m)
 }
-handler.command = /^(ope)$/i
 
+handler.command = /^ngetes$/i
 handler.owner = true
 handler.mods = false
 handler.premium = false
 handler.group = false
 handler.private = false
-
 handler.admin = false
 handler.botAdmin = false
 
