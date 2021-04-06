@@ -12,12 +12,12 @@ let who
   let prem = `
 *╭═══[ • SGDC-BOT • ]═══╮*
 
-_Berhasil Add User Premium_
-_~> Nomor: wa.me/${who.split("@s.whatsapp.net")[0]}_
+_Berhasil Delete User Premium_
+_User @${who.split("@")[0]_
 `.trim()
-  conn.reply(m.chat, prem, m)
+  conn.reply(m.chat, prem, m, { contextInfo { mentiondeJid: [who]}})
 }
-handler.command = /^(delpe)$/i
+handler.command = /^(delprem)$/i
 handler.rowner = true
 
 module.exports = handler
