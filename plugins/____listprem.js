@@ -35,4 +35,4 @@ handler.fail = null
 
 //  MUHAMMAD AFDHAN
 
-module.exports = handler
+//module.exports = handler
