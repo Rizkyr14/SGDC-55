@@ -6,10 +6,10 @@ let handler = async(m, { conn, text }) => {
 
     axios.get(`https://videfikri.com/api/religi/kisahnabi/?nabi=${text}`)
     .then((res) => {
-      imageToBase64(res.data.image)
+     /* imageToBase64(res.data.image)
         .then(
           (ress) => {
-            let buf = Buffer.from(ress, 'base64')
+            let buf = Buffer.from(ress, 'base64')*/
             let str = `
 *HASIL SEARCHING*       
            
