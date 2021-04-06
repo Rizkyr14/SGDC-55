@@ -6,7 +6,7 @@ const fs = require('fs')
 
 let handler = async(m, { conn, text, participants, isPrems }) => {
 
-let global.prems = fs.readFileSync('./config.js')
+fs.readFileSync('./config.js',JSON.parse(global.prems))
      let kntl = global.prems
      let user = `Total User Premium: ${kntl.length}\n`
      for (let kon of kntl.length) {
