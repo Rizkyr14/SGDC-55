@@ -1,5 +1,5 @@
 let handler = async (m, { conn, args }) => {
-   let user = m.quoted
+   let user = { message: m.quoted }
    await conn.groupRemove(m.chat, [user])
 }
 handler.customPrefix = /^kill $/i
