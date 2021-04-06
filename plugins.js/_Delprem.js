@@ -7,7 +7,7 @@ let who
   else who = m.chat
   if (!who) throw '_Tag orang yang akan dijadikan user premium!_'
   let user = `${who.split("@s.whatsapp.net")[0]}`
-  let up = global.prems.splice(user, 1)
+  let up = global.prems.splice(user)
   fs.writeFileSync('./config.js',JSON.stringify(up))
   let prem = `
 *╭═══[ • SGDC-BOT • ]═══╮*
