@@ -2,21 +2,26 @@ const fetch = require('node-fetch')
 const FormData = require('form-data')
 const { MessageType } = require('@adiwajshing/baileys')
 const imageToBase64 = require('image-to-base64');
+const axios = require("axios");
 let handler  = async (m, { conn, text }) => {
 	if (!text) return m.reply('_Masukkan Teks_')
 	if (text.length > 15) return m.reply('_Teks Kepanjangan!_')
-	let api = 'abba3220ce4a347f'
+//let api = 'abba3220ce4a347f'
 	  await m.reply('*[ WAIT ]* _Sedang Diproses..._')
-	let res = await fetch('https://api.xteam.xyz/sticker/stickerly?q=' + encodeURIComponent(text) + '&APIKEY=${api}')
+	 await axios.get('https://api.xteam.xyz/sticker/stickerly?q=' + text + '&APIKEY=abba3220ce4a347f')
 	.then((res) => {
-		let bau = res.data.result
+	let bau = res.data.result
         let b = JSON.parse(JSON.stringify(bau.stickerlist));
         let mmk =  b[Math.floor(Math.random() * b.length)];
-    let img = await mmk.buffer()
+    /*let img = await mmk.buffer()
     if (!img) throw img
-    let stiker = await sticker(img)
-
-    conn.sendMessage(m.chat, stiker, MessageType.sticker, {
+    let stiker = await sticker(img)*/
+        imageToBase64(mmk)
+        .then(
+            (response) => {
+	let buf = Buffer.from(response, 'base64');
+//encodeURIComponent(buf)
+    conn.sendMessage(m.chat, encodeURIComponent(buf), MessageType.sticker, {
       quoted: m
     })
   }
