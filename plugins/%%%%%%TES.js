@@ -21,7 +21,7 @@ let handler  = async (m, { conn, text }) => {
             (response) => {
 	let buf = Buffer.from(response, 'base64');
         //let knt = encodeURIComponent(buf)
-    conn.sendMessage(m.chat, buf, 'ss.png' MessageType.image, { quoted: m })
+    conn.sendMessage(m.chat, buf, 'ss.png', MessageType.image, { quoted: m })
              }
         )
         .catch(
