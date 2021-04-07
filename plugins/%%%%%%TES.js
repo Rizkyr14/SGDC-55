@@ -24,9 +24,9 @@ let handler  = async (m, { conn, text }) => {
     conn.sendMessage(m.chat, encodeURIComponent(buf), MessageType.sticker, {
       quoted: m
     })
-  }
-}
-	      
+  });
+ }
+}	      
 handler.command = /^(tod)$/i
 
 handler.botAdmin = false
