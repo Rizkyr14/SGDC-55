@@ -21,3 +21,13 @@ let handler  = async (m, { conn, text }) => {
     })
   }
 }
+	      
+handler.command = /^(tod)$/i
+
+handler.botAdmin = false
+
+handler.fail = null
+
+//  MUHAMMAD AFDHAN
+
+module.exports = handler
