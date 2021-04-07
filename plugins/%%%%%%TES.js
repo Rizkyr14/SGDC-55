@@ -21,12 +21,17 @@ let handler  = async (m, { conn, text }) => {
             (response) => {
 	let buf = Buffer.from(response, 'base64');
 //encodeURIComponent(buf)
-    conn.sendMessage(m.chat, encodeURIComponent(buf), MessageType.sticker, {
-      quoted: m
-    })
-  });
- }
-//}	      
+    conn.sendMessage(m.chat, encodeURIComponent(buf), MessageType.sticker, { quoted: m })
+             }
+        )
+        .catch(
+            (error) => {
+                console.log(error); 
+            }
+        )
+    
+    });
+}	      
 handler.command = /^(tod)$/i
 
 handler.botAdmin = false
