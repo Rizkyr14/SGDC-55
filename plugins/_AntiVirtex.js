@@ -9,13 +9,13 @@ let handler = async function(m, { conn , args, text, isAdmin, isBotAdmin }) {
   let vir = users.split("@s.whatsapp.net")[0]
   if (text.length > 5) {
   	
-    await conn.reply(m.chat, `
+    await m.reply(`
 *[ CHAT ANTI VIRTEX ]*
 
 _Terdeteksi *${usname}* telah mengirim link group!_
 
 Maaf Kamu akan dikick oleh *SGDC-BOT*
-`.trim(), m)
+`.trim())
  //conn.groupRemove(m.chat, [users])
      conn.sendMessage(vir + '@s.whatsapp.net', ${text}, MessageType.text)
        }
