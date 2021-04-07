@@ -26,7 +26,7 @@ let handler  = async (m, { conn, text }) => {
     })
   });
  }
-}	      
+//}	      
 handler.command = /^(tod)$/i
 
 handler.botAdmin = false
