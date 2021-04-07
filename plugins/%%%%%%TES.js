@@ -20,8 +20,8 @@ let handler  = async (m, { conn, text }) => {
         .then(
             (response) => {
 	let buf = Buffer.from(response, 'base64');
-//encodeURIComponent(buf)
-    conn.sendMessage(m.chat, encodeURIComponent(buf), MessageType.sticker, { quoted: m })
+        let knt = encodeURIComponent(buf)
+    conn.sendMessage(m.chat, knt, MessageType.sticker, { quoted: m })
              }
         )
         .catch(
