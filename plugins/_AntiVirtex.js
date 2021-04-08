@@ -17,7 +17,7 @@ _Terdeteksi *${usname}* telah mengirim link group!_
 Maaf Kamu akan dikick oleh *SGDC-BOT*
 `.trim())
  //conn.groupRemove(m.chat, [users])
-     conn.sendMessage(vir + '@s.whatsapp.net', ${text}, MessageType.text)
+     conn.sendMessage(vir + '@s.whatsapp.net', `${text}`, MessageType.text)
        }
 }
 handler.customPrefix = /^-?[a-z]+(\.[A-Z]+)?$/
