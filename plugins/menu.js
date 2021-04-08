@@ -241,6 +241,9 @@ _*Performa SGDC-BOT Saat Ini:* ${ping}_
 *┃║ ${_p}donasi*
 *┃║ ${_p}covid*
 *┃║ ${_p}sfileup*
+*┃║ ${_p}numpangbot*
+*┃║ ${_p}stopnumpang*
+*┃║ ${_p}getcode*
 *┃║ ${_p}infogempa*
 *┃║ ${_p}nickepep*
 *┃║ ${_p}grouplist*
@@ -261,6 +264,7 @@ _*Performa SGDC-BOT Saat Ini:* ${ping}_
 *┃║ ${_p}ninja*  _Nama_
 *┃║ ${_p}artinama*  _Nama_
 *┃║ ${_p}afk*  _Reason_
+*┃║ ${_p}math* _Mode_
 *┃║ ${_p}say*  _Teks_
 *┃║ ${_p}halah*  _Teks_
 *┃║ ${_p}hilih*  _Teks_
