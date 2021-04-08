@@ -4,7 +4,9 @@ let path = require('path')
 let { spawn } = require('child_process')
 let { performance } = require('perf_hooks')
 let handler  = async (m, { conn, args, usedPrefix: _p }) => {
+    let old = performance.now()
     await conn.fakeReply(m.chat, '```L o a d i n g . . .```', '0@s.whatsapp.net', '*MEMUAT LIST MENU*')
+    let neww = performance.now()
     let package = JSON.parse(fs.readFileSync(path.join(__dirname, '../package.json')))
     let bname = package.name
     let vers = package.version
@@ -12,7 +14,7 @@ let handler  = async (m, { conn, args, usedPrefix: _p }) => {
     let gc = 'https://chat.whatsapp.com/C6JvFUMrWpBJ5THI0Bz3QM'
     let name = conn.getName(m.sender)
     let desc = 'Powered by'
-    let old = performance.now()
+    let ping = neww - old + ' ms'
     let d = new Date
     let locale = 'id'
     let gmt = new Date(0).getTime() - new Date('1 January 1970').getTime()
@@ -52,7 +54,7 @@ _Join GC BOT ${gc}_
 *┃║ Time :            ${time}*
 *┃║ Uptime :         ${uptime}*
 *┃║ Version :        ${vers}*
-*┃║ Performance :  ${old}*
+*┃║ Performa :   ${ping}*
 *┃║ MultiPrefix :「 ${_p} 」*
 *┃╰═════════════════╯*
 *┃                       TEXT MAKER*
