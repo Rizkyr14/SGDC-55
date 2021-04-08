@@ -10,7 +10,7 @@ MessageType
 let handler  = async (m, { conn, args, bot, usedPrefix, command }) => {
 				    conn.updatePresence(m.chat, Presence.composing) 
 				await m.reply('Wait....')
-				  let q = m.quoted //{ message: { [m.quoted.mtype]: m.quoted }}//.replace('m.quoted')
+				  let q = m.quoted ? m.quoted : m //{ message: { [m.quoted.mtype]: m.quoted }}//.replace('m.quoted')
 				 //let q = JSON.stringify(m).replace('quotedM','m'))//.message.extendedTextMessage.contextInfo
 				  let pp = conn.downloadAndSaveMediaMessage(q)
 	                //let pp = await conn.downloadM(q)
