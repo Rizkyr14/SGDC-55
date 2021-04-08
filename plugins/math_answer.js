@@ -19,9 +19,9 @@ let handler = async (m, { conn }) => {
   }
  }
 }
-handler.customPrefix = /^-?[0-9]+(\.[0-9]+)?$/
+/*handler.customPrefix = /^-?[0-9]+(\.[0-9]+)?$/
 handler.command = new RegExp
-module.exports = handler
+module.exports = handler*/
 
 
 const more = String.fromCharCode(8206)
