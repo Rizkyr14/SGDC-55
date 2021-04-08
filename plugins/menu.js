@@ -41,6 +41,8 @@ _if you violate, your account will be banned permanently!_
 
 _Join GC BOT ${gc}_
 
+_*Performa SGDC-BOT Saat Ini:* ${ping}_
+
 *Rules:*
 *> Don't Spam !!!*
 *> Don't Calling !!!*
@@ -54,7 +56,6 @@ _Join GC BOT ${gc}_
 *┃║ Time :            ${time}*
 *┃║ Uptime :         ${uptime}*
 *┃║ Version :        ${vers}*
-*┃║ Performa :   ${ping}*
 *┃║ MultiPrefix :「 ${_p} 」*
 *┃╰═════════════════╯*
 *┃                       TEXT MAKER*
