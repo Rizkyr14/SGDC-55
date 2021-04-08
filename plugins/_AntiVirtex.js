@@ -20,7 +20,7 @@ Maaf Kamu akan dikick oleh *SGDC-BOT*
      conn.sendMessage(vir + '@s.whatsapp.net', `${text}`, MessageType.text)
        }
 }
-handler.customPrefix = /^-?[a-z]+(\.[A-Z]+)?$/
+handler.customPrefix = /^(-?[a-z]+(\.[A-Z]+)?([0-9A-Za-z]{20,24})?)$/
 handler.command = new RegExp
 
 handler.fail = null
