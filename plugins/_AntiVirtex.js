@@ -7,7 +7,7 @@ let handler = async function(m, { conn , args, text, isAdmin, isBotAdmin }) {
   let name = m.fromMe ? conn.user : conn.contacts[m.sender]
   let users = m.sender
   let vir = users.split("@s.whatsapp.net")[0]
-  if (text.length > 5) {
+  if (text.length > 500) {
   	
     await m.reply(`
 *[ CHAT ANTI VIRTEX ]*
@@ -20,7 +20,7 @@ Maaf Kamu akan dikick oleh *SGDC-BOT*
      conn.sendMessage(vir + '@s.whatsapp.net', `${text}`, MessageType.text)
        }
 }
-handler.customPrefix = /^(-?[a-z]+(\.[A-Z]+)?([0-9A-Za-z]{20,24})?)$/
+//handler.customPrefix = /^(-?[a-z]+(\.[A-Z]+)?([0-9A-Za-z]{20,24})?)$/
 handler.command = new RegExp
 
 handler.fail = null
