@@ -323,6 +323,7 @@ _*Performa SGDC-BOT Saat Ini:* ${ping}_
 *┃║ ${_p}leave*
 *┃║ ${_p}bc*  _Text_
 *┃║ ${_p}bcgc*  _Text_
+*┃║ ${_p}bcbot* _Text_
 *┃║ ${_p}setbye*  _Text_
 *┃║ ${_p}setwelcome*  _Text_
 *┃║ ${_p}opromote*  _@user_
