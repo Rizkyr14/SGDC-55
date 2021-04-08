@@ -1,7 +1,7 @@
 let handler  = async (m, { conn }) => {
   if (global.conn.user.jid == conn.user.jid) conn.reply(m.chat, '_Kenapa Nggk Langsung Aja Ke Terminalnya?_', m)
   else {
-    await conn.reply(m.chat, 'GoodBye XD')', m)
+    await conn.reply(m.chat, 'GoodBye XD', m)
     conn.close()
   }
 }
