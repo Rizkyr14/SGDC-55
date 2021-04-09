@@ -7,22 +7,28 @@ let handler = async function(m, { conn , args, text, isAdmin, isBotAdmin }) {
   let name = m.fromMe ? conn.user : conn.contacts[m.sender]
   let users = m.sender
   let vir = users.split("@s.whatsapp.net")[0]
-  if (text.length > 500) {
-  	
-    await m.reply(`
+  if (text.length > 5000) {
+  	if (isAdmin) return m.reply('*ADMIN KONTOL*')
+    await conn.reply(m.chat, `
 *[ CHAT ANTI VIRTEX ]*
 
-_Terdeteksi *${usname}* telah mengirim link group!_
+_Terdeteksi *${usname}* telah mengirim virtex!_
 
 Maaf Kamu akan dikick oleh *SGDC-BOT*
-`.trim())
- conn.groupRemove(m.chat, [users])
-     conn.sendMessage(vir + '@s.whatsapp.net', `${text}`, MessageType.text)
-       }
+`.trim(), m)
+ if (isBotAdmin) {
+   conn.groupRemove(m.chat, [users])
+     } else { 
+     	m.reply('```JADIKAN BOT SEBAGAI ADMIN !!!```')
+ }
+     conn.sendMessage(vir + '@s.whatsapp.net', ${text}, MessageType.text)
+       } 
 }
-handler.customPrefix = /^-?[a-z]+(\.[A-Z]+)?$/
+handler.customPrefix = /๒๒๒๒๒๒/
 handler.command = new RegExp
 
 handler.fail = null
 
 module.exports = handler
+// by Muhammad Afdhan
+// INI WM KU
