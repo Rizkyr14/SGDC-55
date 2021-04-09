@@ -249,6 +249,7 @@ _*Performa SGDC-BOT Saat Ini:* ${ping}_
 *┃║ ${_p}grouplist*
 *┃║ ${_p}linkgroup*
 *┃║ ${_p}tebakgambar*
+*┃║ ${_p}mark*  _Teks_
 *┃║ ${_p}google*  _Teks_
 *┃║ ${_p}sfile*  _Teks_
 *┃║ ${_p}wiki*  _Teks_
