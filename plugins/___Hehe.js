@@ -10,8 +10,8 @@ let kntll = `
 _Woyy @${kn.split("@")[0]} Sama @${kw.split("@")[0]} Baru Jadian Woyy !!! xD_
 `.trim()
     
-    conn.reply(m.chat, kntll, m, { c
-         ontextInfo: { 
+    conn.reply(m.chat, kntll, m, { 
+         contextInfo: { 
                mentionedJid: [kn, kw]
              }
          }
