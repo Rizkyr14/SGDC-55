@@ -345,8 +345,7 @@ _${ping}_
 *┃                       ${bname}*
 *┗━━━━━━━━━━━━━━━━━━━┛*
 
-Ketik *X* Untuk Melihat Info BOT
-Owner @${own.split("@")[0]}
+  _Owner @${own.split("@")[0]}_
 
   ${desc} *${bname}@^${vers}*
 
