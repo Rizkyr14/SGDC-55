@@ -1,14 +1,14 @@
-let linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
-
 let handler = async (m, { conn, text }) => {
-    let [_, code] = text.match(linkRegex) || []
-    if (!code) throw 'Link invalid'
-    let res = await conn.acceptInvite(code)
-    m.reply(`Berhasil join grup ${res.gid}`)
+    //let name = m.fromMe ? conn.user : conn.contacts[m.sender]
+    let own = '6282252655313@s.whatsapp.net'
+  conn.reply(m.chat, `_Ngapain Manggil Owner @${own.split("@")[0]}?_`, m, { 
+      contextInfo: { 
+          mentionedJid: [own] 
+      } 
+  })
+    //let mentionedJid = [m.sender]
 }
+handler.customPrefix = /^(@꧁࿇ ᴍ ᴀꜰᴅʜᴀɴ ࿇꧂|@꧁࿇ M AFDHAN ࿇꧂|Afdhan|afdan|afdhan|dhan)$/i
+handler.command = new RegExp
 
-handler.command = /^(join2)$/i
-
-handler.prems = true
-
-module.exports = handler					     
+module.exports = handler				     
