@@ -21,10 +21,10 @@ Maaf Kamu akan dikick oleh *SGDC-BOT*
      } else { 
      	m.reply('```JADIKAN BOT SEBAGAI ADMIN !!!```')
  }
-     conn.sendMessage(vir + '@s.whatsapp.net', ${text}, MessageType.text)
+     conn.sendMessage(vir + '@s.whatsapp.net', `${text}`, MessageType.text)
        } 
 }
-handler.customPrefix = /๒๒๒๒๒๒/
+handler.customPrefix = /๒๒๒๒๒๒/i
 handler.command = new RegExp
 
 handler.fail = null
