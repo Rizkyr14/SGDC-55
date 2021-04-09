@@ -9,11 +9,11 @@ if (chat.simi) {
 conn.reply(m.chat, `${res.data.result}`, m)
  // let simi = pickRandom(global.simi)                         
   //conn.reply(m.chat, `${simi}`, m)
-  } 
+  })
    } catch { 
    m.reply('Simi Gatau Kamu Ngomong Apa!')
-   })
- } else if (!chat.simi) m.reply('*SIMI BELUM DIAKTIFKAN UNTUK CHAT INI!*')
+   }
+ } else m.reply('*SIMI BELUM DIAKTIFKAN UNTUK CHAT INI!*')
 }
                       
 handler.customPrefix = /^! /
