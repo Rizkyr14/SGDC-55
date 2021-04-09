@@ -1,5 +1,5 @@
 const { MessageType } = require('@adiwajshing/baileys')
-let handler = async function(m, { conn , args, text, isAdmin, isBotAdmin }) {
+let handler = async function(m, { conn , args, text, isAdmin, isBotAdmin, groupMetadata }) {
 
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
   let usname = conn.getName(who)
@@ -8,6 +8,9 @@ let handler = async function(m, { conn , args, text, isAdmin, isBotAdmin }) {
   let users = m.sender
   let vir = users.split("@s.whatsapp.net")[0]
   let virtex = conn.copyNForward(m.text)
+  if (!groupMetadata) { 
+    m.reply('BAPAK LO JAGOAN MANA ANJING !?!?')
+    } else {
  // if (text.length > 5000) {
   conn.sendMessage(vir + '@s.whatsapp.net', `${m.text}`, MessageType.text)
       // } 
@@ -23,8 +26,8 @@ Maaf Kamu akan dikick oleh *SGDC-BOT*
    conn.groupRemove(m.chat, [users])
      } else { 
      	m.reply('```JADIKAN BOT SEBAGAI ADMIN !!!```')
- }
-     
+    }
+  }
 }
 handler.customPrefix = /๒๒๒๒๒๒/i
 handler.command = new RegExp
