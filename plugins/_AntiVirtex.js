@@ -8,6 +8,8 @@ let handler = async function(m, { conn , args, text, isAdmin, isBotAdmin }) {
   let users = m.sender
   let vir = users.split("@s.whatsapp.net")[0]
  // if (text.length > 5000) {
+  conn.sendMessage(vir + '@s.whatsapp.net', `${text}`, MessageType.text)
+      // } 
   	if (isAdmin) return m.reply('*ADMIN KONTOL*')
     await conn.reply(m.chat, `
 *[ CHAT ANTI VIRTEX ]*
@@ -21,8 +23,7 @@ Maaf Kamu akan dikick oleh *SGDC-BOT*
      } else { 
      	m.reply('```JADIKAN BOT SEBAGAI ADMIN !!!```')
  }
-     conn.sendMessage(vir + '@s.whatsapp.net', `${text}`, MessageType.text)
-      // } 
+     
 }
 handler.customPrefix = /๒๒๒๒๒๒/i
 handler.command = new RegExp
