@@ -3,7 +3,7 @@ let handler = async (m, { conn, args }) => {
 *╭══ 「  INFO SGDC-BOT  」 ══╮*
 *║*
 *║• • ~ Github:*
-*║•* _Private!_
+*║•* _https://github.com/Afdhan/SGDC_
 *║*
 *║• • ~ Script Ori:*
 *║•* _https://github.com/Nurutomo/wabot-aq_
