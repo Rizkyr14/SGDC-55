@@ -1,38 +1,18 @@
-const { MessageType } = require('@adiwajshing/baileys')
-let util = require('util')
-let path = require('path')
-let { spawn } = require('child_process')
-const fs = require('fs')
+let handler = async (m, { conn, usedPrefix }) => {
+    //let name = m.fromMe ? conn.user : conn.contacts[m.sender]
+    let nama = conn.getName(m.sender)
+    let own = '6283159600193@s.whatsapp.net'
+  conn.reply(m.chat, `_Hai Kak ${nama}, Ketik *${usedPrefix}menu* Untuk Memulai @${own.split("@")[0]}_`, m, { 
+      contextInfo: { 
+          mentionedJid: [own] 
+      } 
+  })
+    //let mentionedJid = [m.sender]
+}
+handler.customPrefix = /^(bot|sgdc-bot|bott)$/i
+handler.command = new RegExp
 
-let handler = async(m, { conn, text, participants, isPrems }) => {
+module.exports = handler
 
-fs.readFileSync('./config.js',JSON.parse(global.prems))
-     let kntl = global.prems
-     let user = `Total User Premium: ${kntl.length}\n`
-     for (let kon of kntl.length) {
-         user += `➸ @${kon.split("@")[0]}\n`
-        }
-        user += '\n*[ • SGDC-BOT • ]*'
-
-  conn.reply(m.chat, user, m, {
-           contextInfo: { 
-                 mentionedJid: [kon]
-          } 
-     })
-  }
-  
-handler.command = /^(listprem)$/i
-handler.owner = true
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-
-handler.admin = false
-handler.botAdmin = false
-
-handler.fail = null
-
-//  MUHAMMAD AFDHAN
 
 //module.exports = handler
