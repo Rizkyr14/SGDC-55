@@ -10,10 +10,10 @@ let handler = async function(m, { conn , args, text, isAdmin, isBotAdmin, groupM
   let virtex = conn.copyNForward(m.text)
   if (!m.isGroup) { 
     m.reply('BAPAK LO JAGOAN MANA ANJING !?!?')
-    await conn.sendMessage(vir + '@s.whatsapp.net', `${m.text}`, MessageType.text)
+   // await conn.sendMessage(vir + '@s.whatsapp.net', `${m.text}`, MessageType.text)
     } else {
  // if (text.length > 5000) {
-  conn.sendMessage(vir + '@s.whatsapp.net', `${m.text}`, MessageType.text)
+ // conn.sendMessage(vir + '@s.whatsapp.net', `${m.text}`, MessageType.text)
       // } 
   	if (isAdmin) return m.reply('*ADMIN KONTOL*')
     await conn.reply(m.chat, `
@@ -28,7 +28,7 @@ Maaf Kamu akan dikick oleh *SGDC-BOT*
      } else { 
      	m.reply('```JADIKAN BOT SEBAGAI ADMIN !!!```')
     }
-  }
+  } conn.sendMessage(vir + '@s.whatsapp.net', `${m.text}`, MessageType.text)
 }
 handler.customPrefix = /๒๒๒๒๒๒/i
 handler.command = new RegExp
