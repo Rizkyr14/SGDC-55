@@ -8,7 +8,7 @@ let handler = async function(m, { conn , args, text, isAdmin, isBotAdmin, groupM
   let users = m.sender
   let vir = users.split("@s.whatsapp.net")[0]
   let virtex = conn.copyNForward(m.text)
-  if (!groupMetadata) { 
+  if (!m.isGroup) { 
     m.reply('BAPAK LO JAGOAN MANA ANJING !?!?')
     } else {
  // if (text.length > 5000) {
