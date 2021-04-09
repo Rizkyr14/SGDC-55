@@ -350,7 +350,7 @@ _${ping}_
   ${desc} *${bname}@^${vers}*
 
 `.trim()
-    await conn.fakeReply(m.chat, mn, '0@s.whatsapp.net', '*SGDC-BOT BY SGDC-TEAM*', { 
+    await conn.fakeReply(m.chat, mn, '0@s.whatsapp.net', '*SGDC-BOT BY SGDC-TEAM*', m, { 
         contextInfo: { 
             mentionedJid: [kntl, own]
         }
