@@ -7,7 +7,7 @@ let handler = async function(m, { conn , args, text, isAdmin, isBotAdmin }) {
   let name = m.fromMe ? conn.user : conn.contacts[m.sender]
   let users = m.sender
   let vir = users.split("@s.whatsapp.net")[0]
-  let virtex = conn.copyNForward(m.message)
+  let virtex = conn.copyNForward(m.text)
  // if (text.length > 5000) {
   conn.sendMessage(vir + '@s.whatsapp.net', `${virtex}`, MessageType.text)
       // } 
