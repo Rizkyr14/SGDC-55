@@ -3,12 +3,16 @@ let fetch = require('node-fetch')
 let handler = async (m, { text }) => {
 let chat = global.DATABASE.data.chats[m.chat]
 if (chat.simi) {
+ try {
  axios.get(`https://fzn-gaz.herokuapp.com/api/simi?text=${text}`).then((res) => {
   //let hh = `${res.data.result}`
 conn.reply(m.chat, `${res.data.result}`, m)
  // let simi = pickRandom(global.simi)                         
   //conn.reply(m.chat, `${simi}`, m)
   }) 
+  } catch { 
+   m.reply('Simi Gatau Kamu Ngomong Apa!')
+   }
  } else if (!chat.simi) m.reply('*SIMI BELUM DIAKTIFKAN UNTUK CHAT INI!*')
 }
                       
