@@ -1,7 +1,7 @@
 const { MessageType } = require('@adiwajshing/baileys')
 let handler = async function(m, { conn , args, text, isAdmin, isBotAdmin, groupMetadata }) {
 
-//  let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+  let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
   let usname = conn.getName(who)
   let users = m.sender
   let vir = users.split("@s.whatsapp.net")[0]
