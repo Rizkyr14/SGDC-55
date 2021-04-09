@@ -3,7 +3,7 @@ const { MessageType } = require('@adiwajshing/baileys')
 
 let handler = async (m, { conn, text }) => {
  await m.reply('*[ WAIT ]* _Sedang Diproses..._')
-let [ayam, geprek] = text.split `|`
+let [ayam, geprek] = text.split ` | `
  try {
   if (!ayam) throw '_Masukkan Tipe!_'
   if (!geprek) throw '_Emojinya mana?_'
