@@ -32,16 +32,21 @@ let handler  = async (m, { conn, args, usedPrefix: _p }) => {
     })
     let _uptime = process.uptime() * 1000
     let uptime = clockString(_uptime)
+    let own = '6282252655313@s.whatsapp.net'
+    let kntl = m.sender
     let mn = `
 *━━━━━━━━━━━━━━━━━━━━━*
-_Hey *${name}* you will using *${bname}!*_
+_Hey *@${kntl.split("@")[0]}* you will using *${bname}!*_
 _before you using this features,_ 
 _please follow the rules *${bname}.*_
 _if you violate, your account will be banned permanently!_
 
+_Jika Ingin Jadi User Premium, Silahkan Join GC BOT, 
+_Atau Hubungi @${own.split("@")[0]}_
 _Join GC BOT ${gc}_
 
-_*Performa SGDC-BOT Saat Ini:* ${ping}_
+_*Performa SGDC-BOT Saat Ini:*_
+_${ping}_
 
 *Rules:*
 *> Don't Spam !!!*
@@ -345,7 +350,11 @@ _*Performa SGDC-BOT Saat Ini:* ${ping}_
   ${desc} *${bname}@^${vers}*
 
 `.trim()
-    await conn.fakeReply(m.chat, mn, '0@s.whatsapp.net', '*SGDC-BOT BY SGDC-TEAM*')
+    await conn.fakeReply(m.chat, mn, '0@s.whatsapp.net', '*SGDC-BOT BY SGDC-TEAM*', { 
+        contextInfo: { 
+            mentionedJid: [kntl, own]
+        }
+    }) 
   conn.fakeReply(m.chat, 'Untuk Menu Gretongan, Ketik *!gretongmenu*', '0@s.whatsapp.net', '*MENU GRETONGAN SGDC-TEAM*')
 }
 handler.command = /^(menu|help|start|bot|helep)$/i
