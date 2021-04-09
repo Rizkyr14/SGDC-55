@@ -11,7 +11,7 @@ let handler  = async (m, { conn, args, usedPrefix: _p }) => {
     let bname = package.name
     let vers = package.version
     let dsci = package.description
-    let gc = 'https://chat.whatsapp.com/C6JvFUMrWpBJ5THI0Bz3QM'
+    let gc = 'https://tinyurl.com/ygu7vxny'
     let name = conn.getName(m.sender)
     let desc = 'Powered by'
     let ping = neww - old + ' ms'
@@ -345,7 +345,10 @@ _${ping}_
 *┃                       ${bname}*
 *┗━━━━━━━━━━━━━━━━━━━┛*
 
-  ${desc} *${bname}@^${vers}X@${own.split("@")[0]}*
+Ketik *X* Untuk Melihat Info BOT
+Owner @${own.split("@")[0]}
+
+  ${desc} *${bname}@^${vers}*
 
 `.trim()
     await conn.reply(m.chat, mn, m, { 
