@@ -1,20 +1,13 @@
 const { MessageType } = require('@adiwajshing/baileys')
 let handler = async function(m, { conn , args, text, isAdmin, isBotAdmin, groupMetadata }) {
 
-  let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+//  let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
   let usname = conn.getName(who)
-  let mentionedJid = [m.sender]
-  let name = m.fromMe ? conn.user : conn.contacts[m.sender]
   let users = m.sender
   let vir = users.split("@s.whatsapp.net")[0]
-  let virtex = conn.copyNForward(m.text)
   if (!m.isGroup) { 
-    m.reply('BAPAK LO JAGOAN MANA ANJING !?!?')
-   // await conn.sendMessage(vir + '@s.whatsapp.net', `${m.text}`, MessageType.text)
-    } else {
- // if (text.length > 5000) {
- // conn.sendMessage(vir + '@s.whatsapp.net', `${m.text}`, MessageType.text)
-      // } 
+    m.reply('_BAPAK LO JAGOAN MANA ANJING !?!?_')
+  } else {
   	if (isAdmin) return m.reply('*ADMIN KONTOL*')
     await conn.reply(m.chat, `
 *[ CHAT ANTI VIRTEX ]*
