@@ -1,5 +1,5 @@
 let handler  = async (m, { conn }) => {
-  conn.reply(m.chat, `${pickRandom(global.ssh)}`, m)
+  conn.reply(m.chat, `${pickRandom(global.ssh)}\nThanks To _@NEZAVPN_\n\n*[ • SGDC-BOT • ]* `, m)
 }
 
 handler.command = /^(random(ssh)?|ssh)$/i
