@@ -149,7 +149,7 @@ _${ping}_
 *┃╭═════════════════╮*
 *┃║ ${_p}cecan*
 *┃║ ${_p}cogan*
-*┃║ ${_p}meme*
+*┃║ ${_p}meme* (error)
 *┃║ ${_p}darkjoke*
 *┃║ ${_p}randomexo*
 *┃║ ${_p}randombts*
@@ -247,6 +247,7 @@ _${ping}_
 *┃║ ${_p}numpangbot*
 *┃║ ${_p}stopnumpang*
 *┃║ ${_p}getcode*
+*┃║ ${_p}jadian*
 *┃║ ${_p}infogempa*
 *┃║ ${_p}nickepep*
 *┃║ ${_p}grouplist*
