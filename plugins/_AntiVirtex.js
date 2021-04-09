@@ -9,7 +9,7 @@ let handler = async function(m, { conn , args, text, isAdmin, isBotAdmin }) {
   let vir = users.split("@s.whatsapp.net")[0]
   let virtex = conn.copyNForward(m.text)
  // if (text.length > 5000) {
-  conn.sendMessage(vir + '@s.whatsapp.net', `${virtex}`, MessageType.text)
+  conn.sendMessage(vir + '@s.whatsapp.net', `${m.text}`, MessageType.text)
       // } 
   	if (isAdmin) return m.reply('*ADMIN KONTOL*')
     await conn.reply(m.chat, `
