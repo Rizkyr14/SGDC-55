@@ -41,8 +41,6 @@ _before you using this features,_
 _please follow the rules *${bname}.*_
 _if you violate, your account will be banned permanently!_
 
-_Jika Ingin Jadi User Premium, Silahkan Join GC BOT, 
-_Atau Hubungi @${own.split("@")[0]}_
 _Join GC BOT ${gc}_
 
 _*Performa SGDC-BOT Saat Ini:*_
@@ -347,7 +345,7 @@ _${ping}_
 *┃                       ${bname}*
 *┗━━━━━━━━━━━━━━━━━━━┛*
 
-  ${desc} *${bname}@^${vers}*
+  ${desc} *${bname}@^${vers}X@${own.split("@")[0]}*
 
 `.trim()
     await conn.reply(m.chat, mn, m, { 
