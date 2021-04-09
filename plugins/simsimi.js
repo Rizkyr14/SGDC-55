@@ -10,7 +10,7 @@ conn.reply(m.chat, `${res.data.result}`, m)
  // let simi = pickRandom(global.simi)                         
   //conn.reply(m.chat, `${simi}`, m)
   })
-   } catch { 
+   } catch (e) { 
    m.reply('Simi Gatau Kamu Ngomong Apa!')
    }
  } else m.reply('*SIMI BELUM DIAKTIFKAN UNTUK CHAT INI!*')
