@@ -130,19 +130,19 @@ _${ping}_
 *┃╰═════════════════╯*
 *┃                    STICKER EMOJI*
 *┃╭═════════════════╮*
-*┃║ ${_p}emo lg*  _Emoji_
-*┃║ ${_p}emo htc*  _Emoji_
-*┃║ ${_p}emo apple*  _Emoji_
-*┃║ ${_p}emo twitter*  _Emoji_
-*┃║ ${_p}emo google*  _Emoji_
-*┃║ ${_p}emo mozilla*  _Emoji_
-*┃║ ${_p}emo whatsapp*  _Emoji_
-*┃║ ${_p}emo microsoft*  _Emoji_
-*┃║ ${_p}emo samsung*  _Emoji_
-*┃║ ${_p}emo facebook*  _Emoji_
-*┃║ ${_p}emo joypixels*  _Emoji_
-*┃║ ${_p}emo openmoji*  _Emoji_
-*┃║ ${_p}emo emojidex*  _Emoji_
+*┃║ ${_p}emo lg* | _Emoji_
+*┃║ ${_p}emo htc* | _Emoji_
+*┃║ ${_p}emo apple* | _Emoji_
+*┃║ ${_p}emo twitter* | _Emoji_
+*┃║ ${_p}emo google* | _Emoji_
+*┃║ ${_p}emo mozilla* | _Emoji_
+*┃║ ${_p}emo whatsapp* | _Emoji_
+*┃║ ${_p}emo microsoft* | _Emoji_
+*┃║ ${_p}emo samsung* | _Emoji_
+*┃║ ${_p}emo facebook* | _Emoji_
+*┃║ ${_p}emo joypixels* | _Emoji_
+*┃║ ${_p}emo openmoji* | _Emoji_
+*┃║ ${_p}emo emojidex* | _Emoji_
 *┃║ ${_p}semoji*  _Emoji_  (random)
 *┃╰═════════════════╯*
 *┃                  RANDOM IMAGE*
