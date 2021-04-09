@@ -10,7 +10,7 @@ let handler = async (m, { conn, usedPrefix }) => {
   })
     //let mentionedJid = [m.sender]
 }
-handler.customPrefix = /^(bot|sgdc-bot|bott)$/i
+handler.customPrefix = /(bot|sgdc-bot|bott)/i
 handler.command = new RegExp
 
 module.exports = handler
