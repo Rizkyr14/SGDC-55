@@ -14,15 +14,15 @@ let handler = async (m, { conn, text }) => {
   })
 }
 
-handler.command = /^(tagall2)$/i
-handler.owner = false
+handler.command = /^(tagall2|otagall)$/i
+handler.owner = true
 handler.mods = false
 handler.premium = false
 handler.group = true
 handler.private = false
 
-handler.admin = true
-handler.botAdmin = true
+handler.admin = false
+handler.botAdmin = false
 
 handler.fail = null
 
