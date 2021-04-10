@@ -353,8 +353,12 @@ _${ping}_
 *┃╰═════════════════╯*
 *┃                       ${bname}*
 *┗━━━━━━━━━━━━━━━━━━━┛*
+*WARNING*
+_Sebagian fitur mungkin ada beberapa yang error_
+_karena apikey nya sudah kehabisan limit atau invalid!_
+*( APIKEY GRATISAN )*
 
-  _Owner @${own.split("@")[0]}_
+    _Owner @${own.split("@")[0]}_
 
   ${desc} *${bname}@^${vers}*
 
