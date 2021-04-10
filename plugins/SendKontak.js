@@ -7,7 +7,7 @@ let handler = /*function*/ async(m, { conn, text }) => {
 	var no = m.mentionedJid[0]
 	let nom = no.split("@s.whatsapp.net")[0]
 
-  conn.sendContact(m.chat, `${nom`, ${kntl}`, m, { contextInfo: { mentionedJid: [users] } })
+  conn.sendContact(m.chat, `${nom}`, `${kntl}`, m, { contextInfo: { mentionedJid: [users] } })
 }
 handler.command = /^(sendkontak|kontak)$/i
 
