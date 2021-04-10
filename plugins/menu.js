@@ -47,7 +47,7 @@ _if you violate, your account will be banned permanently!_
 _Join GC BOT ${gc}_
 
 _Hitung Mundur Menuju Ramadhan_
-_${rmd}_
+*_${rmd}_*
 
 _*Performa SGDC-BOT Saat Ini:*_
 _${ping}_
