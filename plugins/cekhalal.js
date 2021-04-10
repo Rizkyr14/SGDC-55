@@ -10,7 +10,7 @@ let handler = async(m, { conn, text }) => {
                     muii += `─────────────────\n${mui.result[i].hasil}\n`
                 }
                     muii += '*[ • SGDC-BOT • ]*'
-                 conn.reply(m.chat, sfile, m)
+                 conn.reply(m.chat, muii, m)
 	})
 }
 handler.command = /^(cekhalal)$/i
