@@ -12,4 +12,6 @@ var user = m.sender
        }
 }
 
+handler.command = new RegExp
+handler.customPrefix = /([^@&@@€^*#&;]([0-9A-Za-z]{20,24}))/i
 module.exports = handler
