@@ -1,3 +1,4 @@
+let axios = require ('axios')
 let fs = require ('fs')
 let util = require('util')
 let path = require('path')
@@ -11,6 +12,8 @@ let handler  = async (m, { conn, args, usedPrefix: _p }) => {
     let bname = package.name
     let vers = package.version
     let dsci = package.description
+    let res = await axios.get(`https://xinzbot-api.herokuapp.com/api/hitungmundur?apikey=XinzBot&tanggal=12&bulan=4`)
+    let rmd = res.data.result
     let gc = 'https://tinyurl.com/ygu7vxny'
     let name = conn.getName(m.sender)
     let desc = 'Powered by'
@@ -42,6 +45,9 @@ _please follow the rules *${bname}.*_
 _if you violate, your account will be banned permanently!_
 
 _Join GC BOT ${gc}_
+
+_Hitung Mundur Menuju Ramadhan_
+_${rmd}_
 
 _*Performa SGDC-BOT Saat Ini:*_
 _${ping}_
