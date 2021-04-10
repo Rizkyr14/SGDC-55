@@ -11,7 +11,7 @@ let [mmek, kntl] = text.split ` | `
 	var no = m.mentionedJid[0]
 	let nom = '${no.split("@s.whatsapp.net")[0]}'
 
-  this.sendContact(m.chat, nom, `${kntl}`, m, { 
+  conn.sendContact(m.chat, nom, `${kntl}`, m, { 
 	  contextInfo: { 
 		  mentionedJid: [users] 
 	  } 
