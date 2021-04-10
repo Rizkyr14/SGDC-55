@@ -116,6 +116,7 @@ _${ping}_
 *┃║ ${_p}bacaansholat*
 *┃║ ${_p}asmaulhusna*
 *┃║ ${_p}quotemuslim*
+*┃║ ${_p}cekhalal* _Barang_
 *┃║ ${_p}getsurah*  _Nomor Surah_
 *┃║ ${_p}jadwalsholat*  _Daerah_
 *┃║ ${_p}kisahnabi*  _Nama Nabi_
