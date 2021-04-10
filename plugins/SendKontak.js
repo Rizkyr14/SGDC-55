@@ -1,6 +1,6 @@
 let { MessageType } = require('@adiwajshing/baileys')
 
-let handler = async (m, { conn, text }) => {
+let handler = async (m, { conn, text, args }) => {
 	let [mmek, kntl] = args.join` `
     if (!mmek) return m.reply('_Tag Salah Satu Stah!_')
 	if (!kntl) return m.reply('_Dia Gapunya Nama Ya??_')
