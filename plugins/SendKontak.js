@@ -6,12 +6,12 @@ let handler = /*function*/ async(m, { conn, text }) => {
 	
 	
 	
-        let name = conn.getName(m.mentionedJid)
+       // let name = conn.getName(m.mentionedJid)
 	let users = (await conn.groupMetadata(m.chat)).participants.map(u => u.jid)
 	var no = m.mentionedJid[0]
 	let nom = no.split("@s.whatsapp.net")[0]
 
-  conn.sendContact(m.chat, `${nom}`, `${name}`, m, { contextInfo: { mentionedJid: [users] } })
+  conn.sendContact(m.chat, '${nom}', `${text}`, m, { contextInfo: { mentionedJid: [users] } })
 }
 handler.command = /^(sendkontak|kontak)$/i
 
