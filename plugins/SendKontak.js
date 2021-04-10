@@ -1,4 +1,4 @@
-let handler = /*function*/ async(m, { conn, text }) => {
+let handler = function (m, { conn, text })  {
 //let [mmek, kntl] = text.split ` `
 //        if (!mmek) return m.reply('_Tag Salah Satu Stah!_')
 
@@ -11,7 +11,7 @@ let handler = /*function*/ async(m, { conn, text }) => {
 	var no = m.mentionedJid[0]
 	let nom = no.split("@s.whatsapp.net")[0]
 
-  conn.sendContact(m.chat, '${nom}', `${text}`, m, { contextInfo: { mentionedJid: [users] } })
+  this.sendContact(m.chat, '${nom}', `${text}`, m, { contextInfo: { mentionedJid: [users] } })
 }
 handler.command = /^(sendkontak|kontak)$/i
 
