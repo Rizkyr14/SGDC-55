@@ -72,7 +72,8 @@ let handler  = async (m, { conn, usedPrefix: _p }) =>  {
 *┃╭═════════════════╮*
 *┃║ ${_p}sshindo* _(none)_
 *┃║ ${_p}univ*
-*┃║ ${_p}randomssh* _(none)_
+*┃║ ${_p}ssh*
+*┃║ ${_p}randomssh*
 *┃║ ${_p}keytrial* _(none)_
 *┃║ ${_p}ipopok*
 *┃║ ${_p}ipedukasi*
