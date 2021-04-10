@@ -12,7 +12,7 @@ let handler  = async (m, { conn, args, usedPrefix: _p }) => {
     let bname = package.name
     let vers = package.version
     let dsci = package.description
-    let res = await axios.get(`https://xinzbot-api.herokuapp.com/api/hitungmundur?apikey=XinzBot&tanggal=12&bulan=4`)
+    let res = await axios.get(`https://xinzbot-api.herokuapp.com/api/hitungmundur?apikey=XinzBot&tanggal=13&bulan=4`)
     let rmd = res.data.result
     let gc = 'https://tinyurl.com/ygu7vxny'
     let name = conn.getName(m.sender)
