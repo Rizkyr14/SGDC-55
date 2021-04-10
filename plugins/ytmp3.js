@@ -26,7 +26,7 @@ _Download Sendiri, Jangan Manja :v_
      conn.sendFile(m.chat, buf, 'SGDC-BOT.png', str, m)
         })
     })
-   } catch () {
+   } catch {
     m.reply('ERROR')
    }
 }
