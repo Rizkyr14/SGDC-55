@@ -1,5 +1,5 @@
 let handler = /*function*/ async(m, { conn, text }) => {
-	let [mmek, kntl] = text.join` `
+	let [mmek, kntl] = text.split ` `
         if (!mmek) return m.reply('_Tag Salah Satu Stah!_')
 	if (!kntl) return m.reply('_Dia Gapunya Nama Ya??_')
 	
