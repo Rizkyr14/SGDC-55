@@ -1,4 +1,4 @@
-let handler = function (m, {conn, text }) {
+let handler = async (m, {conn, text }) => {
 let [mmek, kntl] = text.split ` | `
 //        if (!mmek) return m.reply('_Tag Salah Satu Stah!_')
 
