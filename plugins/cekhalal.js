@@ -7,9 +7,9 @@ let handler = async(m, { conn, text }) => {
                 let mui = res.data
                 let muii = `*「  INFO MUI HALAL  」*\n\n`
                 for (let i = 0; i < mui.result.length; i++) {
-                    muii += `─────────────────\n${mui.result[i].hasil}\n`
+                    muii += `\n\n${mui.result[i].hasil}\n`
                 }
-                    muii += '*[ • SGDC-BOT • ]*'
+                    muii += '\n*[ • SGDC-BOT • ]*'
                  conn.reply(m.chat, muii, m)
 	})
 }
