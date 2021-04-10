@@ -355,8 +355,8 @@ _${ping}_
 *┗━━━━━━━━━━━━━━━━━━━┛*
 *━━━━━━━━━━━━━━━━━━━━━*
 *!!! WARNING !!!*
-   _Sebagian fitur mungkin ada beberapa yang error_
-_karena apikey nya sudah kehabisan limit atau invalid!_
+   _Sebagian fitur mungkin ada beberapa yang error, karena apikey nya sudah kehabisan limit atau invalid!_
+
 ~( APIKEY GRATISAN )~
 *━━━━━━━━━━━━━━━━━━━━━*
  ~> _Owner @${own.split("@")[0]}_
