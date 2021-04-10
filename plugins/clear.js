@@ -9,7 +9,7 @@ let handler = async (m, { conn, command, args }) => {
 }
 handler.help = ['deletechat', 'deletechat group', 'mutechat', 'mutechat group']
 handler.tags = ['owner']
-handler.command = /^(clear|delete|mute)chat$/i
+handler.command = /^((clear|delete|mute)chat|clear)$/i
 handler.owner = true
 handler.mods = false
 handler.premium = false
