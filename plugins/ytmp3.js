@@ -26,12 +26,12 @@ _Download Sendiri, Jangan Manja :v_
      conn.sendFile(m.chat, buf, 'SGDC-BOT.png', str, m)
         })
     })
-   } catch {
+   } catch (e) {
     m.reply('ERROR')
    }
 }
 
-handler.command = /^(ytmp3)$/i
+handler.command = /^(ytmp3|mp3)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = true
