@@ -52,7 +52,7 @@ _Hai, Selamat ${cpn} Kak @${kntl.split("@")[0]}_
 *━━━━━━━━━━━━━━━━━━━━━*
 ❍ *INFO* ❍
 ❏ Owner: @${own.split("@")[0]}
-❏ Github: ( Cek Di Grup BOT )
+❏ Github: ( Cek Di Grup ${bname} )
 ❏ Instagram: @dhans11__
 ❏ Facebook: Muhammad Afdhan
 ❏ Telegram: @Bagi_Config
@@ -61,16 +61,16 @@ _Hai, Selamat ${cpn} Kak @${kntl.split("@")[0]}_
 ❏ Mwehehehehe :)
 *━━━━━━━━━━━━━━━━━━━━━*
 *╭═══════════════════╮*
-❍ *Total Pengguna SGDC-BOT* ❍
+❍ *Total Pengguna ${bname}* ❍
 ❏ ~> ${reg} User
 
 ❍ *Hitung Mundur Menuju Ramadhan* ❍
 ❏ ~> ${rmd}
 
-❍ *Group Chat  SGDC-BOT* ❍
+❍ *Group Chat ${bname}* ❍
 ❏ ~> ${gc}
 
-❍ *Performa SGDC-BOT Saat Ini* ❍
+❍ *Performa ${bname} Saat Ini* ❍
 ❏ ~> ${ping}
 *╰═══════════════════╯*
 *━━━━━━━━━━━━━━━━━━━━━*
