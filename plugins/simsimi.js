@@ -4,14 +4,14 @@ let handler = async (m, { text }) => {
 let chat = global.DATABASE.data.chats[m.chat]
 if (chat.simi) {
  try {
- axios.get(`https://fzn-gaz.herokuapp.com/api/simi?text=${text}`).then((res) => {
+ axios.get(`https://simsumi.herokuapp.com/api?text=${text}&lang=id`).then((res) => {
   //let hh = `${res.data.result}`
-conn.reply(m.chat, `${res.data.result}`, m)
+conn.reply(m.chat, `${res.data.success}`, m)
  // let simi = pickRandom(global.simi)                         
   //conn.reply(m.chat, `${simi}`, m)
   })
-   } catch (e) { 
-   m.reply('Simi Gatau Kamu Ngomong Apa!')
+   } catch { 
+   m.reply('_Simi Gatau Kamu Ngomong Apa :)_')
    }
  } else m.reply('*SIMI BELUM DIAKTIFKAN UNTUK CHAT INI!*')
 }
