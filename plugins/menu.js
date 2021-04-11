@@ -62,16 +62,16 @@ _Hai, Selamat ${cpn} Kak @${kntl.split("@")[0]}_
 *━━━━━━━━━━━━━━━━━━━━━*
 *╭═══════════════════╮*
 ❍ *Total Pengguna SGDC-BOT* ❍
-❏ _${reg}
+❏ ~> ${reg}
 
 ❍ *Hitung Mundur Menuju Ramadhan* ❍
-❏ _${rmd}_
+❏ ~> ${rmd}
 
 ❍ *Group Chat  SGDC-BOT* ❍
-❏ _${gc}_
+❏ ~> ${gc}
 
-❍ *Performa Response SGDC-BOT Saat Ini* ❍
-❏ _${ping}_
+❍ *Performa SGDC-BOT Saat Ini* ❍
+❏ ~> ${ping}
 *╰═══════════════════╯*
 *━━━━━━━━━━━━━━━━━━━━━*
 ${readMore}
