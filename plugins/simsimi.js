@@ -13,7 +13,8 @@ if (chat.simi) {
     txt = txt + ''
   } finally {
     let ayam = txt.slice.success
-    m.reply(txt.slice(0, 65536) + '')
+    //m.reply(txt.slice(0, 65536) + '')
+    m.reply(`${ayam}`)
   }
   } else m.reply('*SIMI BELUM DIAKTIFKAN UNTUK CHAT INI!*')
 }
