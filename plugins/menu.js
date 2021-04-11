@@ -62,7 +62,7 @@ _Hai, Selamat ${cpn} Kak @${kntl.split("@")[0]}_
 *━━━━━━━━━━━━━━━━━━━━━*
 *╭═══════════════════╮*
 ❍ *Total Pengguna SGDC-BOT* ❍
-❏ ~> ${reg}
+❏ ~> ${reg} User
 
 ❍ *Hitung Mundur Menuju Ramadhan* ❍
 ❏ ~> ${rmd}
