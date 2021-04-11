@@ -42,7 +42,7 @@ let handler  = async (m, { conn, args, usedPrefix: _p }) => {
     let reg = Object.values(global.DATABASE._data.users).filter(user => user.registered == false).length
     let own = '6282252655313@s.whatsapp.net'
     let kntl = m.sender
-    let poto ='src/SGDC_BOT.png'
+    let poto = './src/SGDC_BOT.png'
     let mn = `
 *━━━━━━━━━━━━━━━━━━━━━*
 _Hai, Selamat ${cpn} Kak @${kntl.split("@")[0]}_
