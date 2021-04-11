@@ -48,8 +48,11 @@ let handler  = async (m, { conn, args, usedPrefix: _p }) => {
 *━━━━━━━━━━━━━━━━━━━━━*
 _Hai, Selamat ${cpn} Kak @${kntl.split("@")[0]}_
 
+
 *❏ WARNING ❏*
+
    _Sebagian fitur mungkin ada beberapa yang error, karena apikey sudah kehabisan limit atau invalid!_
+
 ❍ ~( APIKEY GRATISAN )~ ❍
 *━━━━━━━━━━━━━━━━━━━━━*
 ❍ *INFO* ❍
