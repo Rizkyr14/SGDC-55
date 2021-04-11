@@ -2,7 +2,7 @@ let fetch = require('node-fetch')
 let handler = async (m, { text }) => {
 let chat = global.DATABASE.data.chats[m.chat]
 if (chat.simi) {
-	let res = await fetch('https://simsumi.herokuapp.com/api?text=${text}&lang=id')
+	let res = await fetch(`https://simsumi.herokuapp.com/api?text=${text}&lang=id`)
 	let json = await res.json()
 	if (json.success) m.reply(json.success)
     else throw 'Ngomong Apa?'
