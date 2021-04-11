@@ -373,7 +373,7 @@ ${readMore}
   ${desc} *${bname}@^${vers}*
 
 `.trim()
-    await conn.sendFile(m.chat, poto, 'SGDC-BOT.jpg', mn, m, { 
+    await conn.sendFile(m.chat, poto, 'SGDC-BOT.jpg', mn, m, false, { 
         contextInfo: { 
             mentionedJid: [kntl, own]
         }
