@@ -4,7 +4,7 @@ let handler = async (m, { conn, text }) => {
 let chat = global.DATABASE.data.chats[m.chat]
 if (chat.simi) {
         let res = await axios.get(`https://simsumi.herokuapp.com/api?text=${text}&lang=id`)
-        conn.reply(m.chat, `${res.data.success}`, m)
+        conn.reply(m.chat, res.data.success, m)
   } else throw '*SIMI BELUM DIAKTIFKAN UNTUK CHAT INI!*'
 }
 
