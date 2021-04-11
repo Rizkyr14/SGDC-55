@@ -27,7 +27,7 @@ _Download Sendiri, Jangan Manja :v_
 
 *[ • SGDC-BOT • ]*
 `.trim()
-     conn.sendFile(m.chat, buf, 'SGDC-BOT.png', str, m)
+     conn.sendFile(m.chat, res.data.result.thumbnail, 'SGDC-BOT.png', str, m)
         })
     })
    } catch {
