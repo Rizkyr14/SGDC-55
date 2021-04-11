@@ -4,6 +4,23 @@ let handler = async (m, { text }) => {
 let chat = global.DATABASE.data.chats[m.chat]
 if (chat.simi) {
  try {
+  let url = 'https://simsumi.herokuapp.com/api?text=${text}&lang=id'
+  let res = await fetch(url)
+  if (!/text|json/.test(res.headers.get('content-type'))) return conn.sendFile(m.chat, text, 'file', text, m)
+  let txt = await res.buffer()
+  try {
+    txt = util.format(JSON.parse(txt+''))
+  } catch (e) {
+    txt = txt + ''
+  } finally {
+    m.reply(txt.slice(0, 65536) + '')
+  }
+  } else m.reply('*SIMI BELUM DIAKTIFKAN UNTUK CHAT INI!*')
+}
+  
+  
+  
+  /*
  let res = await fetch(`https://simsumi.herokuapp.com/api?text=${text}&lang=id`)
   //let hh = `${res.data.result}`
  let json = await res.json()
@@ -15,7 +32,7 @@ conn.reply(m.chat, `${json.success}`, m)
    m.reply('_Simi Gatau Kamu Ngomong Apa :)_')
    }
  } else m.reply('*SIMI BELUM DIAKTIFKAN UNTUK CHAT INI!*')
-}
+}*/
                       
 handler.customPrefix = /^! /
 //handler.command = new RegExp
