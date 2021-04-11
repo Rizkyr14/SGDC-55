@@ -5,6 +5,7 @@ let path = require('path')
 let { spawn } = require('child_process')
 let { performance } = require('perf_hooks')
 let handler  = async (m, { conn, args, usedPrefix: _p }) => {
+ try {
     let old = performance.now()
     await conn.fakeReply(m.chat, '```L o a d i n g . . .```', '0@s.whatsapp.net', '*MEMUAT LIST MENU*')
     let neww = performance.now()
@@ -13,6 +14,8 @@ let handler  = async (m, { conn, args, usedPrefix: _p }) => {
     let vers = package.version
     let dsci = package.description
     let apikey = 'XinzBot'
+    let ree = await.axios.get(`https://xinzbot-api.herokuapp.com/api/ucapan?apikey=${apikey}&timeZone=Asia/Jakarta`)
+    let cpn = ree.data.result
     let res = await axios.get(`https://xinzbot-api.herokuapp.com/api/hitungmundur?apikey=${apikey}&tanggal=13&bulan=4`)
     let rmd = res.data.result
     let gc = 'https://tinyurl.com/ygu7vxny'
@@ -36,28 +39,42 @@ let handler  = async (m, { conn, args, usedPrefix: _p }) => {
     })
     let _uptime = process.uptime() * 1000
     let uptime = clockString(_uptime)
+    let reg = Object.values(global.DATABASE._data.users).filter(user => user.registered == true).length
     let own = '6282252655313@s.whatsapp.net'
     let kntl = m.sender
     let mn = `
 *━━━━━━━━━━━━━━━━━━━━━*
-_Hey *@${kntl.split("@")[0]}* you will using *${bname}!*_
-_before you using this features,_ 
-_please follow the rules *${bname}.*_
-_if you violate, your account will be banned permanently!_
+_Hai, Selamat ${cpn} Kak @${kntl.split("@")[0]}_
 
-_Join GC BOT ${gc}_
+*❏ WARNING ❏*
+   _Sebagian fitur mungkin ada beberapa yang error, karena apikey sudah kehabisan limit atau invalid!_
+❍ ~( APIKEY GRATISAN )~ ❍
+*━━━━━━━━━━━━━━━━━━━━━*
+❍ *INFO* ❍
+❏ Owner: @${own.split("@")[0]}
+❏ Github: ( Cek Di Grup BOT )
+❏ Instagram: @dhans11__
+❏ Facebook: Muhammad Afdhan
+❏ Telegram: @Bagi_Config
+❏ YouTube: SGDC Project
+❏ WhatsApp: wa.me/6282252655313
+❏ Mwehehehehe :)
+*━━━━━━━━━━━━━━━━━━━━━*
+*╭═══════════════════╮*
+❍ *Total Pengguna SGDC-BOT* ❍
+❏ _${reg}
 
-*Hitung Mundur Menuju Ramadhan*
-*Sekitar:* _${rmd}_
+❍ *Hitung Mundur Menuju Ramadhan* ❍
+❏ _${rmd}_
 
-_*Performa SGDC-BOT Saat Ini:*_
-_${ping}_
+❍ *Group Chat  SGDC-BOT* ❍
+❏ _${gc}_
 
-*Rules:*
-*> Don't Spam !!!*
-*> Don't Calling !!!*
-*> Don't Video Calls !!!*
-*━━━━━━━━━━━━━━━━━━━━━*${readMore}
+❍ *Performa Response SGDC-BOT Saat Ini* ❍
+❏ _${ping}_
+*╰═══════════════════╯*
+*━━━━━━━━━━━━━━━━━━━━━*
+${readMore}
 *┏━━━━━━━━━━━━━━━━━━━┓*
 *┃                         ${bname}*
 *┃╭═════════════════╮*
@@ -78,7 +95,6 @@ _${ping}_
 *┃║ ${_p}candy*  _Teks_
 *┃║ ${_p}smoke*  _Teks_
 *┃║ ${_p}shine*  _Teks_
-*┃║ ${_p}night*  _Teks_
 *┃║ ${_p}metall*  _Teks_
 *┃║ ${_p}graffiti*  _Teks_
 *┃║ ${_p}candle*  _Teks_
@@ -116,7 +132,6 @@ _${ping}_
 *┃║ ${_p}bacaansholat*
 *┃║ ${_p}asmaulhusna*
 *┃║ ${_p}quotemuslim*
-*┃║ ${_p}cekhalal* _Barang_
 *┃║ ${_p}getsurah*  _Nomor Surah_
 *┃║ ${_p}jadwalsholat*  _Daerah_
 *┃║ ${_p}kisahnabi*  _Nama Nabi_
@@ -353,13 +368,6 @@ _${ping}_
 *┃╰═════════════════╯*
 *┃                       ${bname}*
 *┗━━━━━━━━━━━━━━━━━━━┛*
-*━━━━━━━━━━━━━━━━━━━━━*
-*!!! WARNING !!!*
-   _Sebagian fitur mungkin ada beberapa yang error, karena apikey nya sudah kehabisan limit atau invalid!_
-
-~( APIKEY GRATISAN )~
-*━━━━━━━━━━━━━━━━━━━━━*
- ~> _Owner @${own.split("@")[0]}_
 
   ${desc} *${bname}@^${vers}*
 
@@ -370,8 +378,12 @@ _${ping}_
         }
     }) 
   conn.fakeReply(m.chat, 'Untuk Menu Gretongan, Ketik *!gretongmenu*', '0@s.whatsapp.net', '*MENU GRETONGAN SGDC-TEAM*')
+  } catch (e) {
+    conn.reply(m.chat, '*TERJADI KESALAHAN PADA SAAT MEMUAT LIST MENU!*', m)
+    throw e
+  }
 }
-handler.command = /^(menu|help|start|bot|helep)$/i
+handler.command = /^(menu|help|start|helep)$/i
 
 handler.fail = null
 
