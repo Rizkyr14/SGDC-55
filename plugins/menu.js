@@ -42,6 +42,7 @@ let handler  = async (m, { conn, args, usedPrefix: _p }) => {
     let reg = Object.values(global.DATABASE._data.users).filter(user => user.registered == false).length
     let own = '6282252655313@s.whatsapp.net'
     let kntl = m.sender
+    let poto ='src/SGDC_BOT.png'
     let mn = `
 *━━━━━━━━━━━━━━━━━━━━━*
 _Hai, Selamat ${cpn} Kak @${kntl.split("@")[0]}_
@@ -317,7 +318,7 @@ ${readMore}
 *┃║ ${_p}igdl*  _Url_
 *┃║ ${_p}fbdl*  _Url_
 *┃║ ${_p}sfiledl*  _Url_
-*┃║ ${_p}tiktokdl*  _Url
+*┃║ ${_p}tiktokdl*  _Url_
 *┃║ ${_p}ytmp4*  _Url_
 *┃║ ${_p}ytmp3*  _Judul_
 *┃║ ${_p}ytplay*  _Judul_  (error)
@@ -372,7 +373,7 @@ ${readMore}
   ${desc} *${bname}@^${vers}*
 
 `.trim()
-    await conn.reply(m.chat, mn, m, { 
+    await conn.sendFile(m.chat, poto, 'SGDC-BOT.png', mn, m, { 
         contextInfo: { 
             mentionedJid: [kntl, own]
         }
