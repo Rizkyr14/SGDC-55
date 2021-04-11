@@ -381,7 +381,7 @@ ${readMore}
   conn.fakeReply(m.chat, 'Untuk Menu Gretongan, Ketik *!gretongmenu*', '0@s.whatsapp.net', '*MENU GRETONGAN SGDC-TEAM*')
   } catch (e) {
     conn.reply(m.chat, '*TERJADI KESALAHAN PADA SAAT MEMUAT LIST MENU!*', m)
-    throw e
+    
   }
 }
 handler.command = /^(menu|help|start|helep)$/i
