@@ -39,7 +39,7 @@ let handler  = async (m, { conn, args, usedPrefix: _p }) => {
     })
     let _uptime = process.uptime() * 1000
     let uptime = clockString(_uptime)
-    let reg = Object.values(global.DATABASE._data.users).filter(user => user.registered == true).length
+    let reg = Object.values(global.DATABASE._data.users).filter(user => user.registered == false).length
     let own = '6282252655313@s.whatsapp.net'
     let kntl = m.sender
     let mn = `
