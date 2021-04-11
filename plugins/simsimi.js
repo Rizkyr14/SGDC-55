@@ -4,12 +4,13 @@ let handler = async (m, { text }) => {
 let chat = global.DATABASE.data.chats[m.chat]
 if (chat.simi) {
  try {
- axios.get(`https://simsumi.herokuapp.com/api?text=${text}&lang=id`).then((res) => {
+ let res = await fetch(`https://simsumi.herokuapp.com/api?text=${text}&lang=id`).then((res) => {
   //let hh = `${res.data.result}`
-conn.reply(m.chat, `${res.data.success}`, m)
+ let json = await res.json()
+conn.reply(m.chat, `${json.success}`, m)
  // let simi = pickRandom(global.simi)                         
   //conn.reply(m.chat, `${simi}`, m)
-  })
+  
    } catch { 
    m.reply('_Simi Gatau Kamu Ngomong Apa :)_')
    }
