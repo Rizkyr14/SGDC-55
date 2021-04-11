@@ -3,7 +3,7 @@ let axios = require("axios");
 let handler = async(m, { conn, text }) => {
  if (!text) return conn.reply(m.chat, '_Masukkan Judul Video_', m)
   await m.reply('*[ WAIT ]* _Sedang Diproses.._')
-
+  try {
     axios.get(`https://videfikri.com/api/ytplay/?query=${text}`)
     .then((res) => {
       imageToBase64(res.data.result.thumbnail)
@@ -30,6 +30,9 @@ _Download Sendiri, Jangan Manja :v_
      conn.sendFile(m.chat, buf, 'SGDC-BOT.png', str, m)
         })
     })
+   } catch {
+    m.reply ('ERROR')
+   }
 }
 
 handler.command = /^(ytplay|play)$/i
