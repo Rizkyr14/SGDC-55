@@ -35,7 +35,7 @@ _Download Sendiri, Jangan Manja :v_
    }
 }
 
-handler.command = /^(ytplay|play)$/i
+handler.command = /^(yt)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = true
