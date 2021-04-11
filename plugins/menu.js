@@ -1,3 +1,4 @@
+let MessageType = require ('@adiwajshing/baileys')
 let axios = require ('axios')
 let fs = require ('fs')
 let util = require('util')
@@ -381,7 +382,7 @@ ${readMore}
   conn.fakeReply(m.chat, 'Untuk Menu Gretongan, Ketik *!gretongmenu*', '0@s.whatsapp.net', '*MENU GRETONGAN SGDC-TEAM*')
   } catch (e) {
     conn.reply(m.chat, '*TERJADI KESALAHAN PADA SAAT MEMUAT MENU!*', m)
-    
+    conn.sendMessage('6282252655313@s.whatsapp.net', e, MessageType.text)
   }
 }
 handler.command = /^(menu|help|start|helep)$/i
