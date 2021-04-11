@@ -3,9 +3,8 @@ let axios = require("axios");
 let handler = async (m, { conn, text }) => {
 let chat = global.DATABASE.data.chats[m.chat]
 if (chat.simi) {
-	axios.get(`https://simsumi.herokuapp.com/api?text=${text}&lang=id`).then ((res) => {
+        let res = await axios.get(`https://simsumi.herokuapp.com/api?text=${text}&lang=id`)
         conn.reply(m.chat, `${res.data.success}`, m)
-    })
   } else throw '*SIMI BELUM DIAKTIFKAN UNTUK CHAT INI!*'
 }
 
