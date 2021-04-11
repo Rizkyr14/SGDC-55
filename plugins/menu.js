@@ -381,8 +381,8 @@ ${readMore}
     }) 
   conn.fakeReply(m.chat, 'Untuk Menu Gretongan, Ketik *!gretongmenu*', '0@s.whatsapp.net', '*MENU GRETONGAN SGDC-TEAM*')
   } catch (e) {
-    conn.reply(m.chat, '*TERJADI KESALAHAN PADA SAAT MEMUAT MENU!*', m)
-    throw e
+    conn.fakeReply(m.chat, '*TERJADI KESALAHAN PADA SAAT MEMUAT MENU!*', '0@s.whatsapp.net', '*MENU ERROR! SEGERA LAPORKAN KE OWNER!*')
+    //throw e
    // conn.sendMessage('6282252655313@s.whatsapp.net', 'Menu Error\n' + util.format(e), MessageType.text)
   }
 }
