@@ -4,7 +4,7 @@ let handler = async(m, { conn, text }) => {
  if (!text) return conn.reply(m.chat, '_Masukkan Judul Video_', m)
   await m.reply('*[ WAIT ]* _Sedang Diproses.._')
   try {
-    axios.get(`https://videfikri.com/api/ytplay/?query=${text}`)
+    axios.get(`https://videfikri.com/api/ytplayv2/?query=${text}`)
     .then((res) => {
       imageToBase64(res.data.result.thumbnail)
         .then(
@@ -27,7 +27,7 @@ _Download Sendiri, Jangan Manja :v_
 
 *[ • SGDC-BOT • ]*
 `.trim()
-     conn.sendFile(m.chat, res.data.result.thumbnail, 'SGDC-BOT.png', str, m)
+     conn.sendFile(m.chat, res.data.result.thumbnail, 'SGDC-BOT.jpg', str, m)
         })
     })
    } catch {
