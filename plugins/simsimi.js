@@ -4,7 +4,7 @@ let handler = async (m, { text }) => {
 let chat = global.DATABASE.data.chats[m.chat]
 if (chat.simi) {
  try {
- let res = await fetch(`https://simsumi.herokuapp.com/api?text=${text}&lang=id`).then((res) => {
+ let res = await fetch(`https://simsumi.herokuapp.com/api?text=${text}&lang=id`)
   //let hh = `${res.data.result}`
  let json = await res.json()
 conn.reply(m.chat, `${json.success}`, m)
