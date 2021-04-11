@@ -20,10 +20,10 @@ let handler  = async (m, { conn }) => {
      // conn.reply(m.chat, '*[ WAIT ]* *_Sedang di proses..._*', m)
       conn.sendFile(m.chat, Buffer.concat(bufs),'SGDC-BOT.png', '*[ • SGDC-BOT • ]*', m)
     })
-   } catch (e) { 
+   } 
+ } catch (e) { 
      conn.reply(m.chat, '*Error! Terjadi Kesalahan*', m)
-     }
-  }
+   }
 }
 //util.format(e)
 handler.command = /^(toimg|stimg|img)$/i
