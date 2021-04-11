@@ -6,7 +6,7 @@ if (chat.simi) {
  try {
  axios.get(`https://simsumi.herokuapp.com/api?text=${text}&lang=id`).then((res) => {
   //let hh = `${res.data.result}`
-conn.reply(m.chat, `${res.data.success}`, m)
+conn.reply(m.chat, `${res.success}`, m)
  // let simi = pickRandom(global.simi)                         
   //conn.reply(m.chat, `${simi}`, m)
   })
