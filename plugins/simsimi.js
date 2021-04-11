@@ -3,7 +3,6 @@ let fetch = require('node-fetch')
 let handler = async (m, { text }) => {
 let chat = global.DATABASE.data.chats[m.chat]
 if (chat.simi) {
- try {
   let url = 'https://simsumi.herokuapp.com/api?text=${text}&lang=id'
   let res = await fetch(url)
   if (!/text|json/.test(res.headers.get('content-type'))) return conn.sendFile(m.chat, text, 'file', text, m)
