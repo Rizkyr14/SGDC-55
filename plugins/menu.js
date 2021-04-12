@@ -17,7 +17,7 @@ let handler  = async (m, { conn, args, usedPrefix: _p }) => {
     let apikey = 'XinzBot'
     let ree = await axios.get(`https://xinzbot-api.herokuapp.com/api/ucapan?apikey=${apikey}&timeZone=Asia/Jakarta`)
     let cpn = ree.data.result
-    let res = await axios.get(`https://xinzbot-api.herokuapp.com/api/hitungmundur?apikey=${apikey}&tanggal=13&bulan=4`)
+    let res = await axios.get(`https://xinzbot-api.herokuapp.com/api/hitungmundur?apikey=${apikey}&tanggal=14&bulan=5`)
     let rmd = res.data.result
     let gc = 'https://tinyurl.com/ygu7vxny'
     let name = conn.getName(m.sender)
@@ -68,7 +68,7 @@ _Hai, Selamat ${cpn} Kak @${kntl.split("@")[0]}_
 ❍ *Total Pengguna ${bname}* ❍
 ❏ ~> ${reg} User
 
-❍ *Hitung Mundur Menuju Ramadhan* ❍
+❍ *Hitung Mundur Menuju Idul Fitri 1442 H* ❍
 ❏ ~> ${rmd}
 
 ❍ *Group Chat ${bname}* ❍
