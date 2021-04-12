@@ -5,7 +5,7 @@ let handler = async function(m, { conn , args, isAdmin, isBotAdmin, usedPrefix }
   let mentionedJid = [m.sender]
   let name = m.fromMe ? conn.user : conn.contacts[m.sender]
   let ajg = m.sender
-  let bott = 'SGDC-BOT'
+  let bott = '6283159600193@s.whatsapp.net'
   let chat = global.DATABASE.data.chats[m.chat]
  if(!m.isGroup) return false   //m.reply(`Ingin Memasukkan BOT Ke Grup?  `)
  if (chat.antiLink && m.isGroup) {
