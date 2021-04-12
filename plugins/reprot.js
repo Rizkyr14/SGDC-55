@@ -16,7 +16,7 @@ let handler = async(m, { conn, text }) => {
     conn.reply(m.chat, '_Masalah telah di laporkan ke Owner *SGDC-BOT*_', m)
 }
 
-handler.command = /^(bug|report|bugreport)$/i
+handler.command = /^(report|bugreport)$/i
 handler.fail = null
 
 module.exports = handler
