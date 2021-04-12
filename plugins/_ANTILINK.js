@@ -8,6 +8,7 @@ let handler = async function(m, { conn , args, isAdmin, isBotAdmin }) {
   let bott = 'SGDC-BOT'
   let chat = global.DATABASE.data.chats[m.chat]
  if (chat.antiLink && m.isGroup) {
+ if (m.isBaileys && m.fromMe) throw false
  if (isAdmin) return m.reply('_Kali ini anda aman! Karena anda adalah Admin !!!_')
  await conn.reply(m.chat, `
 *[ CHAT ANTI LINK ]*
