@@ -1,4 +1,5 @@
-switch{
+//let type = (args[0] || '').toLowerCase()
+//switch (type){
 let handler  = async (m, { conn }) => {
   conn.reply(m.chat, `${pickRandom(global.ssh)}\n\nThanks To @NEZAVPN\n\n*[ • SGDC-BOT • ]*`, m)
 }
@@ -7,7 +8,7 @@ handler.command = /^(random(ssh)?|ssh)$/i
 
 
 module.exports = handler
-    break
+  /*  break
 let handler  = async (m, { conn, text }) => {
       let txt = m.quoted ? m.quoted.text ? m.quoted.text : text ? text : m.text : text ? text : m.text
       await global.ssh.push(txt)
@@ -17,7 +18,7 @@ handler.command = /^(addssh)$/i
 handler.rowner = true
 module.exports = handler
 
-}
+}*/
 function pickRandom(list) {
   return list[Math.floor(list.length * Math.random())]
 }
