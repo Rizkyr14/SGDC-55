@@ -1,4 +1,4 @@
-let handler = async function(m, { conn , args, isAdmin, isBotAdmin }) {
+let handler = async function(m, { conn , args, isAdmin, isBotAdmin, usedPrefix }) {
 
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
   let usname = conn.getName(who)
@@ -24,7 +24,7 @@ Maaf Kamu akan dikick oleh *@${bott.split("@")[0]}*
  if(isBotAdmin) { 
    conn.groupRemove(m.chat, [ajg])
     } else if (!isBotAdmin) return m.reply('_Jadikan SGDC-BOT Sebagai Admin, Agar Bisa Bertindak !!!_')
-    if(!m.isGroup) throw false
+    if(!m.isGroup) throw 'Ketik ${usedPrefix}join Untuk Memasukkan SGDC-BOT Ke Grup'
     } else if (!chat.antiLink) return m.reply('```AKTIFIN ANTILINK! BIAR GUA ULTI NI BOCAH !!!```')
  }
 
