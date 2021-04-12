@@ -1,9 +1,11 @@
 let handler = (m, { conn, usedPrefix, command }) => {
 let name = conn.getName(m.sender)
-//let peler = m.sender
- m.reply(`
-_Maaf ${name}!, Perintah *${m.text}* tidak terdaftar di *${usedPrefix}menu*_
-`.trim())
+let peler = m.sender
+ conn.reply(m.chat, `_Maaf @${peler.split("@")[0]}! Command *${m.text}* Tidak Terdaftar Di *${usedPrefix}menu!*_`, m, { 
+  contextInfo: { 
+   mentionedJid: [peler]
+  }
+ })
 }
 handler.command = new RegExp
 
