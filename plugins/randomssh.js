@@ -11,9 +11,9 @@ let handler  = async (m, { conn, args, usedPrefix, command, isOwner }) => {
   let txt = m.quoted ? m.quoted.text ? m.quoted.text : text ? text : m.text : text ? text : m.text
   await global.ssh.push(txt)
   conn.reply(m.chat, '_Berhasil Menambahkan SSH Di Database!_', m
-      }  else { 
+      } /* else { 
       	m.reply('```Hmm...```')
-      }
+      }*/
   }
   
 handler.command = /^(addssh|ssh|random(ssh)?)$/i
