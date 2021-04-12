@@ -6,7 +6,8 @@ let peler = m.sender
    mentionedJid: [peler]
   }
  })
-}
+}/*
 handler.command = new RegExp
 
 module.exports = handler
+*/
