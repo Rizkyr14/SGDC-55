@@ -1,6 +1,6 @@
 let { MessageType } = require('@adiwajshing/baileys')
 
-let handler = async (m, { conn, text, participants }) => {
+let handler = async (m, { conn, args, text, participants }) => {
   let users = (await conn.groupMetadata(m.chat)).participants.map(u => u.jid)
   let ser = Object.values(await conn.groupMetadata(m.chat)).filter(participants.map(u => u.jid)).length
   let mem = `*「  TAG ALL MEMBER  」*\n\n`
