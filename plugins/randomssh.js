@@ -1,19 +1,16 @@
 let { Presence, GroupSettingChange } = require('@adiwajshing/baileys')
 //  let isEnable = /true|enable|(turn)?on/i.test(command)
-let handler  = async (m, { conn, args, usedPrefix, command, isOwner }) => {
+let handler  = async (m, { conn, args, usedPrefix, command, isOwner, text }) => {
    if (command == 'ssh' || command == 'randomssh' || command == 'random') {
-		  conn.reply(m.chat, `${pickRandom(global.ssh)}\n\nThanks To @NEZAVPN\n\n*[ • SGDC-BOT • ]*`, m)
-      } else if (command == 'addssh') {
-   if (!isOwner) {
-        global.dfail('owner', m, conn)
-        throw false
-      }
+   let items = (global.ssh)
+   let sss = items[Math.floor(Math.random() * items.length)];
+   conn.reply(m.chat, `${sss}\n\nThanks To @NEZAVPN\n\n*[ • SGDC-BOT • ]*`, m)
+   } else if (command == 'addssh') {
+  if (!isOwner) return m.reply('_Lah Ngatur?!_')
   let txt = m.quoted ? m.quoted.text ? m.quoted.text : text ? text : m.text : text ? text : m.text
-  await global.ssh.push(txt)
-  conn.reply(m.chat, '_Berhasil Menambahkan SSH Di Database!_', m
-      } /* else { 
-      	m.reply('```Hmm...```')
-      }*/
+  await (global.ssh.push(txt))
+  conn.reply(m.chat, '_Berhasil Menambahkan SSH Di Database!_', m)
+      } else throw '```Hmm...```'
   }
   
 handler.command = /^(addssh|ssh|random(ssh)?)$/i
