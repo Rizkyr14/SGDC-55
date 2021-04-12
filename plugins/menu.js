@@ -217,6 +217,8 @@ ${readMore}
 *┃║ ${_p}tagall*
 *┃║ ${_p}tagall2*
 *┃║ ${_p}grup*  _open/close_
+*┃║ ${_p}setname*  _Teks_
+*┃║ ${_p}setdesc*  _Teks_
 *┃║ ${_p}add*  _628xxxx_
 *┃║ ${_p}promote*  _@user_
 *┃║ ${_p}demote*  _@user_
