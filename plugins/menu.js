@@ -378,16 +378,16 @@ ${readMore}
   ${desc} *${bname}@^${vers}*
 
 `.trim()
- /*   await conn.sendFile(m.chat, poto, 'SGDC-BOT.jpg', mn, m, false, { 
-        contextInfo: { 
-            mentionedJid: [kntl, own]
-        }
-    }) */
-    await conn.reply(m.chat, mn, m, { 
+    await conn.sendFile(m.chat, poto, 'SGDC-BOT.jpg', mn, m, false, { 
         contextInfo: { 
             mentionedJid: [kntl, own]
         }
     }) 
+/*    await conn.reply(m.chat, mn, m, { 
+        contextInfo: { 
+            mentionedJid: [kntl, own]
+        }
+    }) */
   conn.fakeReply(m.chat, 'Untuk Menu Gretongan, Ketik *!gretongmenu*', '0@s.whatsapp.net', '*MENU GRETONGAN SGDC-TEAM*')
   } catch (e) {
     conn.fakeReply(m.chat, '_TERJADI KESALAHAN PADA SAAT MEMUAT MENU!_', '0@s.whatsapp.net', '*MENU ERROR! SEGERA LAPORKAN KE OWNER!*')
