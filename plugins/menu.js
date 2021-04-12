@@ -45,7 +45,7 @@ let handler  = async (m, { conn, args, usedPrefix: _p }) => {
     let kntl = m.sender
     let poto = 'src/SGDC_BOT.jpg'
     let mn = `
-*━━━━━━━━━━━━━━━━━━━━━*
+*━━━━━━━━━━━━━━━━━━━━*
 _Hai, Selamat ${cpn} Kak @${kntl.split("@")[0]}_
 
 
@@ -53,7 +53,7 @@ _Hai, Selamat ${cpn} Kak @${kntl.split("@")[0]}_
    _Sebagian fitur mungkin ada beberapa yang error, karena apikey sudah kehabisan limit atau invalid!_
 
 ❍ ~( APIKEY GRATISAN )~ ❍
-*━━━━━━━━━━━━━━━━━━━━━*
+*━━━━━━━━━━━━━━━━━━━━*
 ❍ *INFO* ❍
 ❏ Owner: @${own.split("@")[0]}
 ❏ Github: ( Cek Di Grup ${bname} )
@@ -63,8 +63,8 @@ _Hai, Selamat ${cpn} Kak @${kntl.split("@")[0]}_
 ❏ YouTube: SGDC Project
 ❏ WhatsApp: wa.me/6282252655313
 ❏ Mwehehehehe :)
-*━━━━━━━━━━━━━━━━━━━━━*
-*╭═══════════════════╮*
+*━━━━━━━━━━━━━━━━━━━━*
+*╭══════════════════╮*
 ❍ *Total Pengguna ${bname}* ❍
 ❏ ~> ${reg} User
 
@@ -76,21 +76,21 @@ _Hai, Selamat ${cpn} Kak @${kntl.split("@")[0]}_
 
 ❍ *Performa ${bname} Saat Ini* ❍
 ❏ ~> ${ping}
-*╰═══════════════════╯*
-*━━━━━━━━━━━━━━━━━━━━━*
+*╰══════════════════╯*
+*━━━━━━━━━━━━━━━━━━━━*
 ${readMore}
-*┏━━━━━━━━━━━━━━━━━━━┓*
+*┏━━━━━━━━━━━━━━━━━━┓*
 *┃                         ${bname}*
-*┃╭═════════════════╮*
+*┃╭════════════════╮*
 *┃║ Name :          ${name}*
 *┃║ Date :             ${week}, ${date}*
 *┃║ Time :            ${time}*
 *┃║ Uptime :         ${uptime}*
 *┃║ Version :        ${vers}*
 *┃║ MultiPrefix :「 ${_p} 」*
-*┃╰═════════════════╯*
-*┃                       TEXT MAKER*
-*┃╭═════════════════╮*
+*┃╰════════════════╯*
+*┃                      TEXT MAKER*
+*┃╭════════════════╮*
 *┃║ ${_p}sand*  _Teks_
 *┃║ ${_p}neon*  _Teks_
 *┃║ ${_p}zuan*  _Teks_
@@ -124,9 +124,9 @@ ${readMore}
 *┃║ ${_p}nulis2*  _Teks_
 *┃║ ${_p}nulis3*  _Teks_
 *┃║ ${_p}nulis4*  _Teks_
-*┃╰═════════════════╯*
-*┃                           ISLAMI*
-*┃╭═════════════════╮*
+*┃╰════════════════╯*
+*┃                          ISLAMI*
+*┃╭════════════════╮*
 *┃║ ${_p}quran*
 *┃║ ${_p}ayatkursi*
 *┃║ ${_p}doawirid*
@@ -140,9 +140,9 @@ ${readMore}
 *┃║ ${_p}jadwalsholat*  _Daerah_
 *┃║ ${_p}kisahnabi*  _Nama Nabi_
 *┃║ ${_p}hadist*  _Perawi|Nomor_
-*┃╰═════════════════╯*
-*┃                          STICKER*
-*┃╭═════════════════╮*
+*┃╰════════════════╯*
+*┃                         STICKER*
+*┃╭════════════════╮*
 *┃║ ${_p}ttp*  _Teks_
 *┃║ ${_p}ttp2*  _Teks_
 *┃║ ${_p}ttp3*  _Teks_
@@ -154,9 +154,9 @@ ${readMore}
 *┃║ ${_p}sticgif*  _Image/Reply_ (error)
 *┃║ ${_p}sticker*  _Image/Reply_
 *┃║ ${_p}stimg*  _Reply Sticker_ (error)
-*┃╰═════════════════╯*
-*┃                    STICKER EMOJI*
-*┃╭═════════════════╮*
+*┃╰════════════════╯*
+*┃                   STICKER EMOJI*
+*┃╭════════════════╮*
 *┃║ ${_p}emo lg* | _Emoji_
 *┃║ ${_p}emo htc* | _Emoji_
 *┃║ ${_p}emo apple* | _Emoji_
@@ -171,9 +171,9 @@ ${readMore}
 *┃║ ${_p}emo openmoji* | _Emoji_
 *┃║ ${_p}emo emojidex* | _Emoji_
 *┃║ ${_p}semoji*  _Emoji_  (random)
-*┃╰═════════════════╯*
-*┃                  RANDOM IMAGE*
-*┃╭═════════════════╮*
+*┃╰════════════════╯*
+*┃                 RANDOM IMAGE*
+*┃╭════════════════╮*
 *┃║ ${_p}cecan*
 *┃║ ${_p}cogan*
 *┃║ ${_p}meme* (error)
@@ -195,25 +195,25 @@ ${readMore}
 *┃║ ${_p}gimage*  _Teks_
 *┃║ ${_p}pinterest*  _Teks_
 *┃║ ${_p}randompict*  _Teks_
-*┃╰═════════════════╯*
-*┃                            STALK*
-*┃╭═════════════════╮*
+*┃╰════════════════╯*
+*┃                           STALK*
+*┃╭════════════════╮*
 *┃║ ${_p}igstalk*  _Username_
 *┃║ ${_p}githubstalk*  _Username_
 *┃║ ${_p}twitterstalk*  _Username_
 *┃║ ${_p}tiktokstalk*  _Username_ (error)
-*┃╰═════════════════╯*
-*┃                            SPAM*
-*┃╭═════════════════╮*
+*┃╰════════════════╯*
+*┃                           SPAM*
+*┃╭════════════════╮*
 *┃║ ${_p}spam*  _@user|Teks_
 *┃║ ${_p}santet*  _@user|Teks_
 *┃║ ${_p}santet2*  _@user|Teks_
 *┃║ ${_p}spaming*  _628xxx|Teks_
 *┃║ ${_p}spamsms*  _08xxx|Jmlh_
 *┃║ ${_p}call*  _8xxxx_
-*┃╰═════════════════╯*
-*┃                            GROUP*
-*┃╭═════════════════╮*
+*┃╰════════════════╯*
+*┃                           GROUP*
+*┃╭════════════════╮*
 *┃║ ${_p}tagall*
 *┃║ ${_p}tagall2*
 *┃║ ${_p}grup*  _open/close_
@@ -230,16 +230,16 @@ ${readMore}
 *┃║ ${_p}hidetag*  _Teks_
 *┃║ ${_p}ohidetag*  _Teks_
 *┃║ ${_p}fitnah*  _Teks @user Teks_
-*┃╰═════════════════╯*
-*┃                            ANIME*
-*┃╭═════════════════╮*
+*┃╰════════════════╯*
+*┃                           ANIME*
+*┃╭════════════════╮*
 *┃║ ${_p}anime husbu*
 *┃║ ${_p}anime neko*
 *┃║ ${_p}anime waifu*
 *┃║ ${_p}anime random*
-*┃╰═════════════════╯*
-*┃                         ANIME 18+*
-*┃╭═════════════════╮*
+*┃╰════════════════╯*
+*┃                        ANIME 18+*
+*┃╭════════════════╮*
 *┃║ ${_p}cum*
 *┃║ ${_p}feet*
 *┃║ ${_p}loli*
@@ -252,18 +252,18 @@ ${readMore}
 *┃║ ${_p}sagiri*
 *┃║ ${_p}shinobu*
 *┃║ ${_p}hentai*
-*┃╰═════════════════╯*
-*┃                           NSFW*
-*┃╭═════════════════╮*
+*┃╰════════════════╯*
+*┃                          NSFW*
+*┃╭════════════════╮*
 *┃║ ${_p}nsfw blowjob*
 *┃║ ${_p}nsfw neko*
 *┃║ ${_p}nsfw loli*
 *┃║ ${_p}nsfw waifu*
 *┃║ ${_p}nsfw trap*
 *┃║ ${_p}nsfw random*
-*┃╰═════════════════╯*
-*┃                          OTHERS*
-*┃╭═════════════════╮*
+*┃╰════════════════╯*
+*┃                         OTHERS*
+*┃╭════════════════╮*
 *┃║ ${_p}puitis*
 *┃║ ${_p}iqtest*
 *┃║ ${_p}ping*
@@ -314,9 +314,9 @@ ${readMore}
 *┃║ ${_p}tts*  _lang Text_
 *┃║ ${_p}readmore*  _Text|Text_
 *┃║ ${_p}maknajadian*  _Tgl|Bln|Thn_
-*┃╰═════════════════╯*
-*┃                     DOWNLOAD*
-*┃╭═════════════════╮*
+*┃╰════════════════╯*
+*┃                    DOWNLOAD*
+*┃╭════════════════╮*
 *┃║ ${_p}mediafire*  _Url_
 *┃║ ${_p}igdl*  _Url_
 *┃║ ${_p}fbdl*  _Url_
@@ -325,9 +325,9 @@ ${readMore}
 *┃║ ${_p}ytmp4*  _Url_
 *┃║ ${_p}ytmp3*  _Judul_
 *┃║ ${_p}ytplay*  _Judul_  (error)
-*┃╰═════════════════╯*
-*┃                          TOOLS*
-*┃╭═════════════════╮*
+*┃╰════════════════╯*
+*┃                         TOOLS*
+*┃╭════════════════╮*
 *┃║ ${_p}join*  _Url_
 *┃║ ${_p}fetch*  _Url_
 *┃║ ${_p}ssweb*  _Url_
@@ -342,9 +342,9 @@ ${readMore}
 *┃║ ${_p}calc*  _Angka_
 *┃║ ${_p}infonpm*  _Nama NPM_
 *┃║ ${_p}fullhd*  _Image/Reply_
-*┃╰═════════════════╯*
-*┃                          OWNER*
-*┃╭═════════════════╮*
+*┃╰════════════════╯*
+*┃                         OWNER*
+*┃╭════════════════╮*
 *┃║ ${_p}ban*
 *┃║ ${_p}unban*
 *┃║ ${_p}reset*
@@ -369,9 +369,9 @@ ${readMore}
 *┃║ ${_p}optionlist*
 *┃║ ${_p}on*  _Option_
 *┃║ ${_p}off*  _Option_
-*┃╰═════════════════╯*
-*┃                       ${bname}*
-*┗━━━━━━━━━━━━━━━━━━━┛*
+*┃╰════════════════╯*
+*┃                      ${bname}*
+*┗━━━━━━━━━━━━━━━━━━┛*
 
   ${desc} *${bname}@^${vers}*
 
