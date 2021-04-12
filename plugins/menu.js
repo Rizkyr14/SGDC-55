@@ -50,7 +50,6 @@ _Hai, Selamat ${cpn} Kak @${kntl.split("@")[0]}_
 
 
 *❏ WARNING ❏*
-
    _Sebagian fitur mungkin ada beberapa yang error, karena apikey sudah kehabisan limit atau invalid!_
 
 ❍ ~( APIKEY GRATISAN )~ ❍
@@ -385,7 +384,7 @@ ${readMore}
   conn.fakeReply(m.chat, 'Untuk Menu Gretongan, Ketik *!gretongmenu*', '0@s.whatsapp.net', '*MENU GRETONGAN SGDC-TEAM*')
   } catch (e) {
     conn.fakeReply(m.chat, '*TERJADI KESALAHAN PADA SAAT MEMUAT MENU!*', '0@s.whatsapp.net', '*MENU ERROR! SEGERA LAPORKAN KE OWNER!*')
-    throw e
+    //throw e
    // conn.sendMessage('6282252655313@s.whatsapp.net', 'Menu Error\n' + util.format(e), MessageType.text)
   }
 }
