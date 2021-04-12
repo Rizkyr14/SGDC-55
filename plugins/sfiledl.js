@@ -19,7 +19,7 @@ _File Nya Langsung Dikirim_
 
 *[ • SGDC-BOT • ]*
 `.trim())
-  if (res.data.size > 02.00) {
+  if (res.data.size > '02.00 MB') {
 	  m.reply('_File Anda Terlalu Besar! Silahkan Download Sendiri Melalui Link Yang Dikirim SGDC-BOT!_')
 	  } else {
    conn.sendFile(m.chat, res.data.result, `${res.data.title}`, m)
