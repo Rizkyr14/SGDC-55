@@ -6,7 +6,7 @@ handler.command = /^(random(ssh)?|ssh)$/i
 
 
 module.exports = handler
-    break
+   // break
 let handler  = async (m, { conn, text }) => {
       let txt = m.quoted ? m.quoted.text ? m.quoted.text : text ? text : m.text : text ? text : m.text
       await global.ssh.push(txt)
