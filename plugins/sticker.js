@@ -2,9 +2,9 @@ const { MessageType } = require('@adiwajshing/baileys')
 const { sticker } = require('../lib/sticker')
 let handler  = async (m, { conn, args, command }) => {
   if (command == 'sgif' || command == 'stickergif' || command  == 'stikergif') {
-    conn.reply(m.chat, '```Tolong Jangan Paksa Fitur Yang Error!!!', m)
-  }
-  m.reply('*[ WAIT ]* _Sedang Diproses..._\n```Jangan Spam Suu!```')
+    conn.reply(m.chat, '```Tolong Jangan Paksa Fitur Yang Error!!!```', m)
+  } else {
+    m.reply('*[ WAIT ]* _Sedang Diproses..._\n```Jangan Spam Suu!```')
   let stiker = false
   try {
     let q = m.quoted ? m.quoted : m
@@ -18,7 +18,8 @@ let handler  = async (m, { conn, args, command }) => {
     if (stiker) conn.sendMessage(m.chat, stiker, MessageType.sticker, {
       quoted: m
     })
-   else throw '_Kesalahan Pada Saat Mengonversi!_'
+   else throw '_Terjadi Kesalahan Pada Saat Mengonversi!_'
+    }
   }
 }
 
