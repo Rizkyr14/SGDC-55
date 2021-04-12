@@ -5,7 +5,7 @@ let handler = async(m, { conn, text }) => {
 
   await m.reply('*[ WAIT ]* _Sedang Diproses..._')
 	axios.get(`https://fzn-gaz.herokuapp.com/api/sfiledl?url=${text}`).then ((res) => {
-m.reply(`
+await m.reply(`
 *KLIK LINK FOR DOWNLOAD*
 
 *Title:* ${res.data.title}
