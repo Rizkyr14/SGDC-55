@@ -5,7 +5,7 @@ let handler = async(m, { conn, text }) => {
 
   await m.reply('*[ WAIT ]* _Sedang Diproses..._')
 	axios.get(`https://fzn-gaz.herokuapp.com/api/sfiledl?url=${text}`).then ((res) => {
-await m.reply(`
+m.reply(`
 *KLIK LINK FOR DOWNLOAD*
 
 *Title:* ${res.data.title}
@@ -20,7 +20,7 @@ _File Nya Langsung Dikirim_
 *[ • SGDC-BOT • ]*
 `.trim())
   if (res.data.size > '02.00 MB') {
-	  m.reply('_File Anda Terlalu Besar! Silahkan Download Sendiri Melalui Link Diatas!_')
+	  m.reply('_File Anda Terlalu Besar! Silahkan Download Sendiri Melalui Link!_')
 	  } else {
    conn.sendFile(m.chat, res.data.result, `${res.data.title}`, m)
 		  }
