@@ -24,6 +24,7 @@ Maaf Kamu akan dikick oleh *@${bott.split("@")[0]}*
  if(isBotAdmin) { 
    conn.groupRemove(m.chat, [ajg])
     } else if (!isBotAdmin) return m.reply('_Jadikan SGDC-BOT Sebagai Admin, Agar Bisa Bertindak !!!_')
+    if(!m.isGroup) throw false
     } else if (!chat.antiLink) return m.reply('```AKTIFIN ANTILINK! BIAR GUA ULTI NI BOCAH !!!```')
  }
 
