@@ -1,9 +1,4 @@
 let handler = async function(m, { conn , args, isAdmin, isBotAdmin, usedPrefix }) {
-
-  /*let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-  let usname = conn.getName(who)
-  let mentionedJid = [m.sender]
-  let name = m.fromMe ? conn.user : conn.contacts[m.sender] */ 
   let ajg = m.sender
   let bott = '6283159600193@s.whatsapp.net'
   let chat = global.DATABASE.data.chats[m.chat]
