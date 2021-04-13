@@ -23,7 +23,7 @@ let handler = async(m, { conn, text, args, bot, command }) => {
         anu = await imgBB("3ea1465ef91578a90ee81f7d41c59a1f", media)
        let triger = await fetch('https://some-random-api.ml/canvas/triggered?avatar=' + encodeURIComponent(anu.display_url));
        let img = await triger.buffer()
-       let stiker = await sticker(img)
+       let stiker = await sticker(img, false, global.packname, global.author)
      //   stic = await sticker(false, triger, global.packname, global.author)
        conn.sendMessage(m.chat, stiker, MessageType.sticker, {
     quoted: m
