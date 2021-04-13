@@ -24,7 +24,7 @@ let handler = async(m, { conn, text, args, bot, command }) => {
       //let hehe = res.data
         conn.reply(m.chat, buff, 'TES.png', 'Nih Stah', m)                   
         } else {
-        m..reply('Reply!')
+        m.reply('Reply!')
        }
     } catch (e) {
  	m.reply('```ERROR```')
