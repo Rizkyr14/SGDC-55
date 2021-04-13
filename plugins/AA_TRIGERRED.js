@@ -1,7 +1,8 @@
 let imgBB = require("imgbb-uploader");
+let { sticker } = require('../lib/sticker');
 let { MessageType } = require('@adiwajshing/baileys');
 let { spawn } = require('child_process');
-const FormData = require('form-data');
+let FormData = require('form-data');
 let path = require('path');
 let util = require('util');
 let fs = require('fs');
@@ -20,7 +21,11 @@ let handler = async(m, { conn, text, args, bot, command }) => {
         media = await conn.downloadAndSaveMediaMessage(ngntd)
         anu = await imgBB("3ea1465ef91578a90ee81f7d41c59a1f", media)
         triger = 'https://some-random-api.ml/canvas/triggered?avatar=' + encodeURIComponent(anu.display_url);
-        conn.sendFile(m.chat, triger, 'trigger.webp', '', m, false, { asSticker: true })            
+        stic = await sticker(null, 'https://some-random-api.ml/canvas/triggered?avatar=' + anu.display_url, global.packname, global.author)
+       conn.sendMessage(m.chat, stic, MessageType.sticker, {
+    quoted: m
+  })
+        //conn.sendFile(m.chat, triger, 'trigger.webp', '', m, false, { asSticker: true })            
         } else {
         m.reply('Reply Fotonya!')
         }
