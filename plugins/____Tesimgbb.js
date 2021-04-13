@@ -1,7 +1,7 @@
 let imgBB = require("imgbb-uploader");
 let ffmpeg = require('fluent-ffmpeg')
 let { MessageType } = require('@adiwajshing/baileys')
-let { exec } = require('child_process')
+let { spawn } = require('child_process')
 let fs = require('fs')
 let axios = require("axios");
 let handler = async(m, { conn, text, args, bot, command }) => {
@@ -17,7 +17,7 @@ let handler = async(m, { conn, text, args, bot, command }) => {
     if ((isMedia && !m.message.videoMessage || isQuotedImage) && args.length == 0) {
       let ngntd = isQuotedImage ? JSON.parse(JSON.stringify(m).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : m
       let media = await conn.downloadAndSaveMediaMessage(ngntd)
-      let tels = text
+      let tels = m.text
       let anu = await imgBB("3ea1465ef91578a90ee81f7d41c59a1f", media)
       let res = 'https://videfikri.com/api/textmaker/customwp/?urlgbr=' + anu.display_url;
       /*let res = await axios.get(`https://videfikri.com/api/textmaker/customwp/?urlgbr=${anu.display_url}`)
