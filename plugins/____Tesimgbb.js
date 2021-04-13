@@ -12,7 +12,7 @@ let handler = async(m, { conn, text, args, bot, command }) => {
     const isMedia = (type === 'imageMessage' || type === 'videoMessage')
     const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
     const isQuotedVideo = type === 'extendedTextMessage' && content.includes('videoMessage')
-  //try {
+  try {
     var imgBB = require('imgbb-uploader')
     if ((isMedia && !m.message.videoMessage || isQuotedImage) && args.length == 0) {
         ngntd = isQuotedImage ? JSON.parse(JSON.stringify(m).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : m
@@ -23,12 +23,12 @@ let handler = async(m, { conn, text, args, bot, command }) => {
       //let hehe = res.data
         conn.sendFile(m.chat, res, 'TES.jpg', 'Nih Stah', m)                   
         } else {
-        m.reply('Reply!')
+        m.reply('Reply Fotonya!')
         }
-   /* } catch (e) {
- 	m.reply('```ERROR```')
-    throw e
- }*/
+    } catch (e) {
+   m.reply('```ERROR```')
+   // throw e
+ }
 }
 
 handler.command = /^(imgbb)$/i
