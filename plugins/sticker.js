@@ -1,7 +1,7 @@
 const { MessageType } = require('@adiwajshing/baileys')
 const { sticker } = require('../lib/sticker')
 let handler  = async (m, { conn, args, command }) => {
-  if (command == 'sgif' || command == 'stickergif' || command  == 'stikergif') {
+  if (command == 'sgif' || command == 'stickergif' || command  == 'stikergif' || command == 'sticgif') {
     conn.reply(m.chat, '```Tolong Jangan Paksa Fitur Yang Error!!!```', m)
   } else {
     m.reply('*[ WAIT ]* _Sedang Diproses..._\n```Jangan Spam Suu!```')
