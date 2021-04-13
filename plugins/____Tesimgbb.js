@@ -13,7 +13,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
     const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
     const isQuotedVideo = type === 'extendedTextMessage' && content.includes('videoMessage')
 
-    var imgbb = require('imgbb-uploader')
+   // var imgbb = require('imgbb-uploader')
     if ((isMedia && !m.message.videoMessage || isQuotedImage) && args.length == 0) {
       let ngntd = isQuotedImage ? JSON.parse(JSON.stringify(m).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : m
       let media = await conn.downloadAndSaveMediaMessage(ngntd)
