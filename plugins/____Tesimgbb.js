@@ -22,7 +22,7 @@ let handler = async(m, { conn, text, args, bot, command }) => {
      // let res = 'https://videfikri.com/api/textmaker/customwp/?urlgbr=' + anu.display_url;
       let buff = await axios.get(`https://videfikri.com/api/textmaker/customwp/?urlgbr=${anu.display_url}`)
       //let hehe = res.data
-        conn.reply(m.chat, buff, 'TES.png', 'Nih Stah', m)                   
+        conn.sendFile(m.chat, buff, 'TES.png', 'Nih Stah', m)                   
         } else {
         m.reply('Reply!')
        }
