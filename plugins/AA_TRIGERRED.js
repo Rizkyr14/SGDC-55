@@ -3,6 +3,7 @@ const { sticker } = require('../lib/sticker');
 let { MessageType } = require('@adiwajshing/baileys');
 let { spawn } = require('child_process');
 let FormData = require('form-data');
+let fetch = require('node-fetch');
 let path = require('path');
 let util = require('util');
 let fs = require('fs');
@@ -20,9 +21,11 @@ let handler = async(m, { conn, text, args, bot, command }) => {
         ngntd = isQuotedImage ? JSON.parse(JSON.stringify(m).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : m
         media = await conn.downloadAndSaveMediaMessage(ngntd)
         anu = await imgBB("3ea1465ef91578a90ee81f7d41c59a1f", media)
-        triger = 'https://some-random-api.ml/canvas/triggered?avatar=' + encodeURIComponent(anu.display_url);
-        stic = await sticker(false, triger, global.packname, global.author)
-       conn.sendMessage(m.chat, stic, MessageType.sticker, {
+       let triger = await fetch('https://some-random-api.ml/canvas/triggered?avatar=' + encodeURIComponent(anu.display_url));
+       let img = await triger.buffer()
+       let stiker = await sticker(img)
+     //   stic = await sticker(false, triger, global.packname, global.author)
+       conn.sendMessage(m.chat, stiker, MessageType.sticker, {
     quoted: m
   })
         //conn.sendFile(m.chat, triger, 'trigger.webp', '', m, false, { asSticker: true })            
