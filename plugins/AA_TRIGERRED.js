@@ -1,5 +1,5 @@
 let imgBB = require("imgbb-uploader");
-let { sticker } = require('../lib/sticker');
+const { sticker } = require('../lib/sticker');
 let { MessageType } = require('@adiwajshing/baileys');
 let { spawn } = require('child_process');
 let FormData = require('form-data');
@@ -20,8 +20,8 @@ let handler = async(m, { conn, text, args, bot, command }) => {
         ngntd = isQuotedImage ? JSON.parse(JSON.stringify(m).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : m
         media = await conn.downloadAndSaveMediaMessage(ngntd)
         anu = await imgBB("3ea1465ef91578a90ee81f7d41c59a1f", media)
-        //triger = 'https://some-random-api.ml/canvas/triggered?avatar=' + encodeURIComponent(anu.display_url);
-        stic = await sticker(null, 'https://some-random-api.ml/canvas/triggered?avatar=' + anu.display_url, global.packname, global.author)
+        triger = 'https://some-random-api.ml/canvas/triggered?avatar=' + anu.display_url;
+        stic = await sticker(triger, false, global.packname, global.author)
        conn.sendMessage(m.chat, stic, MessageType.sticker, {
     quoted: m
   })
