@@ -4,7 +4,7 @@ let { MessageType } = require('@adiwajshing/baileys')
 let { exec } = require('child_process')
 let fs = require('fs')
 let axios = require("axios");
-let handler = async (m, { conn, text, args, usedPrefix, command }) => {
+let handler = async(m, { conn, text, args, bot, command }) => {
   try {
    await m.reply('_Sedang Membuat... Mohon tunggu sekitar 1 menit_')
     const type = Object.keys(m.message)[0]
