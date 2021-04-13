@@ -6,19 +6,21 @@ let handler = async(m, { conn, text }) => {
  await m.reply('*[ WAIT ]* _Sedang diproses..._')
 axios.get(`http://lolhuman.herokuapp.com/api/sholat/${text}?apikey=761e676c13e7710a48011b2b`).then((res) => {
     let hasil = `
-*JADWAL SHOLAT*
+*JADWAL SHOLAT HARI INI*
 
 *Wilayah:* ${res.data.result.wilayah}
 *Tanggal:* ${res.data.result.tanggal}
+
 *Sahur:* ${res.data.result.sahur}
 *Imsak:* ${res.data.result.imsak}
-*Shubuh:* ${res.data.result.subuh}
+*Subuh:* ${res.data.result.subuh}
 *Terbit:* ${res.data.result.terbit}
 *Dhuha:* ${res.data.result.dhuha}
 *Dzuhur:* ${res.data.result.dzuhur}
 *Ashar:* ${res.data.result.ashar}
 *Maghrib:* ${res.data.result.maghrib}
 *Isya:* ${res.data.result.isya}
+
 
 *[ • SGDC-BOT • ]*
 `.trim()
