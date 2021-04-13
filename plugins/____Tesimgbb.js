@@ -19,6 +19,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
       let media = await conn.downloadAndSaveMediaMessage(ngntd)
    //tels = body.slice(7)
       let anu = await imgbb("08579d070df9a07cb1c2ee565aece767", media)
+      //let res = 'https://videfikri.com/api/textmaker/customwp/?urlgbr=' + anu.display_url
       let res = await axios.get(`https://videfikri.com/api/textmaker/customwp/?urlgbr=${anu.display_url}`)
       let hehe = res.data
         conn.reply(m.chat, hehe, 'TES.png', 'Nih Stah', m)
