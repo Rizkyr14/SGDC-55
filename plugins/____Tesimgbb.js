@@ -19,9 +19,9 @@ let handler = async(m, { conn, text, args, bot, command }) => {
       let media = await conn.downloadAndSaveMediaMessage(ngntd)
       let tels = m.text
       let anu = await imgBB("3ea1465ef91578a90ee81f7d41c59a1f", media)
-      let res = 'https://videfikri.com/api/textmaker/customwp/?urlgbr=' + anu.display_url;
-      /*let res = await axios.get(`https://videfikri.com/api/textmaker/customwp/?urlgbr=${anu.display_url}`)
-      let hehe = res.data*/
+     // let res = 'https://videfikri.com/api/textmaker/customwp/?urlgbr=' + anu.display_url;
+      let res = await axios.get(`https://videfikri.com/api/textmaker/customwp/?urlgbr=${anu.display_url}`)
+      let hehe = res.data
         conn.reply(m.chat, res, 'TES.png', 'Nih Stah', m)
         } else {
         m.reply('Reply!')
