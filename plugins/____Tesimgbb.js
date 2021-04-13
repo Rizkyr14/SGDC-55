@@ -26,12 +26,12 @@ let handler = async(m, { conn, text, args, bot, command }) => {
         m.reply('Reply Fotonya!')
         }
     } catch (e) {
-   m.reply('```ERROR```')
+   m.reply('```ERROR! Terjadi Kesalahan```')
    // throw e
  }
 }
 
-handler.command = /^(imgbb)$/i
+handler.command = /^(customwp)$/i
 
 
 module.exports = handler
