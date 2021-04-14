@@ -19,6 +19,6 @@ let handler  = async (m, { conn, args, text }) => {
   }
 }
 
-handler.command = /^stikerwm$/i
+handler.command = /^wm$/i
 
 module.exports = handler
