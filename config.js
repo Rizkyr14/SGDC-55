@@ -13,7 +13,7 @@ global.APIKeys = {
   'https://api.xteam.xyz': 'abba3220ce4a347f'
 }
 
-global.wait = "[!] Please Wait..."
+global.wait = "```[!] Sedang Diproses...```"
 
 
 let fs = require('fs')
