@@ -3,6 +3,7 @@ const { sticker } = require('../lib/sticker')
 let handler  = async (m, { conn, args, text }) => {
   let [kontol, memek] = text.split `|`
   let stiker = false
+  await m.reply(global.wait)
   try {
     let q = m.quoted ? m.quoted : m
     let mime = (q.msg || q).mimetype || ''
