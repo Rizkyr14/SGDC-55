@@ -21,14 +21,15 @@ let handler = async(m, { conn, text, args, bot, command }) => {
         media = await conn.downloadAndSaveMediaMessage(ngntd)
         anu = await imgBB("3ea1465ef91578a90ee81f7d41c59a1f", media)
         res = 'https://videfikri.com/api/textmaker/customwp/?urlgbr=' + anu.display_url;
-     let triger = await fetch('https://some-random-api.ml/canvas/triggered?avatar=' + encodeURIComponent(anu.display_url));
+     //let triger = await fetch('https://some-random-api.ml/canvas/triggered?avatar=' + encodeURIComponent(anu.display_url));
+     let triger = await fetch('https://videfikri.com/api/textmaker/customwp/?urlgbr=' + encodeURIComponent(anu.display_url));
      let img = await triger.buffer()
      let stiker = await sticker(img, false, global.packname, global.author)
      //   stic = await sticker(false, triger, global.packname, global.author)
        
      // let buff = await axios.get(`https://videfikri.com/api/textmaker/customwp/?urlgbr=${anu.display_url}`)
       //let hehe = res.data
-        conn.sendFile(m.chat, res, 'TES.jpg', 'Nih Stah', m)                   
+        await conn.sendFile(m.chat, res, 'TES.jpg', 'Nih Stah', m)                   
         conn.sendMessage(m.chat, stiker, MessageType.sticker, {
     quoted: m
   })
