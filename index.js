@@ -30,7 +30,7 @@ CFonts.say('=============================================', {
   colors: ['red'],
   gradient: false
 })
-CFonts.say(`Tetaplah menjadi dirimu sendiri|jangan pernah mencoba menjadi orang lain|Ingat! satu rasa bukan berarti satu raga.\n\nPluto, 20 April 2021`, {
+CFonts.say(`Tetaplah menjadi dirimu sendiri|jangan pernah mencoba menjadi orang lain|Karena satu rasa bukan berarti satu raga.\n\nPluto, 20 April 2021`, {
   font: 'console',
   align: 'center',
   colors: ['cyan'],
