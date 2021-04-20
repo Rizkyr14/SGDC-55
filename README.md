@@ -7,8 +7,7 @@ SIMPLE WHATSAPP BOT GRETONGERS
 4. > `git clone https://github.com/Afdhan/SGDC-55`
 5. > `cd SGDC-55`
 6. > `bash install.sh`
-7. > `npm start`
-8. > `Scan QR with WhatsApp Web`
+7. > `Scan QR with WhatsApp Web`
 
 # Don't forget to input your apikey at "src/kntl.json"
 
