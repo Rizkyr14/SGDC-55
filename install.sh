@@ -27,4 +27,4 @@ echo ""
 echo ""
 echo ""
 
-npm start
+node index.js
