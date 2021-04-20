@@ -11,6 +11,10 @@ SIMPLE WHATSAPP BOT GRETONGERS
 8. > `Scan QR with WhatsApp Web`
 
 
+
+
+
+
  JOIN
 [`WhatsApp`](https://chat.whatsapp.com/JTqD3cJLmrlJPfxYZMtju8)
 [`Telegram`](https://t.me/SGDC_TEAM)
