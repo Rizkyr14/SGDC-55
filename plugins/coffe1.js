@@ -1,17 +1,14 @@
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
-/*let user = global.DATABASE._data.users[m.sender]
-if (user.prems) {*/
-    if (!text) return conn.reply(m.chat, 'Silahkan Masukan Teks!', m)
-
-   if (text > 10) return conn.reply(m.chat, '*Teks Terlalu Panjang!* _Maksimal 10 huruf!_', m)
-   
-
-  await m.reply('*[ WAIT ]* _Sedang Diproses..._')
-let link = 'https://videfikri.com/api/textmaker/coffeecup/?text=' + text
-
-conn.sendFile(m.chat, link, 'SGDC-BOT.png', '*[ • SGDC-BOT • ]*', m)
-   //} else if (!user.prems) m.reply('*FITUR INI KHUSUS UNTUK USER PREMIUM!*')
+ try{
+    if (!text) return conn.reply(m.chat, '_Masukan Teks!_', m)
+    if (text.length > 10) return conn.reply(m.chat, '_Teks Terlalu Panjang! Maksimal 10 huruf!_', m)
+    await m.reply(global.wait)
+    let link = 'https://videfikri.com/api/textmaker/coffeecup/?text=' + text
+conn.sendFile(m.chat, link, 'SGDC-BOT.png', '*SGDC-BOT*', m)
+   } catch (e) {
+  	m.reply('```Error```')
+  }
 }
 
 handler.command = /^(coffe(cup)?)$/i

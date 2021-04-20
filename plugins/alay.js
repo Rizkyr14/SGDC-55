@@ -1,13 +1,15 @@
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
+try {
 let txt = m.quoted ? m.quoted.text ? m.quoted.text : text ? text : m.text : text ? text : m.text
-    if (!txt) return conn.reply(m.chat, '*Masukkan Text!*', m)
-
+    if (!txt) return conn.reply(m.chat, '_Teksnya Mana?_', m)
 	axios.get(`https://api.terhambar.com/bpk?kata=${txt}`).then ((res) => {
-	 	let hasil = `${res.data.text}\n\n*[ • SGDC-BOT • ]*`
-
+	 	let hasil = `${res.data.text}\n\n*SGDC-BOT*`
     conn.reply(m.chat, hasil, m)
 	})
+  } catch (e) {
+		m.reply('```Error```')
+    }
 }
 
 handler.command = /^(alay)$/i

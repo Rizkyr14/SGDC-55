@@ -2,7 +2,6 @@ const { MessageType } = require('@adiwajshing/baileys')
 let handler = async function(m, { conn , args, text, isAdmin, isBotAdmin, groupMetadata }) {
 
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-  let bott = '6283159600193@s.whatsapp.net'
   let asu = m.sender
   let vir = asu.split("@s.whatsapp.net")[0]
   if (!m.isGroup) { 
@@ -14,24 +13,25 @@ let handler = async function(m, { conn , args, text, isAdmin, isBotAdmin, groupM
 
 _Terdeteksi *@${asu.split("@")[0]}* telah mengirim virtex!_
 
-Maaf Kamu akan dikick oleh *@${bott.split("@")[0]}*
+Maaf Kamu akan dikick oleh *SGDC-BOT*
 `.trim(), m, { 
       contextInfo: {  
-        mentionedJid: [asu, bott]
+        mentionedJid: [asu]
       }
     })
  if (isBotAdmin) {
    conn.groupRemove(m.chat, [asu])
      } else { 
-     	m.reply('```JADIKAN BOT SEBAGAI ADMIN !!!```')
+     	m.reply('```JADIKAN SGDC-BOT SEBAGAI ADMIN !!!```')
     }
   } conn.sendMessage(vir + '@s.whatsapp.net', `${m.text}`, MessageType.text)
 }
-handler.customPrefix = /(๒๒๒๒๒๒|♚㜸ཽཽࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧ͢͢㜺ࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣩࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧࣧ㜸ཽཽཽ͢͢͢♚|🧙‍♂️𝐀𝐥𝐚𝐤𝐚𝐳𝐚𝐦🔮|𝐗-𝐕𝐢𝐫𝐮𝐬)/i
+handler.customPrefix = //i
 handler.command = new RegExp
 
 handler.fail = null
 
 module.exports = handler
 // by Muhammad Afdhan
-// INI WM KU
+// INI WM KU, MANA WM MU?
+//||||

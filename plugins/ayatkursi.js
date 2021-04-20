@@ -1,8 +1,10 @@
 let axios = require("axios");
+let kntl = require("../src/kntl.json");
 let handler = async(m, { conn, text }) => {
-
-  await m.reply('*[ WAIT ]* _Searching..._')
-	axios.get(`https://xnxx-tbot.herokuapp.com/api/muslim/ayatkursi?apikey=tbot`).then ((res) => {
+let api = (kntl.tbotkey)
+try {
+    await m.reply(global.wait)
+	axios.get(`https://xnxx-tbot.herokuapp.com/api/muslim/ayatkursi?apikey=${api}`).then ((res) => {
 	 	let hasil = `
 *AYAT KURSI*
 	
@@ -17,11 +19,14 @@ ${res.data.result.translation}
 ${res.data.result.tafsir}
 
 
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
 
     conn.reply(m.chat, hasil, m)
 	})
+    } catch (e) {
+  	m.reply('```Error```')
+  }
 }
 
 handler.command = /^(ayatkursi)$/i

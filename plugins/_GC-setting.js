@@ -4,9 +4,11 @@ let handler  = async (m, { conn, args, usedPrefix, command }) => {
 		await conn.updatePresence(m.chat, Presence.composing) 
 		conn.reply(m.chat, `*Format salah!*\n*Contoh:*\n*• ${usedPrefix + command} close*\n*• ${usedPrefix + command} open*`, m)
 	} else if(args[0] == 'open') {
-		conn.groupSettingChange(m.chat, GroupSettingChange.messageSend, false)
+		await conn.groupSettingChange(m.chat, GroupSettingChange.messageSend, false)
+		m.reply('```Berhasil Membuka Grup```')
 	} else if(args[0] == 'close') {
-		conn.groupSettingChange(m.chat, GroupSettingChange.messageSend, true)
+		await conn.groupSettingChange(m.chat, GroupSettingChange.messageSend, true)
+		m.reply('```Berhasil Menutup Grup```')
 	} else {
 		await conn.updatePresence(m.chat, Presence.composing) 
 		conn.reply(m.chat, `*Format salah!*\n*Contoh:*\n*• ${usedPrefix + command} close*\n*• ${usedPrefix + command} open*`, m)

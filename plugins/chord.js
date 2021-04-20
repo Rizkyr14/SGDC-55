@@ -1,13 +1,15 @@
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
-
-    if (!text) return conn.reply(m.chat, 'Masukkan Judul!', m)
-
-  await m.reply('*[ WAIT ]* _Searching..._')
-axios.get(`https://st4rz.herokuapp.com/api/chord?q=${text}`).then((res) => {
-    let hasil = `${res.data.result}\n\n*[ • SGDC-BOT • ]*`
+ try {
+    if (!text) return conn.reply(m.chat, '_Masukkan Judul Lagu!_', m)
+    await m.reply(global.wait)
+    axios.get(`https://st4rz.herokuapp.com/api/chord?q=${text}`).then((res) => {
+    let hasil = `${res.data.result}\n\n*SGDC-BOT*`
 conn.reply(m.chat, hasil, m)
 	})
+   } catch (e) {
+  	m.reply('```Error```')
+  }
 }
 handler.command = /^(chord)$/i
 handler.owner = false

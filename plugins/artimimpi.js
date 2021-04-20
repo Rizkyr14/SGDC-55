@@ -1,20 +1,21 @@
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
-
+ try {
     if (!text) return conn.reply(m.chat, 'Silahkan masukan parameter! contoh *!artimimpi ular*', m)
-
-  await m.reply('*[ WAIT ]* _Searching..._')
+    await m.reply(global.wait)
 	axios.get(`https://videfikri.com/api/primbon/artimimpi/?mimpi=${text}`).then ((res) => {
-	 	let hasil = `
+	let hasil = `
 *TAFSIR MIMPI*
 
 ${res.data.result.artimimpi}
 
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
-
-    conn.reply(m.chat, hasil, m)
-	})
+conn.reply(m.chat, hasil, m)
+	 })
+  } catch (e) {
+  	m.reply('```Error```')
+  }
 }
 
 handler.command = /^(artimimpi|tafsirmimpi)$/i

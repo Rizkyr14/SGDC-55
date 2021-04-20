@@ -1,22 +1,24 @@
 let imageToBase64 = require('image-to-base64');
 let axios = require("axios");
+let kntl = require("../src/kntl.json");
 let handler = async(m, { conn, text }) => {
-/*let user = global.DATABASE._data.users[m.sender]
-if (user.prems) {*/
-  await m.reply('*[ WAIT ]* _Searching..._')
-
-    axios.get('https://api.zeks.xyz/api/darkjokes?apikey=apivinz')
+let api = (kntl.zekskey)
+  try {
+    await m.reply(global.wait)
+    axios.get(`https://api.zeks.xyz/api/darkjokes?apikey=${api}`}
     .then((res) => {
       imageToBase64(res.data.result)
         .then(
           (ress) => {
             let buf = Buffer.from(ress, 'base64')
-            let str = `Dark Ajg`
+            let str = `Ini Darkk ?`
 
      conn.sendFile(m.chat, buf, 'Nyenye_SGDC-BOT.jpg', str, m)
         })
     })
-//  } else if (!user.prems) m.reply('*FITUR INI KHUSUS UNTUK USER PREMIUM!*')
+    } catch (e) {
+  	m.reply('```Error```')
+  }
 }
 
 handler.command = /^(darkjoke(s)?)$/i
@@ -31,6 +33,6 @@ handler.botAdmin = false
 
 handler.fail = null
 
-//  MUHAMMAD AFDHAN
+//  MUHAMMAD AFDHAN 
 
 module.exports = handler

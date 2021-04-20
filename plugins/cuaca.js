@@ -1,11 +1,14 @@
 let axios = require("axios");
+let kntl = require("../src/kntl.json");
 let handler = async(m, { conn, text }) => {
-
+let api = (kntl.xteam)
+  try {
     if (!text) return conn.reply(m.chat, 'Masukkan Nama Kota', m)
-
-  await m.reply('*[ WAIT ]* _Sedang Diproses..._')
-axios.get(`https://api.xteam.xyz/cuaca?kota=${text}&APIKEY=abba3220ce4a347f`).then((res) => {
+    await m.reply(global.wait)
+    axios.get(`https://api.xteam.xyz/cuaca?kota=${text}&APIKEY=${api}`).then((res) => {
     let hasil = `
+*INFO CUACA INDONESIA*
+    
 *Kota:* _${res.data.message.kota}_
 *Hari:* _${res.data.message.hari}_
 *Cuaca:* _${res.data.message.cuaca}_
@@ -16,10 +19,13 @@ axios.get(`https://api.xteam.xyz/cuaca?kota=${text}&APIKEY=abba3220ce4a347f`).th
 *Angin:* _${res.data.message.angin}_
 
 
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
 conn.reply(m.chat, hasil, m)
 	})
+    } catch (e) {
+  	m.reply('```Error```')
+  }
 }
 handler.command = /^(cuaca)$/i
 handler.owner = false

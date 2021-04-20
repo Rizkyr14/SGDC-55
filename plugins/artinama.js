@@ -1,22 +1,24 @@
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
-
-    if (!text) return conn.reply(m.chat, 'Silahkan masukan nama yang ingin diartikan', m)
-
-  await m.reply('Searching...')
+ try{
+    if (!text) return conn.reply(m.chat, '_Silahkan masukan nama yang ingin diartikan!_', m)
+    await m.reply(global.wait)
 	axios.get(`https://videfikri.com/api/primbon/artinama/?nama=${text}`).then ((res) => {
-	 	let hasil = `
-*ARTI NAMA ${text}*
+    let hasil = `
+*Arti Nama ${text}*
 ${res.data.result.arti}
 
-*DESKRIPSI:*
+*Deskripsi:*
 ${res.data.result.desk}
 
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
 
     conn.reply(m.chat, hasil, m)
 	})
+   } catch (e) {
+  	m.reply('```Error```')
+  }
 }
 
 handler.command = /^(arti(nama)?)$/i

@@ -1,7 +1,8 @@
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
-
-  axios.get(`https://videfikri.com/api/covidindo/`).then((res) => {
+ try {
+    await m.reply(global.wait)
+    axios.get(`https://videfikri.com/api/covidindo/`).then((res) => {
     let hasil = `
 *Country:* _${res.data.result.country}_
 *Positif:* _${res.data.result.positif}_
@@ -9,13 +10,16 @@ let handler = async(m, { conn, text }) => {
 *Meninggal:* _${res.data.result.meninggal}_
 *Dirawat:* _${res.data.result.dalam_perawatan}_
 
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
 conn.reply(m.chat, hasil, m)
     })
+    } catch (e) {
+  	m.reply('```Error```')
+  }
 }
 
-handler.command = /^(infocovid|covid)$/i
+handler.command = /^(infocovid|covid|covidindo)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
