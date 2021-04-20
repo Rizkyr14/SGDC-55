@@ -1,6 +1,13 @@
+pkg install nodejs -y
+pkg install ffmpeg -y
+pkg install imagemagick -y
+npm install
+npm audit fix
 
 clear
 
+echo ""
+echo ""
 echo "=+=+=+=+=+=+=+=+÷+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+==+=+=+"
 echo "×××××××××××××××××! WELCOME TO SCRIPT SGDC-BOT !××××××××××××××××××"
 echo "=+=+=+=+=+=+=+=+÷+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+==+=+=+"
@@ -26,6 +33,5 @@ echo ""
 echo "================================================================="
 echo "=============! HARAP TUNGGU SELAGI MEMULAI SCRIPT !=============="
 echo "================================================================="
-echo ""
 
 node index.js
