@@ -4,7 +4,10 @@ pkg install imagemagick -y
 npm install
 npm audit fix
 
+echo "AMPUN BANG, JANGAN BULLY GUA BANG :'("
+
 clear
+
 echo ""
 echo ""
 echo ""
