@@ -1,11 +1,10 @@
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
-
-
-  await m.reply('*[ WAIT ]* _Searching..._')
+try {
+    await m.reply(global.wait)
 	axios.get(`https://videfikri.com/api/randquran/`).then ((res) => {
 	 	let hasil = `
-*HASIL SEARCHING*
+*Random AL-QUR'AN*
 	
 *Nama Surah:* ${res.data.result.name}
 *Nomor:* ${res.data.result.nomor}
@@ -17,12 +16,14 @@ let handler = async(m, { conn, text }) => {
 *Arti:* ${res.data.result.arti}
 *Keterangan:* ${res.data.result.keterangan}
 
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
-
     conn.reply(m.chat, hasil, m)
 	})
-}
+   } catch (e) {
+   m.reply('```Error```')
+  }
+} 
 
 handler.command = /^(randquran|quran)$/i
 handler.owner = false

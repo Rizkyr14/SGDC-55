@@ -1,10 +1,9 @@
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
-
+try {
     if (!text) return conn.reply(m.chat, 'Silahkan masukan link mediafire', m)
-
-  await m.reply('*[ WAIT ]* _Sedang Diproses..._')
-axios.get(`https://videfikri.com/api/mediafire/?query=${text}`).then((res) => {
+    await m.reply(global.wait)
+    axios.get(`https://videfikri.com/api/mediafire/?query=${text}`).then((res) => {
 	let hasil = `
 *FileName:* ${res.data.result.filename}
 *Size:* ${res.data.result.size}
@@ -16,12 +15,14 @@ _Download sendiri, jangan manja:v_
 _Kalau Gak Error,_
 _File Nya Langsung Dikirim_
 
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
 m.reply(hasil)	
-//let file = await conn.downloadM(res.data.result.download)
 conn.sendFile(m.chat, res.data.result.download, `${res.data.result.filename}`, m)
    })
+  } catch (e) {
+   m.reply('```Error```')
+  }
 }
 handler.command = /^(mediafire)$/i
 handler.owner = false

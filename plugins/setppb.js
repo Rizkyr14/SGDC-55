@@ -21,8 +21,8 @@ let handler  = async (m, { conn, args, bot, usedPrefix, command }) => {
 					await conn.updateProfilePicture(botNumber, media)
 					m.reply('_Success Change Profile Picture!_')*/
 }
-
+/*
 handler.command = /^setpp$/i
 handler.owner = true
-
-module.exports = handler
+ */
+//module.exports = handler

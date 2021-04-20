@@ -1,12 +1,11 @@
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
-
-    if (!text) return conn.reply(m.chat, 'Masukkan Link!', m)
-
-  await m.reply('*[ WAIT ]* _Sedang Diproses..._')
+  try {
+    if (!text) return conn.reply(m.chat, '_Masukkan Link!_', m)
+    await m.reply(global.wait)
 	axios.get(`https://fzn-gaz.herokuapp.com/api/igdl?url=${text}`).then ((res) => {
-	 	let hasil = `
-*KLIK LINK UNTUK DOWNLOAD*
+let hasil = `
+*KLIK LINK FOR DOWNLOAD*
 
 *Userame:* ${res.data.result.username}
 *Caption:* ${res.data.result.caption}
@@ -14,11 +13,13 @@ let handler = async(m, { conn, text }) => {
 
 _Download Sendiri, Jangan Manja :v_
 
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
-
     conn.reply(m.chat, hasil, m)
 	})
+  } catch (e) {
+   m.reply('```Error```')
+  }
 }
 
 handler.command = /^(igdl)$/i

@@ -1,11 +1,9 @@
 let imageToBase64 = require('image-to-base64');
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
-/*let user = global.DATABASE._data.users[m.sender]
-if (user.prems) {*/
- if (!text) return conn.reply(m.chat, 'Masukkan Username Instagram', m)
-  await m.reply('*[ WAIT ]* _Sedang Diproses.._')
-
+try {
+ if (!text) return conn.reply(m.chat, '_Masukkan Username Instagram!_', m)
+  await m.reply(global.wait)
     axios.get(`https://mhankbarbar.herokuapp.com/api/stalk?username=${text}`)
     .then((res) => {
       imageToBase64(res.data.Profile_pic)
@@ -19,12 +17,14 @@ if (user.prems) {*/
 *Following:* ${res.data.Jumlah_Following}
 *Bio:* ${res.data.Biodata}
 
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
      conn.sendFile(m.chat, buf, 'SGDC-BOT.png', str, m)
         })
     })
-  //} else if (!user.prems) m.reply('*FITUR INI KHUSUS UNTUK USER PREMIUM!*')
+  } catch (e) {
+   m.reply('```Error```')
+  }
 }
 
 handler.command = /^(igstalk)$/i

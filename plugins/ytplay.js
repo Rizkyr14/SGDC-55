@@ -2,7 +2,7 @@ let imageToBase64 = require('image-to-base64');
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
  if (!text) return conn.reply(m.chat, '_Masukkan Judul Video_', m)
-  await m.reply('*[ WAIT ]* _Sedang Diproses.._')
+  await m.reply(global.wait)   
   try {
     axios.get(`https://videfikri.com/api/ytplayv2/?query=${text}`)
     .then((res) => {
@@ -27,13 +27,13 @@ ${res.data.result.description}
 
 _Download Sendiri, Jangan Manja :v_
 
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
      conn.sendFile(m.chat, res.data.result.thumbnail, 'SGDC-BOT.jpg', str, m)
         })
     })
-   } catch {
-    m.reply ('ERROR')
+   } catch (e) {
+    m.reply('```Error```')
    }
 }
 

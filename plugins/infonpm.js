@@ -1,12 +1,11 @@
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
-
+ try {
     if (!text) return conn.reply(m.chat, '_Masukkan Nama NPM_', m)
-
-  await m.reply('*[ WAIT ]* _Searching..._')
+    await m.reply(global.wait)
 	axios.get(`https://videfikri.com/api/npm/?query=${text}`).then ((res) => {
-	 	let hasil = `
-*HASIL SEARCHING*
+	let hasil = `
+*INFORMASI HASIL*
 	
 *ID:* ${res.data.result.id}
 *REV:* ${res.data.result.rev}
@@ -21,11 +20,13 @@ let handler = async(m, { conn, text }) => {
 *Last Modified:* ${res.data.result.last_modified}
 
 
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
-
     conn.reply(m.chat, hasil, m)
 	})
+  } catch (e) {
+   m.reply('```Error```')
+  }
 }
 
 handler.command = /^(infonpm|npm)$/i

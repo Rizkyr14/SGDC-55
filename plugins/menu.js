@@ -3,6 +3,7 @@ let axios = require ('axios')
 let fs = require ('fs')
 let util = require('util')
 let path = require('path')
+let kntl = require("../src/kntl.json");
 let { spawn } = require('child_process')
 let { performance } = require('perf_hooks')
 let handler  = async (m, { conn, args, usedPrefix: _p }) => {
@@ -14,7 +15,8 @@ let handler  = async (m, { conn, args, usedPrefix: _p }) => {
     let bname = package.name
     let vers = package.version
     let dsci = package.description
-    let apikey = 'XinzBot'
+    let kntl = require("../src/kntl.json");
+    let apikey = (kntl.xinzbot)
     let ree = await axios.get(`https://xinzbot-api.herokuapp.com/api/ucapan?apikey=${apikey}&timeZone=Asia/Jakarta`)
     let cpn = ree.data.result
     let res = await axios.get(`https://xinzbot-api.herokuapp.com/api/hitungmundur?apikey=${apikey}&tanggal=13&bulan=5`)
@@ -40,40 +42,25 @@ let handler  = async (m, { conn, args, usedPrefix: _p }) => {
     })
     let _uptime = process.uptime() * 1000
     let uptime = clockString(_uptime)
+    //let users = (await conn.groupMetadata(m.chat)).participants.map(u => u.jid)
     let reg = Object.values(global.DATABASE._data.users).filter(user => user.registered == false).length
     let own = '6282252655313@s.whatsapp.net'
-    let kntl = m.sender
-    let poto = 'src/SGDC_BOT.jpg'
+    let cown = '6283129011845@s.whatsapp.net'
+    let mmk = m.sender
+    //let poto = 'src/SGDC_BOT.jpg'
     let mn = `
 *━━━━━━━━━━━━━━━━━━━━*
-_Hai, Selamat ${cpn} Kak @${kntl.split("@")[0]}_
-
-
-*❏ WARNING ❏*
-   _Sebagian fitur mungkin ada beberapa yang error, karena apikey sudah kehabisan limit atau invalid!_
-
-❍ ~( APIKEY GRATISAN )~ ❍
-*━━━━━━━━━━━━━━━━━━━━*
-❍ *INFO* ❍
-❏ Owner: @${own.split("@")[0]}
-❏ Github: ( Cek Di Grup ${bname} )
-❏ Instagram: @dhans11__
-❏ Facebook: Muhammad Afdhan
-❏ Telegram: @Bagi_Config
-❏ YouTube: SGDC Project
-❏ WhatsApp: wa.me/6282252655313
-❏ Mwehehehehe :)
-*━━━━━━━━━━━━━━━━━━━━*
+_Hai, Selamat ${cpn} Kak @${mmk.split("@")[0]}_
+*Owner Info:*
+*OwnerName:* _@${own.split("@")[0]}_
+*Co_OwnerName:* _@${cown.split("@")[0]}_
 *╭══════════════════╮*
 ❍ *Total Pengguna ${bname}* ❍
 ❏ ~> ${reg} User
-
 ❍ *Hitung Mundur Menuju Idul Fitri 1442 H* ❍
 ❏ ~> ${rmd}
-
 ❍ *Group Chat ${bname}* ❍
 ❏ ~> ${gc}
-
 ❍ *Performa ${bname} Saat Ini* ❍
 ❏ ~> ${ping}
 *╰══════════════════╯*
@@ -93,7 +80,6 @@ ${readMore}
 *┃╭════════════════╮*
 *┃║ ${_p}sand*  _Teks_
 *┃║ ${_p}neon*  _Teks_
-*┃║ ${_p}zuan*  _Teks_
 *┃║ ${_p}burn*  _Teks_
 *┃║ ${_p}wolf*  _Teks_
 *┃║ ${_p}candy*  _Teks_
@@ -114,6 +100,7 @@ ${readMore}
 *┃║ ${_p}8bit*  _Text|Text_
 *┃║ ${_p}glitch*  _Text|Text_
 *┃║ ${_p}wanted*  _Text|Text_
+*┃║ ${_p}cswp*  _Reply_
 *┃║ ${_p}photooxy*  _Effect|Text_
 *┃║ ${_p}qrcode*  _Teks_
 *┃║ ${_p}style*  _Teks_
@@ -123,7 +110,24 @@ ${readMore}
 *┃║ ${_p}nulis*  _Teks_
 *┃║ ${_p}nulis2*  _Teks_
 *┃║ ${_p}nulis3*  _Teks_
-*┃║ ${_p}nulis4*  _Teks_
+*┃╰════════════════╯*
+*┃                     SERTI MAKER* (Proses)
+*┃╭════════════════╮*
+*┃║ ${_p}pubgserti*  _Nama_
+*┃║ ${_p}pubgserti2*  _Nama_
+*┃║ ${_p}pubgserti3*  _Nama_
+*┃║ ${_p}pubgserti4*  _Nama_
+*┃║ ${_p}pubgserti5*  _Nama_
+*┃║ ${_p}mlserti*  _Nama_
+*┃║ ${_p}mlserti2*  _Nama_
+*┃║ ${_p}mlserti3*  _Nama_
+*┃║ ${_p}mlserti4*  _Nama_
+*┃║ ${_p}mlserti5*  _Nama_
+*┃║ ${_p}ffserti*  _Nama_
+*┃║ ${_p}ffserti2*  _Nama_
+*┃║ ${_p}ffserti3*  _Nama_
+*┃║ ${_p}ffserti4*  _Nama_
+*┃║ ${_p}ffserti5*  _Nama_
 *┃╰════════════════╯*
 *┃                          ISLAMI*
 *┃╭════════════════╮*
@@ -149,11 +153,13 @@ ${readMore}
 *┃║ ${_p}attp*  _Teks_
 *┃║ ${_p}attp2*  _Teks_
 *┃║ ${_p}semoji*  _Emoji_
-*┃║ ${_p}snobg*  _Image/Reply_ (error)
-*┃║ ${_p}sgif2*  _Image/Reply_ (error)
-*┃║ ${_p}sticgif*  _Image/Reply_ (error)
-*┃║ ${_p}sticker*  _Image/Reply_
-*┃║ ${_p}stimg*  _Reply Sticker_ (error)
+*┃║ ${_p}triggered*  _Image/Reply_
+*┃║ ${_p}snbg*  _Image/Reply_ (Remove Error)
+*┃║ ${_p}sticgif*  _Image/Reply_ (-5 second)
+*┃║ ${_p}sticker*  _Image/Reply_ 
+*┃║ ${_p}stickerwm*  _Image/Reply_ Nama|Author
+*┃║ ${_p}takestic*  _ReplySticker_ Nama|Author
+*┃║ ${_p}stimg*  _ReplySticker_
 *┃╰════════════════╯*
 *┃                   STICKER EMOJI*
 *┃╭════════════════╮*
@@ -176,7 +182,7 @@ ${readMore}
 *┃╭════════════════╮*
 *┃║ ${_p}cecan*
 *┃║ ${_p}cogan*
-*┃║ ${_p}meme* (error)
+*┃║ ${_p}meme*
 *┃║ ${_p}darkjoke*
 *┃║ ${_p}randomexo*
 *┃║ ${_p}randombts*
@@ -201,22 +207,22 @@ ${readMore}
 *┃║ ${_p}igstalk*  _Username_
 *┃║ ${_p}githubstalk*  _Username_
 *┃║ ${_p}twitterstalk*  _Username_
-*┃║ ${_p}tiktokstalk*  _Username_ (error)
+*┃║ ${_p}tiktokstalk*  _Username_ (perbaikan)
 *┃╰════════════════╯*
 *┃                           SPAM*
 *┃╭════════════════╮*
 *┃║ ${_p}spam*  _@user|Teks_
-*┃║ ${_p}santet*  _@user|Teks_
-*┃║ ${_p}santet2*  _@user|Teks_
-*┃║ ${_p}spaming*  _628xxx|Teks_
-*┃║ ${_p}spamsms*  _08xxx|Jmlh_
+*┃║ ${_p}spam2*  _@user|Teks_
+*┃║ ${_p}spam3*  _@user|Teks_
+*┃║ ${_p}spamer*  _628xxx|Teks_
 *┃║ ${_p}call*  _8xxxx_
 *┃╰════════════════╯*
 *┃                           GROUP*
 *┃╭════════════════╮*
 *┃║ ${_p}tagall*
-*┃║ ${_p}tagall2*
+*┃║ ${_p}otagall*
 *┃║ ${_p}grup*  _open/close_
+*┃║ ${_p}setppgc*  _Reply_
 *┃║ ${_p}setname*  _Teks_
 *┃║ ${_p}setdesc*  _Teks_
 *┃║ ${_p}add*  _628xxxx_
@@ -281,6 +287,7 @@ ${readMore}
 *┃║ ${_p}nickepep*
 *┃║ ${_p}grouplist*
 *┃║ ${_p}linkgroup*
+*┃║ ${_p}proxyscrapper*
 *┃║ ${_p}tebakgambar*
 *┃║ ${_p}mark*  _Teks_
 *┃║ ${_p}google*  _Teks_
@@ -290,7 +297,6 @@ ${readMore}
 *┃║ ${_p}lirik*  _Judul Lagu_
 *┃║ ${_p}chord*  _Judul Lagu_
 *┃║ ${_p}artimimpi*  _Teks_
-*┃║ ${_p}kodepos*  _Kota_
 *┃║ ${_p}cuaca*  _Daerah_
 *┃║ ${_p}waktu*  _Daerah_
 *┃║ ${_p}jadwaltv*  _Channel_
@@ -314,6 +320,7 @@ ${readMore}
 *┃║ ${_p}kusonime*  _Teks_
 *┃║ ${_p}teksbalik*  _Teks_
 *┃║ ${_p}tts*  _lang Text_
+*┃║ ${_p}hostsearch*  _Host_
 *┃║ ${_p}readmore*  _Text|Text_
 *┃║ ${_p}maknajadian*  _Tgl|Bln|Thn_
 *┃╰════════════════╯*
@@ -324,9 +331,10 @@ ${readMore}
 *┃║ ${_p}fbdl*  _Url_
 *┃║ ${_p}sfiledl*  _Url_
 *┃║ ${_p}tiktokdl*  _Url_
-*┃║ ${_p}ytmp4*  _Url_
-*┃║ ${_p}ytmp3*  _Judul_
-*┃║ ${_p}ytplay*  _Judul_  (error)
+*┃║ ${_p}ytmp3*  _Url_
+*┃║ ${_p}ytmp4*  (perbaikan)
+*┃║ ${_p}playmp3*  _Judul_
+*┃║ ${_p}playmp4*  _Judul_
 *┃╰════════════════╯*
 *┃                         TOOLS*
 *┃╭════════════════╮*
@@ -374,25 +382,35 @@ ${readMore}
 *┃╰════════════════╯*
 *┃                      ${bname}*
 *┗━━━━━━━━━━━━━━━━━━┛*
-
+  _Encoded by @${own.split("@")[0]}_
+  _Supported by @${cown.split("@")[0]}_
   ${desc} *${bname}@^${vers}*
-
 `.trim()
   /*  await conn.sendFile(m.chat, poto, 'SGDC-BOT.jpg', mn, m, false, { 
         contextInfo: { 
             mentionedJid: [kntl, own]
         }
     }) */
+    //if (!m.isGroup) {
     await conn.reply(m.chat, mn, m, { 
         contextInfo: { 
-            mentionedJid: [kntl, own]
+            mentionedJid: [mmk, own, cown]
         }
     }) 
-  conn.fakeReply(m.chat, 'Untuk Menu Gretongan, Ketik *!gretongmenu*', '0@s.whatsapp.net', '*MENU GRETONGAN SGDC-TEAM*')
+   /* } else {
+    let users = (await conn.groupMetadata(m.chat)).participants.map(u => u.jid)
+    await conn.reply(m.chat, mn, m, { 
+        contextInfo: { 
+            mentionedJid: [mmk, own, cown, users]
+        }
+    })
+   }*/
+    conn.fakeReply(m.chat, `Untuk Menu Gretongan, Ketik *${_p}gretongmenu*`, '0@s.whatsapp.net', '*M AFDHAN || SUPPORT ME WITH DONATE*')
   } catch (e) {
     conn.fakeReply(m.chat, '_TERJADI KESALAHAN PADA SAAT MEMUAT MENU!_', '0@s.whatsapp.net', '*MENU ERROR! SEGERA LAPORKAN KE OWNER!*')
     //throw e
-   // conn.sendMessage('6282252655313@s.whatsapp.net', 'Menu Error\n' + util.format(e), MessageType.text)
+    //conn.sendMessage(`, 'Menu Error\n' + util.format(e), MessageType.text)
+  console.log(e)
   }
 }
 handler.command = /^(menu|help|start|helep)$/i
@@ -404,6 +422,16 @@ module.exports = handler
 
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
+
+global.tytyd = [
+"♤","◇","~","●","@","•","♡",",","♧",
+"○","¥","+","+","×","%","$","☆","/","^",
+"#","?","€","7","*","Q","0","Z",".","1","!","-",
+]
+
+function pickRandom(list) {
+  return list[Math.floor(list.length * Math.random())]
+}
 
 function clockString(ms) {
   let h = Math.floor(ms / 3600000)

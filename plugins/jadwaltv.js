@@ -1,18 +1,23 @@
 let axios = require("axios");
-let handler = async(m, { conn, text }) => {
+let kntl = require("../src/kntl.json");
+let handler  = async (m, { conn, text }) => {
+    let api = (kntl.zekskey)
+  try {
     if (!text) return conn.reply(m.chat, '_Masukkan Nama Channel_', m)
-    
-    await m.reply('*[ WAIT ]* _Searching..._')
-	axios.get(`https://api.zeks.xyz/api/jadwaltv?channel=${text}&apikey=apivinz`).then ((res) => {
+    await m.reply(global.wait)
+	axios.get(`https://api.zeks.xyz/api/jadwaltv?channel=${text}&apikey=${api}`).then ((res) => {
 	 	let hasil = `
 *Jadwal Hari Ini*
 
 ${res.data.result}
 
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
    conn.reply(m.chat, hasil, m)
 	})
+  } catch (e) {
+   m.reply('```Error```')
+  }
 }
 
 handler.command = /^(jadwal(tv)?)$/i

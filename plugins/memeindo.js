@@ -1,12 +1,16 @@
 let axios = require("axios");
-let handler = async(m, { conn, text }) => {
-/*let user = global.DATABASE._data.users[m.sender]
-if (user.prems) {*/
-  await m.reply('*[ WAIT ]* _Sedang Diproses..._')
-let link = 'https://api.zeks.xyz/api/memeindo?apikey=apivinz'
-
-conn.sendFile(m.chat, link, 'SGDC-BOT.png', '*[ • SGDC-BOT • ]*', m)
-  //} else if (!user.prems) m.reply('*FITUR INI KHUSUS UNTUK USER PREMIUM!*')
+let kntl = require("../src/kntl.json");
+let handler  = async (m, { conn, text }) => {
+    let api = (kntl.zekskey)
+ try {
+  await m.reply(global.wait)
+  axios.get(`https://api.zeks.xyz/api/memeindo?apikey=${api}`).then((res) => {
+ let link = res.data.result
+conn.sendFile(m.chat, link, 'SGDC-BOT.jpg', '*SGDC-BOT*', m)
+  })
+  } catch (e) {
+   m.reply('```Error```')
+  }
 }
 
 handler.command = /^(meme(indo)?)$/i

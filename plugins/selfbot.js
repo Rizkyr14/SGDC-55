@@ -1,5 +1,3 @@
-let { Presence, GroupSettingChange } = require('@adiwajshing/baileys')
-//  let isEnable = /true|enable|(turn)?on/i.test(command)
 let handler = async (m, { conn, usedPrefix, command, text, args, isROwner }) => {
    if (command == 'self') {
 	 isAll = false
@@ -8,7 +6,7 @@ let handler = async (m, { conn, usedPrefix, command, text, args, isROwner }) => 
         throw false
       }
       global.opts['self'] = true
-  conn.reply(m.chat, `_Mode Self Berhasil Diaktifkan! Sekarang Hanya ROwner Yang Dapat Menggunakan BOT!_`, m)
+  conn.reply(m.chat, `_Success Activated SELF-BOT Mode_`, m)
       } else if (command == 'public') {
           isAll = true
    if (!isROwner) {
@@ -16,7 +14,7 @@ let handler = async (m, { conn, usedPrefix, command, text, args, isROwner }) => 
         throw false
       }
       global.opts['self'] = false
-  conn.reply(m.chat, `_Mode Public Berhasil Diaktifkan! Sekarang Ssmua User Bisa Menggunakan BOT!_`, m)
+  conn.reply(m.chat, `_Success Activated PUBLIC-BOT Mode_`, m)
       }
   }
   

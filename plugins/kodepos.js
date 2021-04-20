@@ -1,18 +1,21 @@
 let axios = require("axios");
+let kntl = require("../src/kntl.json");
 let handler = async(m, { conn, text }) => {
-
-    if (!text) return conn.reply(m.chat, 'Masukkan Lokasi', m)
-
-//  await m.reply('*[ WAIT ]* _Seda..._')
-axios.get(`https://xnxx-tbot.herokuapp.com/api/kodepos?kota=${text}&apikey=tbot`).then((res) => {
+	let api = (kntl.tbotkey)
+    try{
+      if (!text) return conn.reply(m.chat, 'Masukkan Lokasi', m)
+     axios.get(`https://xnxx-tbot.herokuapp.com/api/kodepos?kota=${text}&apikey=${api}`).then((res) => {
     let hasil = `
-*KODE POSTAL*
+*Postal Code*
 ${res.data.result.data.postalcode}
 
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
 conn.reply(m.chat, hasil, m)
 	})
+  } catch (e) {
+   m.reply('```Error```')
+  }
 }
 handler.command = /^(kodepos)$/i
 handler.owner = false

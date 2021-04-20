@@ -1,11 +1,9 @@
 let imageToBase64 = require('image-to-base64');
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
-/*let user = global.DATABASE._data.users[m.sender]
-if (user.prems) {*/
- if (!text) return conn.reply(m.chat, 'Masukkan Username Twitter', m)
-  await m.reply('*[ WAIT ]* _Searching..._')
-
+ if (!text) return conn.reply(m.chat, '_Masukkan Username Twitter_', m)
+ try {
+   await m.reply(global.wait)
     axios.get(`https://videfikri.com/api/stalktwit/?username=${text}`)
     .then((res) => {
       imageToBase64(res.data.result.profile)
@@ -19,13 +17,16 @@ if (user.prems) {*/
 *Following:* ${res.data.result.following}
 *Tweets:* ${res.data.result.tweets}
 
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
      conn.sendFile(m.chat, buf, 'SGDC.png', str, m)
         })
     })
-//  } else if (!user.prems) m.reply('*FITUR INI KHUSUS UNTUK USER PREMIUM!*')
+  } catch (e) {
+   m.reply('```Error```')
+  }
 }
+
 
 handler.command = /^(twitter(stalk)?)$/i
 handler.owner = false

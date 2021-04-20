@@ -1,10 +1,10 @@
 let imageToBase64 = require('image-to-base64');
 let axios = require("axios");
-let handler = async(m, { conn, text }) => {
- if (!text) return conn.reply(m.chat, '_Masukkan Judul Video_', m)
-  await m.reply('*[ WAIT ]* _Sedang Diproses.._')
-  try{
-   let api = 'apivinz'
+let kntl = require("../src/kntl.json");
+let handler  = async (m, { conn, text }) => {
+    let api = (kntl.zekskey)
+ try {
+  await m.reply(global.wait)
     axios.get(`https://api.zeks.xyz/api/ytmp3?url=${text}&apikey=${api}`)
     .then((res) => {
       imageToBase64(res.data.result.thumbnail)
@@ -21,13 +21,13 @@ let handler = async(m, { conn, text }) => {
 
 _Download Sendiri, Jangan Manja :v_
 
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
      conn.sendFile(m.chat, buf, 'SGDC-BOT.png', str, m)
         })
     })
    } catch (e) {
-    m.reply('ERROR')
+    m.reply('```Error```')
    }
 }
 

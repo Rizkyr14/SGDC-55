@@ -1,17 +1,19 @@
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
-let txt = m.quoted ? m.quoted.text ? m.quoted.text : text ? text : m.text : text ? text : m.text
-    if (!txt) return conn.reply(m.chat, 'Silahkan masukan kata kunci', m)
-
-//  await m.reply('*[ WAIT ]* _Searching..._')
-axios.get(`https://videfikri.com/api/jumlahhuruf/?query=${txt}`).then((res) => {
+ try {
+    let txt = m.quoted ? m.quoted.text ? m.quoted.text : text ? text : m.text : text ? text : m.text
+    if (!txt) return conn.reply(m.chat, '_Silahkan masukan kata kunci!_', m)
+    axios.get(`https://videfikri.com/api/jumlahhuruf/?query=${txt}`).then((res) => {
     let hasil = `
-_JUMLAH ADA:_ *${res.data.result.jumlah}*
+_UMLAH ADA: *${res.data.result.jumlah}*
 
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
 conn.reply(m.chat, hasil, m)
 	})
+  } catch (e) {
+   m.reply('```Error```')
+  }
 }
 handler.command = /^(jhuruf)$/i
 handler.owner = false

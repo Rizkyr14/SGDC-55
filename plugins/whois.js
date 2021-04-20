@@ -3,11 +3,11 @@ let handler = async(m, { conn, text }) => {
 
 let txt = m.quoted ? m.quoted.text ? m.quoted.text : text ? text : m.text : text ? text : m.text
     if (!txt) return conn.reply(m.chat, 'Masukkan IP adress', m)
-
-  await m.reply('*[ WAIT ]* _Searching..._')
+   try {
+    await m.reply(global.wait)
 	axios.get(`https://videfikri.com/api/iplookup/?ip=${txt}`).then ((res) => {
 	 	let hasil = `
-*HASIL SEARCHING*
+*WHOIS IP LOOKUP*
 	
 *IP Adress:* ${res.data.result.ip}
 *City:* ${res.data.result.city}
@@ -22,11 +22,14 @@ let txt = m.quoted ? m.quoted.text ? m.quoted.text : text ? text : m.text : text
 *ORG:* ${res.data.result.org}
 *AS:* ${res.data.result.as}
 
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
 
     conn.reply(m.chat, hasil, m)
 	})
+  } catch (e) {
+   m.reply('```Error```')
+  }
 }
 
 handler.command = /^(whois)$/i

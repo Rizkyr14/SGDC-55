@@ -1,20 +1,24 @@
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
-
-    if (!text) return conn.reply(m.chat, 'Masukkan Judul Lagu!', m)
-
-  await m.reply('*[ WAIT ]* _Searching..._')
-axios.get(`https://videfikri.com/api/liriklagu/?query=${text}`).then((res) => {
-    let hasil = `
+    if (!text) return conn.reply(m.chat, '_Masukkan Judul Lagu!_', m)
+ try {
+   await m.reply(global.wait)
+   axios.get(`https://videfikri.com/api/liriklagu/?query=${text}`).then((res) => {
+  let hasil = `
+*Lirik Lagu*
+  
 *Judul:* ${res.data.result.title}
 *Artist:* ${res.data.result.artist}
 *Lirik:* 
 ${res.data.result.lirik}
 
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
 conn.reply(m.chat, hasil, m)
 	})
+  } catch (e) {
+   m.reply('```Error```')
+  }
 }
 handler.command = /^(lirik)$/i
 handler.owner = false

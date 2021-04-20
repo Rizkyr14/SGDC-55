@@ -1,9 +1,9 @@
 const { sticker } = require('../lib/sticker')
 const { MessageType } = require('@adiwajshing/baileys')
 
-let handler = async (m, { conn, text }) => {
- await m.reply('*[ WAIT ]* _Sedang Diproses..._')
-let [ayam, geprek] = text.split ` | `
+let handler = async (m, { conn, args, text }) => {
+ await m.reply(global.wait)
+let [ayam, geprek] = args.join` `
  try {
   if (!ayam) throw '_Masukkan Tipe!_'
   if (!geprek) throw '_Emojinya mana?_'
@@ -12,7 +12,7 @@ let [ayam, geprek] = text.split ` | `
     quoted: m
   })
  } catch (e) {
-   m.reply('```Error!```')
+   m.reply('```Error```')
   }
 }
 

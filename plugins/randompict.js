@@ -1,12 +1,12 @@
 let imageToBase64 = require('image-to-base64');
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
-/*let user = global.DATABASE._data.users[m.sender]
-    if (user.prems) {*/
-  await m.reply('*[ WAIT ]* _Sedang Diproses..._')
+	if (!text) return m.reply('_Masukkan Teks!_')
+    await m.reply(global.wait)
+  try{
     let url = "https://api.fdci.se/rep.php?gambar=" + text
     let str = `
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
     
     axios.get(url)
@@ -28,8 +28,10 @@ let handler = async(m, { conn, text }) => {
         )
     
     });
-  //   } else if (!user.prems) m.reply('*FITUR INI KHUSUS UNTUK USER PREMIUM!*')
- }
+      } catch (e) {
+   m.reply('```Error```')
+  }
+} 
 
 handler.command = /^(pict|randompict)$/i
 

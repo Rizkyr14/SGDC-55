@@ -1,19 +1,21 @@
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
-
-    if (!text) return conn.reply(m.chat, 'Silahkan masukan kata kunci', m)
-
-  await m.reply('*[ WAIT ]* _Sedang Diproses..._')
-axios.get(`https://videfikri.com/api/kbbi/?query=${text}`).then((res) => {
+  try {
+    if (!text) return conn.reply(m.chat, '_Silahkan masukan kata kunci!_', m)
+   await m.reply(global.wait)
+   axios.get(`https://videfikri.com/api/kbbi/?query=${text}`).then((res) => {
     let hasil = `
-*Menurut KBBI*
+*Kamus Besar Bahasa Indonesia*
 
 ${res.data.result.hasil}
 
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
 conn.reply(m.chat, hasil, m)
 	})
+  } catch (e) {
+   m.reply('```Error```')
+  }
 }
 handler.command = /^(kbbi)$/i
 handler.owner = false

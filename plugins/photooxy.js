@@ -1,21 +1,20 @@
 let axios = require("axios");
+let kntl = require("../src/kntl.json");
 let handler = async(m, { conn, text }) => {
-/*let user = global.DATABASE._data.users[m.sender]
-if (user.prems) {*/
-let [fx, xs] = text.split `|`
-    if (!fx) return conn.reply(m.chat, 'Effect tidak boleh kosong!', m)
-    if (!xs) return conn.reply(m.chat, 'Silahkan masukan teks', m)
-
-   if (fx > 10) return conn.reply(m.chat, '*Teks1 Terlalu Panjang!* _Maksimal 10 huruf!_', m)
-   if (xs > 10) return conn.reply(m.chat, '*Teks2 Terlalu Panjang!* _Maksimal 10 huruf!_', m)
-
-  await m.reply('*[ WAIT ]* _Sedang Diproses..._')
-let link = 'https://api.xteam.xyz/photooxy/' + fx + '?text=' + xs + '&APIKEY=abba3220ce4a347f'
-
-conn.sendFile(m.chat, link, 'SGDC-BOT.png', '*[ • SGDC-BOT • ]*', m)
- // } else if (!user.prems) m.reply('*FITUR INI KHUSUS UNTUK USER PREMIUM!*')
-}
-
+let api = (kntl.xteam)
+ try {
+   let [fx, xs] = text.split `|`
+    if (!fx) return conn.reply(m.chat, '_Effect tidak boleh kosong!_', m)
+    if (!xs) return conn.reply(m.chat, '_Silahkan masukan teks_', m)
+    if (fx.length > 10) return conn.reply(m.chat, '_Teks1 Terlalu Panjang! Maksimal 10 huruf!_', m)
+    if (xs.length > 10) return conn.reply(m.chat, '_Teks2 Terlalu Panjang! Maksimal 10 huruf!_', m)
+    await m.reply(global.wait)
+    let link = 'https://api.xteam.xyz/photooxy/' + fx + '?text=' + xs + '&APIKEY=' + api;
+    conn.sendFile(m.chat, link, 'SGDC-BOT.png', '*SGDC-BOT*', m)
+  } catch (e) {
+   m.reply('```Error```')
+  }
+} 
 handler.command = /^(photooxy)$/i
 handler.premium = true
 

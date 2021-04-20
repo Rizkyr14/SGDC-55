@@ -1,10 +1,11 @@
 let axios = require("axios");
-let handler = async(m, { conn, text }) => {
-
-    if (!text) return conn.reply(m.chat, 'Silahkan masukan nama daerah', m)
-
- await m.reply('*[ WAIT ]* _Sedang diproses..._')
-axios.get(`http://lolhuman.herokuapp.com/api/sholat/${text}?apikey=761e676c13e7710a48011b2b`).then((res) => {
+let kntl = require("../src/kntl.json");
+let handler  = async (m, { conn, text }) => {
+    let api = (kntl.lolkey)
+  try {
+     if (!text) return conn.reply(m.chat, 'Silahkan masukan nama daerah', m)
+     await m.reply(global.wait)
+     axios.get(`http://lolhuman.herokuapp.com/api/sholat/${text}?apikey=${api}`).then((res) => {
     let hasil = `
 *JADWAL SHOLAT HARI INI*
 
@@ -22,10 +23,13 @@ axios.get(`http://lolhuman.herokuapp.com/api/sholat/${text}?apikey=761e676c13e77
 *Isya:* ${res.data.result.isya}
 
 
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
 conn.reply(m.chat, hasil, m)
 	})
+  } catch (e) {
+   m.reply('```Error```')
+  }
 }
 handler.command = /^(jadwal(sholat)?(shalat)?(solat)?)$/i
 handler.owner = false

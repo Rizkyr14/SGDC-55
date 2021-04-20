@@ -1,13 +1,17 @@
 let axios = require("axios");
+let kntl = require("../src/kntl.json");
 let handler = async(m, { conn, text }) => {
-/*let user = global.DATABASE._data.users[m.sender]
-if (user.prems) {*/
-  await m.reply('*[ WAIT ]* _Sedang Diproses..._')
-let link = 'http://lolhuman.herokuapp.com/api/random/sagiri?apikey=761e676c13e7710a48011b2b'
-
-    conn.sendFile(m.chat, link, 'SGDC-BOT.png', 'No Colay:v\n\n*[ • SGDC-BOT • ]*', m)
-//    } else if (!user.prems) m.reply('*FITUR INI KHUSUS UNTUK USER PREMIUM!*')
-}
+let chat = global.DATABASE.data.chats[m.chat]
+    if (chat.nsfw) { 
+    let api = (kntl.lolkey)
+  try {
+  	await m.reply(global.wait)
+     let link = 'http://lolhuman.herokuapp.com/api/random/sagiri?apikey=' + api;
+     conn.sendFile(m.chat, link, 'SGDC-BOT.png', 'No Colay:v\n\n*SGDC-BOT*', m)
+    } catch (e) {
+   m.reply('```Error```')
+  }
+} 
 
 handler.command = /^(sagiri|randomsagiri)$/i
 

@@ -1,12 +1,12 @@
 let handler = async(m, { conn, text }) => {
-  //let [who, txt] = text.split `-`
   let who = m.mentionedJid[0]
+  let kon = m.sender
   let name = conn.getName(m.sender)
-  if (!who) return m.reply('_Tag Salah Satu!_')
+  if (!who) return m.reply('```Tag Salah Satu!```')
   let repeat = `
 *「  REPEAT TAG  」*
 
-Dari: ${name}
+Dari: @${kon.split("@")[0]}
 
 🤣 @${who.split("@")[0]}
 🤣 @${who.split("@")[0]}
@@ -1417,7 +1417,7 @@ Dari: ${name}
 
 conn.reply(m.chat, repeat, m, {
            contextInfo: { 
-                 mentionedJid: [who]
+                 mentionedJid: [kon, who]
           } 
       })
   }

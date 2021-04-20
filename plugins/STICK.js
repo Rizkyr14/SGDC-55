@@ -4,15 +4,13 @@ const fetch = require('node-fetch')
 const FormData = require('form-data')
 const { spawn } = require('child_process')
 const { MessageType } = require('@adiwajshing/baileys')
-const kntl = require("../src/kntl.json")
-
-let handler  = async (m, { conn, text }) => {
-/*let user = global.DATABASE._data.users[m.sender]
-if (user.prems) {*/
-	  await m.reply('Sedang Membuat...')
+const kntl = require("../src/kntl.json");
+let handler = async(m, { conn, text }) => { 
+    let api = (kntl.lolkey)
+  try {
+  	await m.reply(global.wait)
   if (text) {
-    //let api = (kntl.api)
-    let res = await fetch('http://lolhuman.herokuapp.com/api/ttp4?apikey=761e676c13e7710a48011b2b&text=' + encodeURIComponent(text))
+    let res = await fetch('http://lolhuman.herokuapp.com/api/ttp4?apikey=' + api + '&text=' + encodeURIComponent(text))
     let img = await res.buffer()
     if (!img) throw img
     let stiker = await sticker(img)
@@ -20,9 +18,10 @@ if (user.prems) {*/
       quoted: m
     })
   }
-//   } else if (!user.prems) m.reply('*FITUR INI KHUSUS UNTUK USER PREMIUM!*')
+   } catch (e) {
+   m.reply('```Error```')
+  }
 }
-
 handler.command = /^(ttp2)$/i
 handler.owner = false
 handler.mods = false

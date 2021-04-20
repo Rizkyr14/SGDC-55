@@ -1,10 +1,9 @@
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
-
-
-  await m.reply('*[ WAIT ]* _Searching..._')
+try {
+    await m.reply(global.wait)
 	axios.get(`https://videfikri.com/api/infogempa/`).then ((res) => {
-	 	let hasil = `
+let hasil = `
 *INFORMASI HASIL*
 
 *Wilayah:* ${res.data.result.wilayah}
@@ -15,11 +14,13 @@ let handler = async(m, { conn, text }) => {
 *Kedalaman:* ${res.data.result.kedalaman}
 
 
-*[ • SGDC-BOT • ]*
+*SGDC-BOT*
 `.trim()
-
     conn.reply(m.chat, hasil, m)
 	})
+  } catch (e) {
+   m.reply('```Error```')
+  }
 }
 
 handler.command = /^(infogempa)$/i
