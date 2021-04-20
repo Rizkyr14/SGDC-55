@@ -10,10 +10,7 @@ SIMPLE WHATSAPP BOT GRETONGERS
 7. > `npm start`
 8. > `Scan QR with WhatsApp Web`
 
-
-
-
-
+# Don't forget to input your apikey at "src/kntl.json"
 
  JOIN
 [`WhatsApp`](https://chat.whatsapp.com/JTqD3cJLmrlJPfxYZMtju8)
