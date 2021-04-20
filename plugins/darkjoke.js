@@ -5,7 +5,7 @@ let handler = async(m, { conn, text }) => {
 let api = (kntl.zekskey)
   try {
     await m.reply(global.wait)
-    axios.get(`https://api.zeks.xyz/api/darkjokes?apikey=${api}`}
+    axios.get(`https://api.zeks.xyz/api/darkjokes?apikey=${api}`)
     .then((res) => {
       imageToBase64(res.data.result)
         .then(

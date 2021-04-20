@@ -39,7 +39,7 @@ handler.fail = null
 //  MUHAMMAD AFDHAN
 
 module.exports = handler
-
+/*
 let tmp = path.join(__dirname, '../tmp')
 function sticker(img, url) {
   return new Promise(async (resolve, reject) => {
@@ -73,5 +73,5 @@ function sticker(img, url) {
       reject(e)
     }
   })
-}
+}*/
 // MUHAMMAD AFDHAN

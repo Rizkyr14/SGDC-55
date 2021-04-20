@@ -1,5 +1,4 @@
 let axios = require("axios");
-let handler = async(m, { conn, text }) => {
 let kntl = require("../src/kntl.json");
 let handler = async(m, { conn, text }) => {
 let api = (kntl.xteam)
