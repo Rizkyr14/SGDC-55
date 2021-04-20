@@ -8,7 +8,7 @@ let handler = async (m, { conn, text }) => {
   })
     //let mentionedJid = [m.sender]
 }
-handler.customPrefix = /^(@꧁࿇ ᴍ ᴀꜰᴅʜᴀɴ ࿇꧂|@꧁࿇ M AFDHAN ࿇꧂|Afdhan|afdan|afdhan|dhan)$/i
+handler.customPrefix = /^(@꧁࿇ ᴍ ᴀꜰᴅʜᴀɴ ࿇꧂|Afdhan|@6282252655313)/i
 handler.command = new RegExp
 
 module.exports = handler				     
