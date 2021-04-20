@@ -38,7 +38,7 @@ CFonts.say(`Tetaplah menjadi dirimu sendiri|jangan pernah mencoba menjadi orang 
   space: false,
   gradient: true,
 })
-CFonts.say(`${package.name}@${package.version}\n\nMUHAMMAD AFDHAN`, {
+CFonts.say(`\n\n${package.name}@${package.version}\n\nMUHAMMAD AFDHAN`, {
   font: 'console',
   align: 'center',
   colors: ['red']
@@ -76,3 +76,5 @@ function start(file) {
   })
 
 }
+
+start('dhans.js')
