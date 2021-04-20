@@ -1,13 +1,14 @@
 # SGDC-BOT@^1.5.5
 SIMPLE WHATSAPP BOT GRETONGERS
 
-[`> pkg update && pkg upgrade`]
-[`> pkg install git -y`]
-[`> git clone https://github.com/Afdhan/SGDC-55`]
-[`> cd SGDC-55`]
-[`> bash install.sh`]
-[`> npm start`]
-[`> Scan QR with WhatsApp Web`]
+1. > `Open Termux`
+2. > `pkg update && pkg upgrade`
+3. > `pkg install git -y`
+4. > `git clone https://github.com/Afdhan/SGDC-55`
+5. > `cd SGDC-55`
+6. > `bash install.sh`
+7. > `npm start`
+8. > `Scan QR with WhatsApp Web`
 
 
  JOIN
