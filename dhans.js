@@ -1,3 +1,4 @@
+console.log(`SGDC-BOT Connecting to WhatsApp Web server...`)
 require('./config.js')
 let { WAConnection: _WAConnection, WA_MESSAGE_STUB_TYPES } = require('@adiwajshing/baileys')
 let { generate } = require('qrcode-terminal')
@@ -167,7 +168,7 @@ for (let filename of fs.readdirSync(pluginFolder).filter(pluginFilter)) {
     delete global.plugins[filename]
   }
 }
-console.log(Object.keys(global.plugins))
+//console.log(Object.keys(global.plugins))
 global.reload = (_event, filename) => {
   if (pluginFilter(filename)) {
     let dir = path.join(pluginFolder, filename)
