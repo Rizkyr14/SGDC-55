@@ -1,8 +1,7 @@
 # SGDC-BOT@^1.5.5
 SIMPLE WHATSAPP BOT GRETONGERS
 
-> pkg update && pkg upgrade
-> pkg install git -y
+> pkg update && pkg upgrade\n> pkg install git -y
 > git clone https://github.com/Afdhan/SGDC-55
 > cd SGDC-55
 > bash install.sh
