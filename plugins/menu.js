@@ -53,7 +53,7 @@ let handler  = async (m, { conn, args, usedPrefix: _p }) => {
 _Hai, Selamat ${cpn} || (Masukkan Apikey) Kak @${mmk.split("@")[0]}_
 
 *Note:*
-_Script ini hanya polosan, anda perlu memasukkan parametsr apikey  agar fitur dapat berfungsi!_
+_Script ini hanya polosan, anda perlu memasukkan parameter apikey  agar fitur dapat berfungsi!_
 *╭══════════════════╮*
 ❍ *Total Pengguna ${bname}* ❍
 ❏ ~> ${reg} User
