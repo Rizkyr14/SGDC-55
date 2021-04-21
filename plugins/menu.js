@@ -357,7 +357,7 @@ ${readMore}
 *┃                      ${bname}*
 *┗━━━━━━━━━━━━━━━━━━┛*
 
-  _Encoded by @${own.split("@")[0]}_
+ _Encoded by @${own.split("@")[0]}_
 
   ${desc} *${bname}@^${vers}*
 `.trim()
@@ -369,7 +369,7 @@ ${readMore}
     //if (!m.isGroup) {
     await conn.reply(m.chat, mn, m, { 
         contextInfo: { 
-            mentionedJid: [mmk, own, cown]
+            mentionedJid: [mmk, own]
         }
     }) 
    /* } else {
