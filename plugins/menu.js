@@ -50,15 +50,15 @@ let handler  = async (m, { conn, args, usedPrefix: _p }) => {
     //let poto = 'src/SGDC_BOT.jpg'
     let mn = `
 *━━━━━━━━━━━━━━━━━━━━*
-_Hai, Selamat ${cpn} Kak @${mmk.split("@")[0]}_
-*Owner Info:*
-*OwnerName:* _@${own.split("@")[0]}_
-*Co_OwnerName:* _@${cown.split("@")[0]}_
+_Hai, Selamat ${cpn} || (Masukkan Apikey) Kak @${mmk.split("@")[0]}_
+
+*Note:*
+_Script ini hanya polosan, anda perlu memasukkan parametsr apikey  agar fitur dapat berfungsi!_
 *╭══════════════════╮*
 ❍ *Total Pengguna ${bname}* ❍
 ❏ ~> ${reg} User
 ❍ *Hitung Mundur Menuju Idul Fitri 1442 H* ❍
-❏ ~> ${rmd}
+❏ ~> ${rmd} || Masukkan Apikey
 ❍ *Group Chat ${bname}* ❍
 ❏ ~> ${gc}
 ❍ *Performa ${bname} Saat Ini* ❍
@@ -100,34 +100,13 @@ ${readMore}
 *┃║ ${_p}8bit*  _Text|Text_
 *┃║ ${_p}glitch*  _Text|Text_
 *┃║ ${_p}wanted*  _Text|Text_
-*┃║ ${_p}cswp*  _Reply_
 *┃║ ${_p}photooxy*  _Effect|Text_
 *┃║ ${_p}qrcode*  _Teks_
 *┃║ ${_p}style*  _Teks_
-*┃║ ${_p}tahta*  _Teks_
 *┃║ ${_p}tahta2*  _Teks_
-*┃║ ${_p}sgdc*  _Teks_
 *┃║ ${_p}nulis*  _Teks_
 *┃║ ${_p}nulis2*  _Teks_
 *┃║ ${_p}nulis3*  _Teks_
-*┃╰════════════════╯*
-*┃                     SERTI MAKER* (Proses)
-*┃╭════════════════╮*
-*┃║ ${_p}pubgserti*  _Nama_
-*┃║ ${_p}pubgserti2*  _Nama_
-*┃║ ${_p}pubgserti3*  _Nama_
-*┃║ ${_p}pubgserti4*  _Nama_
-*┃║ ${_p}pubgserti5*  _Nama_
-*┃║ ${_p}mlserti*  _Nama_
-*┃║ ${_p}mlserti2*  _Nama_
-*┃║ ${_p}mlserti3*  _Nama_
-*┃║ ${_p}mlserti4*  _Nama_
-*┃║ ${_p}mlserti5*  _Nama_
-*┃║ ${_p}ffserti*  _Nama_
-*┃║ ${_p}ffserti2*  _Nama_
-*┃║ ${_p}ffserti3*  _Nama_
-*┃║ ${_p}ffserti4*  _Nama_
-*┃║ ${_p}ffserti5*  _Nama_
 *┃╰════════════════╯*
 *┃                          ISLAMI*
 *┃╭════════════════╮*
@@ -153,12 +132,9 @@ ${readMore}
 *┃║ ${_p}attp*  _Teks_
 *┃║ ${_p}attp2*  _Teks_
 *┃║ ${_p}semoji*  _Emoji_
-*┃║ ${_p}triggered*  _Image/Reply_
 *┃║ ${_p}snbg*  _Image/Reply_ (Remove Error)
 *┃║ ${_p}sticgif*  _Image/Reply_ (-5 second)
 *┃║ ${_p}sticker*  _Image/Reply_ 
-*┃║ ${_p}stickerwm*  _Image/Reply_ Nama|Author
-*┃║ ${_p}takestic*  _ReplySticker_ Nama|Author
 *┃║ ${_p}stimg*  _ReplySticker_
 *┃╰════════════════╯*
 *┃                   STICKER EMOJI*
@@ -287,7 +263,6 @@ ${readMore}
 *┃║ ${_p}nickepep*
 *┃║ ${_p}grouplist*
 *┃║ ${_p}linkgroup*
-*┃║ ${_p}proxyscrapper*
 *┃║ ${_p}tebakgambar*
 *┃║ ${_p}mark*  _Teks_
 *┃║ ${_p}google*  _Teks_
@@ -320,7 +295,6 @@ ${readMore}
 *┃║ ${_p}kusonime*  _Teks_
 *┃║ ${_p}teksbalik*  _Teks_
 *┃║ ${_p}tts*  _lang Text_
-*┃║ ${_p}hostsearch*  _Host_
 *┃║ ${_p}readmore*  _Text|Text_
 *┃║ ${_p}maknajadian*  _Tgl|Bln|Thn_
 *┃╰════════════════╯*
@@ -331,8 +305,8 @@ ${readMore}
 *┃║ ${_p}fbdl*  _Url_
 *┃║ ${_p}sfiledl*  _Url_
 *┃║ ${_p}tiktokdl*  _Url_
-*┃║ ${_p}ytmp3*  _Url_
-*┃║ ${_p}ytmp4*  (perbaikan)
+*┃║ ${_p}ytmp3*  (perbaikan)
+*┃║ ${_p}ytmp4*  _Url_
 *┃║ ${_p}playmp3*  _Judul_
 *┃║ ${_p}playmp4*  _Judul_
 *┃╰════════════════╯*
@@ -382,8 +356,9 @@ ${readMore}
 *┃╰════════════════╯*
 *┃                      ${bname}*
 *┗━━━━━━━━━━━━━━━━━━┛*
+
   _Encoded by @${own.split("@")[0]}_
-  _Supported by @${cown.split("@")[0]}_
+
   ${desc} *${bname}@^${vers}*
 `.trim()
   /*  await conn.sendFile(m.chat, poto, 'SGDC-BOT.jpg', mn, m, false, { 
