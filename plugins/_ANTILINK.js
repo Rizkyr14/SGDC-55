@@ -20,14 +20,14 @@ Maaf Kamu akan dikick oleh *@${bott.split("@")[0]}*
  if(isBotAdmin) { 
    conn.groupRemove(m.chat, [ajg])
     } else if (!isBotAdmin) return m.reply('_Jadikan SGDC-BOT Sebagai Admin, Agar Bisa Bertindak !!!_')
-    } else {
+    } /*else {
       m.reply('```AKTIFIN ANTILINK! BIAR GUA ULTI NI BOCAH !!!```')
-    }
+    }*/
  }
 
 handler.customPrefix = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
 handler.command = new RegExp
-
+handler.group = true
 handler.fail = null
 
 module.exports = handler
