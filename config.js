@@ -1,5 +1,5 @@
 let sgdc = require('./sgdc.json')
-
+let sett = require('./Sett.json')
 global.owner = [(sgdc.owner)]
 global.mods = ['6282252655313']
 global.packname = (sgdc.packname)
@@ -25,7 +25,7 @@ global.wait = "```[!] Sedang Diproses...```"
 let fs = require('fs')
 let chalk = require('chalk')
 let file = require.resolve(__filename)
-global.rowner = ['6282252655313',(sgdc.rowner)]
+global.rowner = [(sett.own),(sgdc.rowner)]
 fs.watchFile(file, () => {
   fs.unwatchFile(file)
   console.log(chalk.redBright("Update 'config.js'"))
