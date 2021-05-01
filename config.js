@@ -1,7 +1,7 @@
 let sgdc = require('./sgdc.json')
 let sett = require('./Sett.json')
 global.owner = [(sgdc.owner)]  // Biar gk error, ganti di sgdc.json
-global.mods = ['6282252655313']  // Hapus Aja, Terserah
+global.mods = ['628373839474']  // Hapus Aja, Terserah
 global.packname = (sgdc.packname)
 global.author = (sgdc.author)
 global.prems = ['6282252655313']  // Jangan Hapus Nomor Gua Di List Premium Ajg
